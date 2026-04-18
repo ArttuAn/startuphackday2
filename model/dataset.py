@@ -198,28 +198,173 @@ def build_loaders(
     batch_size: int = 8,
     n_frames: int = 8,
     num_workers: int = 0,
+    wandb_run=None,
 ):
+    from collections import Counter
     from sklearn.model_selection import train_test_split
     from torch.utils.data import DataLoader, Subset
 
     full_ds = GameplayDataset(dataset_dir, processor, n_frames=n_frames, augment=True)
-
     if len(full_ds) == 0:
         raise RuntimeError(f"No clips found in {dataset_dir}. Run extract_clips.py first.")
 
-    indices = list(range(len(full_ds)))
-    # Stratify on hard emotion label for balanced split
-    labels = [full_ds.samples[i][1].get("emotion", "neutral") for i in indices]
+    # ── Video-level split (prevents leakage: clips from same video stay together) ──
+    # Group clip indices by parent video directory
+    video_to_indices: dict[str, list[int]] = {}
+    for i, (clip_dir, _) in enumerate(full_ds.samples):
+        vid_id = clip_dir.parent.parent.name   # dataset/<vid_id>/clips/<clip>
+        video_to_indices.setdefault(vid_id, []).append(i)
 
-    from collections import Counter
-    counts = Counter(labels)
-    can_stratify = len(set(labels)) > 1 and min(counts.values()) >= 2
+    video_ids = sorted(video_to_indices.keys())
+    n_val_vids = max(1, int(len(video_ids) * val_split))
+    # Put the last N videos in val (deterministic, no randomness needed for small sets)
+    val_vids   = set(video_ids[-n_val_vids:])
+    train_vids = set(video_ids[:-n_val_vids])
 
-    train_idx, val_idx = train_test_split(
-        indices, test_size=val_split,
-        stratify=labels if can_stratify else None,
-        random_state=42,
-    )
+    train_idx = [i for vid in train_vids for i in video_to_indices[vid]]
+    val_idx   = [i for vid in val_vids   for i in video_to_indices[vid]]
+
+    # Print split info
+    train_labels = [full_ds.samples[i][1].get("emotion", "none") for i in train_idx]
+    val_labels   = [full_ds.samples[i][1].get("emotion", "none") for i in val_idx]
+    print(f"\nTrain: {len(train_idx)} clips from {len(train_vids)} videos")
+    print(f"Val:   {len(val_idx)} clips from {len(val_vids)} videos")
+    print(f"Train distribution: {dict(Counter(train_labels))}")
+    print(f"Val   distribution: {dict(Counter(val_labels))}\n")
+
+    # ── Log dataset as wandb artifact ──────────────────────────────────────
+    if wandb_run is not None:
+        try:
+            import wandb
+
+            def _grab_frame(video_path: Path) -> np.ndarray | None:
+                """Return middle frame as RGB numpy array, or None."""
+                cap   = cv2.VideoCapture(str(video_path))
+                total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+                cap.set(cv2.CAP_PROP_POS_FRAMES, total // 2)
+                ok, frame = cap.read()
+                cap.release()
+                if not ok:
+                    return None
+                return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+            # ── 1. Clip summary table ──────────────────────────────────────
+            rows = []
+            for clip_dir, meta in full_ds.samples:
+                vid_id = clip_dir.parent.parent.name
+                split  = "val" if vid_id in val_vids else "train"
+                rows.append([vid_id, clip_dir.name,
+                              meta.get("emotion", "none"), split])
+
+            clips_table = wandb.Table(
+                columns=["video_id", "clip", "emotion", "split"],
+                data=rows,
+            )
+
+            # ── 2. Class distribution bar charts ──────────────────────────
+            wandb_run.log({
+                "dataset/train_size":   len(train_idx),
+                "dataset/val_size":     len(val_idx),
+                "dataset/n_videos":     len(video_ids),
+                "dataset/train_distribution": wandb.plot.bar(
+                    wandb.Table(
+                        columns=["emotion", "count"],
+                        data=sorted(Counter(train_labels).items()),
+                    ),
+                    "emotion", "count", title="Train — emotion distribution",
+                ),
+                "dataset/val_distribution": wandb.plot.bar(
+                    wandb.Table(
+                        columns=["emotion", "count"],
+                        data=sorted(Counter(val_labels).items()),
+                    ),
+                    "emotion", "count", title="Val — emotion distribution",
+                ),
+            })
+
+            # ── 3. Gameplay / facecam frame pairs ─────────────────────────
+            MAX_PAIRS = 30   # cap so wandb upload stays fast
+            pairs_table = wandb.Table(
+                columns=["split", "emotion", "gameplay_frame", "facecam_frame"])
+
+            for split_name, indices in [("train", train_idx), ("val", val_idx)]:
+                sampled = indices[:MAX_PAIRS] if len(indices) > MAX_PAIRS else indices
+                for i in sampled:
+                    clip_dir, meta = full_ds.samples[i]
+                    emotion = meta.get("emotion", "none")
+
+                    gp_frame = _grab_frame(clip_dir / "gameplay.mp4")
+                    fc_frame = _grab_frame(clip_dir / "facecam.mp4") \
+                        if (clip_dir / "facecam.mp4").exists() else None
+
+                    gp_img = wandb.Image(gp_frame,
+                                         caption=f"{split_name} | {emotion}") \
+                        if gp_frame is not None else None
+                    fc_img = wandb.Image(fc_frame,
+                                         caption=f"{split_name} | {emotion}") \
+                        if fc_frame is not None else None
+
+                    pairs_table.add_data(split_name, emotion, gp_img, fc_img)
+
+            wandb_run.log({
+                "dataset/clips":        clips_table,
+                "dataset/frame_pairs":  pairs_table,
+            })
+
+            # ── 4. Emotion inspection gallery (angry + confused) ──────────
+            INSPECT_EMOTIONS = ["angry", "confused"]
+            MAX_INSPECT      = 20   # max clips per emotion
+
+            for emotion_name in INSPECT_EMOTIONS:
+                inspect_table = wandb.Table(
+                    columns=["clip", "video_id", "split",
+                              "gameplay_frame", "facecam_frame"])
+                count = 0
+                for i, (clip_dir, meta) in enumerate(full_ds.samples):
+                    if meta.get("emotion") != emotion_name:
+                        continue
+                    vid_id = clip_dir.parent.parent.name
+                    split  = "val" if vid_id in val_vids else "train"
+
+                    gp_frame = _grab_frame(clip_dir / "gameplay.mp4")
+                    fc_frame = _grab_frame(clip_dir / "facecam.mp4") \
+                        if (clip_dir / "facecam.mp4").exists() else None
+
+                    inspect_table.add_data(
+                        clip_dir.name,
+                        vid_id,
+                        split,
+                        wandb.Image(gp_frame,
+                                    caption=f"{emotion_name} | gameplay") \
+                            if gp_frame is not None else None,
+                        wandb.Image(fc_frame,
+                                    caption=f"{emotion_name} | facecam") \
+                            if fc_frame is not None else None,
+                    )
+                    count += 1
+                    if count >= MAX_INSPECT:
+                        break
+
+                wandb_run.log({f"inspect/{emotion_name}": inspect_table})
+                print(f"  wandb: logged {count} '{emotion_name}' clips for inspection")
+
+            # ── 5. Save as artifact ───────────────────────────────────────
+            artifact = wandb.Artifact(
+                name="dataset_split", type="dataset",
+                description="Train/val clip split with emotion labels and frame pairs",
+                metadata={
+                    "train_size": len(train_idx),
+                    "val_size":   len(val_idx),
+                    "train_dist": dict(Counter(train_labels)),
+                    "val_dist":   dict(Counter(val_labels)),
+                },
+            )
+            artifact.add(clips_table,  "clips")
+            artifact.add(pairs_table,  "frame_pairs")
+            wandb_run.log_artifact(artifact)
+            print("  wandb: dataset artifact + frame pairs logged")
+        except Exception as e:
+            print(f"  wandb dataset logging failed: {e}")
 
     val_ds = GameplayDataset(dataset_dir, processor, n_frames=n_frames, augment=False)
 

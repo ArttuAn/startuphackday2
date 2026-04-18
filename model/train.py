@@ -152,8 +152,49 @@ def run_epoch(model, loader, optimizer, device, train: bool,
     preds    = np.concatenate(all_preds,   axis=0)
     targets  = np.concatenate(all_targets, axis=0)
     metrics  = compute_metrics(preds, targets)
-    metrics["kl_loss"] = avg_loss
+    metrics["kl_loss"]     = avg_loss
+    metrics["pred_labels"] = preds.argmax(axis=1).tolist()
+    metrics["true_labels"] = targets.argmax(axis=1).tolist()
     return metrics
+
+
+# ── Confusion matrix helper ─────────────────────────────────────────────────
+
+def _make_confusion_matrix(true_labels: list, pred_labels: list,
+                            class_names: list):
+    """Build a matplotlib confusion matrix and return as wandb.Image."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from sklearn.metrics import confusion_matrix
+    import wandb
+
+    cm = confusion_matrix(true_labels, pred_labels,
+                          labels=list(range(len(class_names))))
+    fig, ax = plt.subplots(figsize=(10, 8))
+    im = ax.imshow(cm, interpolation="nearest", cmap="Blues")
+    plt.colorbar(im, ax=ax)
+
+    ax.set_xticks(range(len(class_names)))
+    ax.set_yticks(range(len(class_names)))
+    ax.set_xticklabels(class_names, rotation=45, ha="right", fontsize=9)
+    ax.set_yticklabels(class_names, fontsize=9)
+    ax.set_xlabel("Predicted", fontsize=11)
+    ax.set_ylabel("True", fontsize=11)
+    ax.set_title("Validation Confusion Matrix")
+
+    # Annotate cells
+    thresh = cm.max() / 2
+    for i in range(cm.shape[0]):
+        for j in range(cm.shape[1]):
+            ax.text(j, i, str(cm[i, j]),
+                    ha="center", va="center", fontsize=8,
+                    color="white" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    img = wandb.Image(fig)
+    plt.close(fig)
+    return img
 
 
 # ── Main ────────────────────────────────────────────────────────────────────
@@ -220,6 +261,7 @@ def main():
         batch_size=args.batch_size,
         n_frames=args.n_frames,
         num_workers=args.workers,
+        wandb_run=run if use_wandb else None,
     )
     print(f"Train: {len(train_loader.dataset)} | Val: {len(val_loader.dataset)}")
 
@@ -259,7 +301,7 @@ def main():
         )
 
         if use_wandb and run:
-            wandb.log({
+            log_dict = {
                 "epoch": epoch,
                 "train/kl_loss":  train_m["kl_loss"],
                 "train/top1_acc": train_m["top1_acc"],
@@ -270,7 +312,11 @@ def main():
                 "val/top3_acc":   val_m["top3_acc"],
                 "val/macro_f1":   val_m["macro_f1"],
                 "lr": scheduler.get_last_lr()[0],
-            })
+            }
+            # Confusion matrix — matplotlib heatmap logged as image
+            log_dict["val/confusion_matrix"] = _make_confusion_matrix(
+                val_m["true_labels"], val_m["pred_labels"], EMOTION_CLASSES)
+            wandb.log(log_dict)
 
         row = {"epoch": epoch, **{f"train_{k}": v for k, v in train_m.items()},
                **{f"val_{k}": v for k, v in val_m.items()}}

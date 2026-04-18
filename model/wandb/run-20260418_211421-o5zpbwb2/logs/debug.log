@@ -17,3 +17,4 @@ config: {'model_name': 'google/siglip-base-patch16-224', 'epochs': 30, 'batch_si
 2026-04-18 21:14:26,331 INFO    MainThread:16668 [wandb_run.py:_redirect():2460] Wrapping output streams.
 2026-04-18 21:14:26,332 INFO    MainThread:16668 [wandb_run.py:_redirect():2483] Redirects installed.
 2026-04-18 21:14:26,335 INFO    MainThread:16668 [wandb_init.py:init():1098] run started, returning control to user process
+2026-04-18 21:14:58,302 INFO    MainThread:16668 [wandb_watch.py:_watch():69] Watching

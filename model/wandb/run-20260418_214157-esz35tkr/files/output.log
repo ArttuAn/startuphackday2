@@ -1,0 +1,21 @@
+wandb run: https://wandb.ai/arttu-antikainen-aalto/streamer-reaction-model/runs/esz35tkr
+Loading SigLIP...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████| 408/408 [00:00<00:00, 2864.43it/s]
+[GameplayDataset] 341 clips
+  confused    : 135
+  angry       : 112
+  neutral     : 55
+  happy       : 20
+  contempt    : 8
+  surprise    : 6
+  excited     : 3
+  fear        : 1
+  sad         : 1
+
+Train: 333 clips from 4 videos
+Val:   8 clips from 1 videos
+Train distribution: {'excited': 3, 'happy': 20, 'angry': 112, 'confused': 135, 'contempt': 8, 'fear': 1, 'neutral': 47, 'surprise': 6, 'sad': 1}
+Val   distribution: {'neutral': 8}
+
+  wandb: logged 20 'angry' clips for inspection

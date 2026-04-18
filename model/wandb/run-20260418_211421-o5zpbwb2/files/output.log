@@ -24,4 +24,9 @@ Loading weights: 100%|███| 408/408 [00:00<00:00, 5441.05it/s]
   sad         : 1
 Train: 289 | Val: 52
 Trainable params: 199,434 (head only)
-  train e1:  10%| | 7/73 [00:27<04:24,  4.00s/it, loss=0.0004
+  train e4:  23%|▏| 17/73 [01:16<04:21,  4.66s/it, loss=0.0000      
+Epoch   1/30 | train KL=0.1133 top1=0.983 top3=0.990 f1=0.248 | val KL=0.0029 top1=1.000 top3=1.000 f1=1.000 | 355.8s
+  → saved best_model.pt (val_KL=0.0029)
+Epoch   2/30 | train KL=0.0383 top1=0.997 top3=0.997 f1=0.499 | val KL=0.0012 top1=1.000 top3=1.000 f1=1.000 | 351.8s
+  → saved best_model.pt (val_KL=0.0012)
+Epoch   3/30 | train KL=0.0150 top1=0.997 top3=1.000 f1=0.499 | val KL=0.0015 top1=1.000 top3=1.000 f1=1.000 | 365.1s

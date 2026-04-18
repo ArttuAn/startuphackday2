@@ -1,0 +1,35 @@
+wandb run: https://wandb.ai/arttu-antikainen-aalto/streamer-reaction-model/runs/kgu0xtiu
+Loading SigLIP...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|████| 408/408 [00:00<00:00, 6124.10it/s]
+[GameplayDataset] 341 clips
+  confused    : 135
+  angry       : 112
+  neutral     : 55
+  happy       : 20
+  contempt    : 8
+  surprise    : 6
+  excited     : 3
+  fear        : 1
+  sad         : 1
+
+Train: 333 clips from 4 videos
+Val:   8 clips from 1 videos
+Train distribution: {'surprise': 6, 'angry': 112, 'happy': 20, 'contempt': 8, 'confused': 135, 'neutral': 47, 'excited': 3, 'fear': 1, 'sad': 1}
+Val   distribution: {'neutral': 8}
+
+  wandb: dataset artifact + frame pairs logged
+[GameplayDataset] 341 clips
+  confused    : 135
+  angry       : 112
+  neutral     : 55
+  happy       : 20
+  contempt    : 8
+  surprise    : 6
+  excited     : 3
+  fear        : 1
+  sad         : 1
+Train: 333 | Val: 8
+Trainable params: 199,434 (head only)
+  train e1:   1%|▏          | 1/84 [00:04<05:33,  4.02s/it, loss=2.1853][34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 1 that is less than the current step 2. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+  train e1:  80%|██████████████████████████████████████████████████████████████████▏                | 67/84 [04:53<01:11,  4.19s/it, loss=0.0000]
