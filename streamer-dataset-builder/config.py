@@ -24,9 +24,19 @@ DEFAULT_QUERIES = [
     "Signalis twitch vod",
 ]
 
+# Shorts-specific queries — target 15–60s highlight/reaction clips
+SHORTS_QUERIES = [
+    "Signalis reaction #shorts",
+    "Signalis scary moment #shorts",
+    "Signalis gameplay #shorts",
+    "Signalis facecam shorts",
+]
+
 # ── Filter thresholds ──────────────────────────────────────────────────────
-MIN_DURATION_SECONDS   = 10 * 60   # 10 min hard floor
-PREFER_DURATION_SECONDS = 30 * 60  # 30 min preference floor
+MIN_DURATION_SECONDS    = 10 * 60  # 10 min hard floor for regular videos
+PREFER_DURATION_SECONDS = 30 * 60  # 30 min preference floor for regular videos
+MIN_SHORT_DURATION_SECONDS = 15    # shorts must be at least 15 s
+MAX_SHORT_DURATION_SECONDS = 60    # anything over 60 s is not a Short
 
 PREFERRED_KEYWORDS = {"facecam", "stream", "vod", "playthrough", "let's play",
                       "lets play", "reaction", "horror"}

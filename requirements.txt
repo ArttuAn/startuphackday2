@@ -33,3 +33,8 @@ mediapipe>=0.10.9
 # Requires Python <=3.12 due to upstream torch constraints.
 # Install separately once on a compatible Python:
 #   pip install demucs
+
+# ── Model training + generation (model/) ─────────────────
+torch>=2.2.0
+torchvision>=0.17.0
+scikit-learn>=1.4.0

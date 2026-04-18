@@ -10,7 +10,7 @@ from __future__ import annotations
 import time
 import yt_dlp
 
-from config import DEFAULT_QUERIES, REQUEST_DELAY_SECONDS
+from config import DEFAULT_QUERIES, SHORTS_QUERIES, REQUEST_DELAY_SECONDS
 from logger_setup import get_logger
 
 log = get_logger("search")
@@ -76,6 +76,119 @@ def fetch_video_metadata(url: str) -> dict | None:
         "channel":    info.get("uploader") or info.get("channel", ""),
         "view_count": info.get("view_count"),
     }
+
+
+def search_channel(
+    channel: str,
+    game_filter: str = "signalis",
+    max_results: int = 200,
+) -> list[dict]:
+    """
+    Fetch all videos from a YouTube channel and filter by game title.
+
+    Args:
+        channel:     channel handle or URL, e.g. "@lyonclips" or full URL
+        game_filter: case-insensitive substring that must appear in the title
+        max_results: max videos to pull from the channel (yt-dlp flat extract)
+
+    Returns:
+        List of video metadata dicts tagged with is_short where applicable.
+    """
+    # Normalise to a full URL
+    if channel.startswith("http"):
+        base_url = channel.rstrip("/")
+    else:
+        handle = channel.lstrip("@")
+        base_url = f"https://www.youtube.com/@{handle}"
+
+    # Use the channel's own search to let YouTube do the filtering —
+    # avoids title-language mismatches (e.g. German titles without "signalis")
+    if game_filter:
+        tab_urls = [f"{base_url}/search?query={game_filter}"]
+        log.info("Using channel search URL for game filter: %s", game_filter)
+    else:
+        tab_urls = [f"{base_url}/videos", f"{base_url}/shorts"]
+
+    opts = {**_YDL_OPTS, "playlistend": max_results}
+    seen: set[str] = set()
+    all_results: list[dict] = []
+
+    for tab_url in tab_urls:
+        log.info("Fetching: %s", tab_url)
+        try:
+            with yt_dlp.YoutubeDL(opts) as ydl:
+                info = ydl.extract_info(tab_url, download=False)
+        except Exception as exc:
+            log.warning("Could not fetch %s: %s", tab_url, exc)
+            continue
+
+        entries = (info or {}).get("entries") or []
+        log.info("  → %d raw entries", len(entries))
+
+        for e in entries:
+            if not e:
+                continue
+            vid_id = e.get("id") or ""
+            if not vid_id or vid_id in seen:
+                continue
+            seen.add(vid_id)
+            duration = e.get("duration")
+            all_results.append({
+                "id":        vid_id,
+                "url":       e.get("url") or f"https://www.youtube.com/watch?v={vid_id}",
+                "title":     e.get("title", ""),
+                "duration":  duration,
+                "channel":   e.get("uploader") or e.get("channel", channel),
+                "view_count": e.get("view_count"),
+                "is_short":  duration is not None and duration <= 60,
+            })
+
+        time.sleep(REQUEST_DELAY_SECONDS)
+
+    log.info("Channel '%s' — %d videos matching '%s'", channel, len(all_results), game_filter)
+    return all_results
+
+
+def search_shorts(
+    queries: list[str] | None = None,
+    max_per_query: int = 50,
+) -> list[dict]:
+    """
+    Search for YouTube Shorts and tag each result with is_short=True.
+
+    Shorts are regular YouTube videos <= 60 s. yt-dlp finds them via normal
+    ytsearch — we just use hashtag-heavy queries and tag the results so the
+    filter can apply a different duration floor.
+    """
+    if queries is None:
+        queries = SHORTS_QUERIES
+
+    seen: set[str] = set()
+    all_results: list[dict] = []
+
+    for q in queries:
+        log.info("Searching shorts: %r  (max %d results)", q, max_per_query)
+        results = _search_query(q, max_per_query)
+        log.info("  → %d raw results", len(results))
+
+        for r in results:
+            vid_id = r["id"]
+            if not vid_id or vid_id in seen:
+                continue
+            seen.add(vid_id)
+
+            if r["duration"] is None:
+                full = fetch_video_metadata(r["url"])
+                if full:
+                    r.update(full)
+
+            r["is_short"] = True
+            all_results.append(r)
+
+        time.sleep(REQUEST_DELAY_SECONDS)
+
+    log.info("Total unique shorts found: %d", len(all_results))
+    return all_results
 
 
 def search_videos(

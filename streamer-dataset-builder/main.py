@@ -29,7 +29,7 @@ from pathlib import Path
 
 from config import DEFAULT_QUERIES, REQUEST_DELAY_SECONDS
 from logger_setup import get_logger
-from search import search_videos
+from search import search_videos, search_shorts, search_channel
 from filter import filter_videos
 from downloader import download_batch
 from processor import process_video
@@ -94,6 +94,28 @@ def parse_args() -> argparse.Namespace:
         help="(Optional) Run facecam detection/crop during processing (requires opencv-python)",
     )
     p.add_argument(
+        "--no_shorts",
+        action="store_true",
+        help="Skip YouTube Shorts search (only collect long-form videos)",
+    )
+    p.add_argument(
+        "--shorts_only",
+        action="store_true",
+        help="Only scrape YouTube Shorts, skip long-form video search",
+    )
+    p.add_argument(
+        "--channel",
+        metavar="HANDLE",
+        default="@LyonClips",
+        help="Channel to scrape from (default: @lyonclips)",
+    )
+    p.add_argument(
+        "--game",
+        metavar="TITLE",
+        default="signalis",
+        help="Game title filter (default: signalis)",
+    )
+    p.add_argument(
         "--no_speech_filter",
         action="store_true",
         help="Keep videos even if VAD detects insufficient speech",
@@ -112,10 +134,21 @@ def parse_args() -> argparse.Namespace:
 # ── Pipeline stages ────────────────────────────────────────────────────────
 
 def stage_search(args: argparse.Namespace) -> list[dict]:
-    queries = args.queries or DEFAULT_QUERIES
     log.info("═══ STAGE 1: SEARCH ═══")
-    log.info("Queries: %s", queries)
-    videos = search_videos(queries=queries, max_per_query=args.max_per_query)
+
+    log.info("Channel mode — fetching from %s (game filter: %s)", args.channel, args.game)
+    all_videos = search_channel(
+        channel=args.channel,
+        game_filter=args.game,
+        max_results=args.max_per_query,
+    )
+
+    # Shorts first, long-form second
+    shorts   = [v for v in all_videos if v.get("is_short")]
+    long     = [v for v in all_videos if not v.get("is_short")]
+    videos   = shorts + long
+    log.info("Priority order — shorts: %d, long-form: %d", len(shorts), len(long))
+
     return videos
 
 
@@ -132,7 +165,20 @@ def stage_filter(args: argparse.Namespace, videos: list[dict]) -> list[dict]:
 
 def stage_download(args: argparse.Namespace, filtered: list[dict]) -> dict[str, bool]:
     log.info("═══ STAGE 3: DOWNLOAD ═══")
-    results = download_batch(filtered, max_workers=args.workers)
+
+    shorts   = [v for v in filtered if v.get("is_short")]
+    long     = [v for v in filtered if not v.get("is_short")]
+
+    results: dict[str, bool] = {}
+
+    if shorts:
+        log.info("Phase 1: downloading %d shorts first...", len(shorts))
+        results.update(download_batch(shorts, max_workers=args.workers))
+
+    if long:
+        log.info("Phase 2: downloading %d long-form videos...", len(long))
+        results.update(download_batch(long, max_workers=args.workers))
+
     succeeded = [vid_id for vid_id, ok in results.items() if ok]
     log.info("Downloaded %d/%d videos", len(succeeded), len(filtered))
     return results

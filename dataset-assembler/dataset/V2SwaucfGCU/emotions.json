@@ -1,0 +1,91 @@
+[
+  {
+    "t": 0.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.01,
+      "pitch_mean": 107.8,
+      "pitch_var": 63.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 4.97,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 83.27,
+      "happy": 4.58,
+      "excited": 8.35,
+      "sad": 19.24,
+      "angry": 21.61,
+      "fear": 9.68,
+      "surprise": 9.37,
+      "disgust": 8.79,
+      "contempt": 10.73,
+      "confused": 20.76
+    },
+    "audio": {
+      "loudness": 90.28,
+      "pitch_mean": 110.7,
+      "pitch_var": 87.4,
+      "speech": 0.653,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 9.94,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 91.97,
+      "happy": 0.22,
+      "excited": 1.91,
+      "sad": 21.13,
+      "angry": 22.18,
+      "fear": 4.85,
+      "surprise": 5.02,
+      "disgust": 4.79,
+      "contempt": 3.54,
+      "confused": 22.42
+    },
+    "audio": {
+      "loudness": 99.24,
+      "pitch_mean": 96.7,
+      "pitch_var": 47.1,
+      "speech": 0.98,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 14.91,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 91.28,
+      "happy": 1.77,
+      "excited": 4.92,
+      "sad": 20.58,
+      "angry": 21.12,
+      "fear": 5.55,
+      "surprise": 7.79,
+      "disgust": 6.52,
+      "contempt": 4.44,
+      "confused": 20.02
+    },
+    "audio": {
+      "loudness": 100.0,
+      "pitch_mean": 119.3,
+      "pitch_var": 86.1,
+      "speech": 0.932,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  }
+]

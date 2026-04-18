@@ -2,7 +2,8 @@
 assemble.py — Combine separator bbox results with raw videos into one dataset.
 
 Reads bboxes.json from the separator to find which videos had a face detected,
-then copies raw.mp4 + bbox.txt + facecam.jpg into a single clean dataset folder.
+then copies raw.mp4 + audio.wav + bbox.txt + facecam.jpg into a clean dataset
+folder.
 
 Usage:
     python assemble.py
@@ -10,6 +11,7 @@ Usage:
 Output:
     dataset/<video_id>/
         raw.mp4         copy of the source video
+        audio.wav       copy of the extracted audio (needed for emotion audio features)
         bbox.txt        x=.. y=.. w=.. h=..
         facecam.jpg     cropped face screenshot
 """
@@ -56,6 +58,13 @@ def main():
 
         # Copy raw video
         shutil.copy2(raw_video, out_dir / "raw.mp4")
+
+        # Copy audio (required for audio emotion features in classify_emotions.py)
+        audio_src = RAW_VIDEOS_DIR / vid_id / "audio.wav"
+        if audio_src.exists():
+            shutil.copy2(audio_src, out_dir / "audio.wav")
+        else:
+            log.warning("  audio.wav not found in raw_videos — audio features will be skipped")
 
         # Copy bbox.txt
         bbox_src = sep_dir / "bbox.txt"

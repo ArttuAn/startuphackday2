@@ -54,20 +54,24 @@ def split_video(vid_dir: Path) -> bool:
     x, y, w, h = bbox["x"], bbox["y"], bbox["w"], bbox["h"]
 
     # ── facecam.mp4 — crop + upscale to 512px wide ────────────────────────
-    # Upscale using lanczos so emotion classifier gets cleaner frames
     scale_filter = f"crop={w}:{h}:{x}:{y},scale=512:-2:flags=lanczos"
-    cmd = [
-        "ffmpeg", "-y", "-i", str(raw),
-        "-vf", scale_filter,
-        "-c:v", "libx264", "-crf", "18", "-preset", "fast",
-        "-an",
-        str(facecam),
-    ]
-    result = subprocess.run(cmd, capture_output=True)
+
+    # Try NVIDIA GPU encoding first, fall back to CPU
+    def _ffmpeg_cmd(encoder: str, extra: list) -> list:
+        return ["ffmpeg", "-y", "-i", str(raw),
+                "-vf", scale_filter, "-c:v", encoder, "-an",
+                *extra, str(facecam)]
+
+    gpu_cmd = _ffmpeg_cmd("h264_nvenc", ["-preset", "p1", "-cq", "23"])
+    cpu_cmd = _ffmpeg_cmd("libx264",    ["-preset", "ultrafast", "-crf", "23"])
+
+    result = subprocess.run(gpu_cmd, capture_output=True)
+    if result.returncode != 0:
+        result = subprocess.run(cpu_cmd, capture_output=True)
     if result.returncode != 0:
         log.error("  ffmpeg facecam failed: %s", result.stderr.decode()[-200:])
         return False
-    log.info("  ✓ facecam.mp4 (upscaled to 512px)")
+    log.info("  ✓ facecam.mp4")
 
     # ── audio.wav — 16kHz mono PCM ─────────────────────────────────────────
     cmd = [

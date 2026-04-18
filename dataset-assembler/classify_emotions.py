@@ -8,6 +8,11 @@ Output per video:
     dataset/<video_id>/emotions.json   — [{t, emotion, scores, audio}, ...]
     dataset/<video_id>/emotion_frames/ — face screenshot per timestamp
 
+After classification, each video is checked for emotional expressiveness:
+    MIN_REACTION_RATE — fraction of frames that must be non-neutral/non-none.
+    Videos below this threshold are deleted from the dataset (too boring to
+    train on — streamer barely reacts).
+
 ⚠️  PROTOTYPE MODE: 1 frame/minute. Change step to int(fps) for 1 frame/second.
 
 Usage:
@@ -25,6 +30,13 @@ import numpy as np
 from tqdm import tqdm
 
 from config import DATASET_DIR
+from parse_captions import load_captions, nearest_caption
+
+# ── Expressiveness filter ──────────────────────────────────────────────────
+# Fraction of classified frames that must show a non-neutral, non-none emotion.
+# Streamers below this threshold are deleted from the dataset — they barely
+# react and won't contribute useful training signal.
+MIN_REACTION_RATE = 0.15   # 15 % of frames must be expressive
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger(__name__)
@@ -192,6 +204,20 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
     facecam_path = vid_dir / "facecam.mp4" if (vid_dir / "facecam.mp4").exists() else vid_dir / "raw.mp4"
     audio_path   = vid_dir / "audio.wav"
 
+    # Read bbox so we can crop the facecam region out of raw.mp4 per-frame.
+    # Without this, MediaPipe runs on the full stream frame where the face is
+    # a tiny overlay — blendshapes are unreliable and reactions all read neutral.
+    bbox_crop: tuple[int, int, int, int] | None = None
+    bbox_file = vid_dir / "bbox.txt"
+    if bbox_file.exists() and facecam_path.name == "raw.mp4":
+        try:
+            parts = dict(p.split("=") for p in bbox_file.read_text().split())
+            bbox_crop = (int(parts["x"]), int(parts["y"]),
+                         int(parts["w"]), int(parts["h"]))
+            log.info("  bbox crop: x=%d y=%d w=%d h=%d", *bbox_crop)
+        except Exception as e:
+            log.warning("  could not parse bbox.txt (%s) — running on full frame", e)
+
     model_path = _ensure_model()
     options = mp_vision.FaceLandmarkerOptions(
         base_options=mp_python.BaseOptions(model_asset_path=str(model_path)),
@@ -201,19 +227,34 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
     )
     landmarker = mp_vision.FaceLandmarker.create_from_options(options)
 
-    # Load audio once
+    # Load captions (VTT auto-captions downloaded alongside video)
+    captions = load_captions(vid_dir)
+    has_captions = len(captions) > 0
+
+    # Load audio — extract from raw.mp4 via ffmpeg if audio.wav is missing
+    if not audio_path.exists():
+        raw_mp4 = vid_dir / "raw.mp4"
+        if raw_mp4.exists():
+            import subprocess
+            log.info("  audio.wav missing — extracting from raw.mp4 via ffmpeg...")
+            result = subprocess.run(
+                ["ffmpeg", "-i", str(raw_mp4),
+                 "-ar", "16000", "-ac", "1", "-y", str(audio_path),
+                 "-loglevel", "error"],
+                capture_output=True,
+            )
+            if result.returncode != 0:
+                log.warning("  ffmpeg extraction failed: %s", result.stderr.decode()[:200])
+
     audio_samples, audio_sr = load_audio(audio_path) if audio_path.exists() else (None, None)
     if audio_samples is None:
-        log.warning("  no audio.wav found — skipping audio analysis")
+        log.warning("  no audio available — skipping audio features")
 
     cap      = cv2.VideoCapture(str(facecam_path))
     fps      = cap.get(cv2.CAP_PROP_FPS) or 30.0
     total_f  = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    step     = max(1, int(fps * 60))   # ⚠️ PROTOTYPE: 1/min — change to int(fps) for 1/sec
+    step     = max(1, int(fps * 5))    # sample every 5 seconds
     n_frames = total_f // step
-
-    frames_dir = out_path.parent / "emotion_frames"
-    frames_dir.mkdir(exist_ok=True)
 
     timeline  = []
     frame_idx = 0
@@ -226,6 +267,27 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
                 break
 
             t = round(frame_idx / fps, 2)
+
+            # ── Crop to facecam region (avoids running MediaPipe on tiny overlay) ──
+            if bbox_crop is not None:
+                bx, by, bw, bh = bbox_crop
+                fh_frame, fw_frame = frame.shape[:2]
+                bx = max(0, min(bx, fw_frame - 1))
+                by = max(0, min(by, fh_frame - 1))
+                bw = max(1, min(bw, fw_frame - bx))
+                bh = max(1, min(bh, fh_frame - by))
+                frame = frame[by:by + bh, bx:bx + bw]
+
+            # ── Upscale small crops — MediaPipe needs ≥256px for reliable landmarks ──
+            MIN_MP_SIZE = 256
+            fh_c, fw_c = frame.shape[:2]
+            if fw_c < MIN_MP_SIZE or fh_c < MIN_MP_SIZE:
+                scale = MIN_MP_SIZE / min(fw_c, fh_c)
+                frame = cv2.resize(
+                    frame,
+                    (int(fw_c * scale), int(fh_c * scale)),
+                    interpolation=cv2.INTER_LANCZOS4,
+                )
 
             # ── Face emotion ───────────────────────────────────────────────
             emotion, scores = "none", {}
@@ -241,24 +303,17 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
             if audio_samples is not None:
                 audio_info = analyse_audio_window(audio_samples, audio_sr, t)
 
-            timeline.append({
-                "t":       t,
-                "emotion": emotion,
-                "scores":  scores,
-                "audio":   audio_info,
-            })
+            # ── Nearest caption event ──────────────────────────────────────
+            caption_entry = nearest_caption(captions, t) if has_captions else {}
 
-            # ── Screenshot ────────────────────────────────────────────────
-            frame_name = f"{int(t):06d}s_{emotion}.jpg"
-            fh, fw = frame.shape[:2]
-            if fw < 512:
-                scale     = 512 / fw
-                frame_out = cv2.resize(frame, (int(fw*scale), int(fh*scale)),
-                                       interpolation=cv2.INTER_LANCZOS4)
-            else:
-                frame_out = frame
-            cv2.imwrite(str(frames_dir / frame_name), frame_out,
-                        [cv2.IMWRITE_JPEG_QUALITY, 95])
+            timeline.append({
+                "t":              t,
+                "emotion":        emotion,
+                "scores":         scores,
+                "audio":          audio_info,
+                "caption":        caption_entry.get("text", ""),
+                "caption_events": caption_entry.get("events", []),
+            })
 
             pbar.set_postfix(t=f"{t:.0f}s", face=emotion,
                              audio=audio_info.get("audio_emotion", "-"))
@@ -269,10 +324,14 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
     landmarker.close()
 
     out_path.write_text(json.dumps(timeline, indent=2))
-    no_face = sum(1 for e in timeline if e["emotion"] == "none")
-    log.info("  ✓ %d entries — %d no-face, audio=%s",
-             len(timeline), no_face,
-             "yes" if audio_samples is not None else "no")
+    no_face   = sum(1 for e in timeline if e["emotion"] == "none")
+    reactions = sum(1 for e in timeline if e["emotion"] not in ("neutral", "none"))
+    reaction_rate = reactions / len(timeline) if timeline else 0.0
+    cap_events = sum(1 for e in timeline if e.get("caption_events"))
+    log.info("  ✓ %d entries — reactions=%.0f%%, no-face=%d, audio=%s, caption_events=%d",
+             len(timeline), reaction_rate * 100, no_face,
+             "yes" if audio_samples is not None else "no",
+             cap_events)
     return True
 
 
@@ -294,13 +353,13 @@ def main():
         log.error("No videos found in %s — run assemble.py first", DATASET_DIR)
         sys.exit(1)
 
-    log.warning("⚠️  PROTOTYPE MODE: 1 frame/minute. Change step to int(fps) for 1/sec.")
-    log.info("Classifying emotions for %d videos...", len(vid_dirs))
-    ok = 0
+    log.info("Classifying emotions for %d videos (1 frame/5s)...", len(vid_dirs))
 
+    ok = 0
     for i, vid_dir in enumerate(vid_dirs, 1):
         log.info("[%d/%d] %s", i, len(vid_dirs), vid_dir.name)
-        if classify_video(vid_dir, vid_dir / "emotions.json"):
+        result = classify_video(vid_dir, vid_dir / "emotions.json")
+        if result:
             ok += 1
 
     log.info("Done — %d/%d videos classified", ok, len(vid_dirs))

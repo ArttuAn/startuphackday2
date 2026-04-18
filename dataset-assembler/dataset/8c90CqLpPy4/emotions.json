@@ -1,0 +1,9308 @@
+[
+  {
+    "t": 0.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 96.63,
+      "pitch_mean": 369.9,
+      "pitch_var": 90.2,
+      "speech": 0.833,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 5.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 82.44,
+      "pitch_mean": 300.8,
+      "pitch_var": 136.5,
+      "speech": 0.898,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 10.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.98,
+      "pitch_mean": 163.9,
+      "pitch_var": 93.2,
+      "speech": 0.857,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 15.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.27,
+      "pitch_mean": 141.6,
+      "pitch_var": 40.9,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 20.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.97,
+      "pitch_mean": 146.8,
+      "pitch_var": 37.8,
+      "speech": 0.878,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 25.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 88.68,
+      "happy": 1.85,
+      "excited": 4.44,
+      "sad": 19.79,
+      "angry": 24.06,
+      "fear": 6.8,
+      "surprise": 6.01,
+      "disgust": 5.85,
+      "contempt": 7.13,
+      "confused": 20.47
+    },
+    "audio": {
+      "loudness": 24.53,
+      "pitch_mean": 122.5,
+      "pitch_var": 66.8,
+      "speech": 0.408,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 30.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 22.58,
+      "pitch_mean": 159.8,
+      "pitch_var": 97.7,
+      "speech": 0.531,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 35.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.82,
+      "pitch_mean": 160.9,
+      "pitch_var": 53.4,
+      "speech": 0.673,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 40.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.46,
+      "pitch_mean": 153.4,
+      "pitch_var": 50.6,
+      "speech": 0.714,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 45.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.79,
+      "pitch_mean": 258.0,
+      "pitch_var": 136.7,
+      "speech": 0.898,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 50.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.72,
+      "pitch_mean": 141.8,
+      "pitch_var": 57.1,
+      "speech": 0.673,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 55.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.22,
+      "pitch_mean": 128.9,
+      "pitch_var": 26.3,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 60.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.97,
+      "pitch_mean": 115.2,
+      "pitch_var": 48.7,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 65.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.67,
+      "pitch_mean": 116.7,
+      "pitch_var": 28.0,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 70.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.93,
+      "pitch_mean": 116.5,
+      "pitch_var": 11.8,
+      "speech": 0.694,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 75.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 14.74,
+      "pitch_mean": 100.9,
+      "pitch_var": 14.0,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 80.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.73,
+      "pitch_mean": 114.9,
+      "pitch_var": 57.6,
+      "speech": 0.551,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 85.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.59,
+      "pitch_mean": 366.3,
+      "pitch_var": 90.7,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 90.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.21,
+      "pitch_mean": 131.2,
+      "pitch_var": 53.8,
+      "speech": 0.673,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 95.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 89.22,
+      "happy": 0.8,
+      "excited": 3.71,
+      "sad": 20.51,
+      "angry": 24.02,
+      "fear": 6.92,
+      "surprise": 5.77,
+      "disgust": 12.77,
+      "contempt": 11.05,
+      "confused": 20.87
+    },
+    "audio": {
+      "loudness": 20.58,
+      "pitch_mean": 115.4,
+      "pitch_var": 7.8,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 100.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.5,
+      "pitch_mean": 158.9,
+      "pitch_var": 43.2,
+      "speech": 0.49,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 105.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.13,
+      "pitch_mean": 142.9,
+      "pitch_var": 78.8,
+      "speech": 0.592,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 110.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.94,
+      "pitch_mean": 88.6,
+      "pitch_var": 5.1,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 115.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.83,
+      "pitch_mean": 110.9,
+      "pitch_var": 66.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 120.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.84,
+      "pitch_mean": 156.0,
+      "pitch_var": 103.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 125.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.82,
+      "pitch_mean": 108.7,
+      "pitch_var": 47.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 130.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.49,
+      "pitch_mean": 89.8,
+      "pitch_var": 6.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 135.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.19,
+      "pitch_mean": 94.2,
+      "pitch_var": 44.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 140.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.01,
+      "pitch_mean": 97.7,
+      "pitch_var": 17.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 145.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.58,
+      "pitch_mean": 94.8,
+      "pitch_var": 15.0,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 150.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.98,
+      "pitch_mean": 108.0,
+      "pitch_var": 47.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 155.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.28,
+      "pitch_mean": 96.7,
+      "pitch_var": 16.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 160.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.14,
+      "pitch_mean": 97.9,
+      "pitch_var": 17.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 165.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.5,
+      "pitch_mean": 98.1,
+      "pitch_var": 14.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 170.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.14,
+      "pitch_mean": 99.9,
+      "pitch_var": 41.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 175.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.88,
+      "pitch_mean": 104.5,
+      "pitch_var": 46.1,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 180.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.49,
+      "pitch_mean": 99.1,
+      "pitch_var": 40.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 185.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.46,
+      "pitch_mean": 111.5,
+      "pitch_var": 39.5,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 190.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.19,
+      "pitch_mean": 195.5,
+      "pitch_var": 142.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 195.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.36,
+      "pitch_mean": 111.9,
+      "pitch_var": 63.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 200.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.89,
+      "pitch_mean": 106.2,
+      "pitch_var": 60.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 205.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.39,
+      "pitch_mean": 97.6,
+      "pitch_var": 13.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 210.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.18,
+      "pitch_mean": 95.4,
+      "pitch_var": 28.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 215.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.59,
+      "pitch_mean": 123.5,
+      "pitch_var": 84.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 220.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.82,
+      "pitch_mean": 105.0,
+      "pitch_var": 19.6,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 225.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.38,
+      "pitch_mean": 91.4,
+      "pitch_var": 18.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 230.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.12,
+      "pitch_mean": 117.5,
+      "pitch_var": 48.6,
+      "speech": 0.959,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 235.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.02,
+      "pitch_mean": 104.7,
+      "pitch_var": 46.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 240.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.67,
+      "pitch_mean": 180.7,
+      "pitch_var": 137.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 245.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.99,
+      "pitch_mean": 113.5,
+      "pitch_var": 73.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 250.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.59,
+      "pitch_mean": 132.7,
+      "pitch_var": 102.2,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 255.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.83,
+      "pitch_mean": 138.7,
+      "pitch_var": 55.2,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 260.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.12,
+      "pitch_mean": 129.7,
+      "pitch_var": 72.4,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 265.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.33,
+      "pitch_mean": 114.1,
+      "pitch_var": 48.4,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 270.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 19.35,
+      "pitch_mean": 119.6,
+      "pitch_var": 38.9,
+      "speech": 0.633,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 275.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.71,
+      "pitch_mean": 123.2,
+      "pitch_var": 43.7,
+      "speech": 0.531,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 280.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.5,
+      "pitch_mean": 125.0,
+      "pitch_var": 26.0,
+      "speech": 0.633,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 285.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 22.67,
+      "pitch_mean": 113.3,
+      "pitch_var": 18.0,
+      "speech": 0.347,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 290.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 19.74,
+      "pitch_mean": 118.4,
+      "pitch_var": 62.6,
+      "speech": 0.469,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 295.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.49,
+      "pitch_mean": 107.3,
+      "pitch_var": 13.7,
+      "speech": 0.633,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 300.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 21.88,
+      "pitch_mean": 107.0,
+      "pitch_var": 15.2,
+      "speech": 0.551,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 305.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.34,
+      "pitch_mean": 118.2,
+      "pitch_var": 20.1,
+      "speech": 0.571,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 310.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.69,
+      "pitch_mean": 107.8,
+      "pitch_var": 19.0,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 315.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.39,
+      "pitch_mean": 101.3,
+      "pitch_var": 7.8,
+      "speech": 0.612,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 320.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.72,
+      "pitch_mean": 112.3,
+      "pitch_var": 21.8,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 325.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 22.94,
+      "pitch_mean": 137.7,
+      "pitch_var": 91.6,
+      "speech": 0.571,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 330.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.27,
+      "pitch_mean": 128.8,
+      "pitch_var": 53.7,
+      "speech": 0.653,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 335.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.99,
+      "pitch_mean": 150.1,
+      "pitch_var": 63.1,
+      "speech": 0.551,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 340.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.33,
+      "pitch_mean": 103.1,
+      "pitch_var": 10.4,
+      "speech": 0.592,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 345.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.98,
+      "pitch_mean": 107.0,
+      "pitch_var": 12.3,
+      "speech": 0.612,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 350.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.26,
+      "pitch_mean": 117.4,
+      "pitch_var": 34.9,
+      "speech": 0.878,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 355.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 22.79,
+      "pitch_mean": 110.2,
+      "pitch_var": 8.8,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 360.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.31,
+      "pitch_mean": 153.1,
+      "pitch_var": 71.4,
+      "speech": 0.327,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 365.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.58,
+      "pitch_mean": 111.3,
+      "pitch_var": 51.6,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 370.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.55,
+      "pitch_mean": 120.1,
+      "pitch_var": 50.2,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 375.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.53,
+      "pitch_mean": 108.6,
+      "pitch_var": 12.0,
+      "speech": 0.531,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 380.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.47,
+      "pitch_mean": 232.0,
+      "pitch_var": 144.6,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 385.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.43,
+      "pitch_mean": 166.6,
+      "pitch_var": 53.2,
+      "speech": 0.49,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 390.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.71,
+      "pitch_mean": 292.8,
+      "pitch_var": 147.0,
+      "speech": 0.878,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 395.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.22,
+      "pitch_mean": 178.0,
+      "pitch_var": 112.5,
+      "speech": 0.653,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 400.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.64,
+      "pitch_mean": 166.5,
+      "pitch_var": 85.3,
+      "speech": 0.694,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 405.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 58.68,
+      "pitch_mean": 188.7,
+      "pitch_var": 103.3,
+      "speech": 0.796,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 410.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.53,
+      "pitch_mean": 190.6,
+      "pitch_var": 116.4,
+      "speech": 0.633,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 415.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.73,
+      "pitch_mean": 119.8,
+      "pitch_var": 21.6,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 420.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.18,
+      "pitch_mean": 126.0,
+      "pitch_var": 25.2,
+      "speech": 0.673,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 425.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.02,
+      "pitch_mean": 120.2,
+      "pitch_var": 35.7,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 430.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.74,
+      "pitch_mean": 113.7,
+      "pitch_var": 37.9,
+      "speech": 0.694,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 435.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.26,
+      "pitch_mean": 177.0,
+      "pitch_var": 138.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 440.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 52.15,
+      "pitch_mean": 346.1,
+      "pitch_var": 110.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 445.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 55.98,
+      "pitch_mean": 311.0,
+      "pitch_var": 126.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 450.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.99,
+      "pitch_mean": 367.6,
+      "pitch_var": 87.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 455.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.2,
+      "pitch_mean": 176.3,
+      "pitch_var": 102.2,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 460.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.48,
+      "pitch_mean": 141.9,
+      "pitch_var": 57.6,
+      "speech": 0.633,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 465.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.72,
+      "pitch_mean": 130.9,
+      "pitch_var": 79.0,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 470.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.52,
+      "pitch_mean": 373.6,
+      "pitch_var": 76.6,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 475.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 61.44,
+      "pitch_mean": 157.0,
+      "pitch_var": 127.0,
+      "speech": 0.551,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 480.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 92.68,
+      "pitch_mean": 296.9,
+      "pitch_var": 107.3,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 485.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 93.25,
+      "pitch_mean": 254.8,
+      "pitch_var": 133.3,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 490.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 82.14,
+      "pitch_mean": 265.4,
+      "pitch_var": 109.4,
+      "speech": 0.776,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 495.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.99,
+      "pitch_mean": 301.7,
+      "pitch_var": 116.2,
+      "speech": 0.837,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 500.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.64,
+      "pitch_mean": 146.0,
+      "pitch_var": 27.0,
+      "speech": 0.633,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 505.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.49,
+      "pitch_mean": 170.8,
+      "pitch_var": 58.3,
+      "speech": 0.673,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 510.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 81.41,
+      "pitch_mean": 255.0,
+      "pitch_var": 140.0,
+      "speech": 0.878,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 515.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 77.53,
+      "pitch_mean": 247.7,
+      "pitch_var": 151.5,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 520.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.69,
+      "pitch_mean": 189.5,
+      "pitch_var": 139.0,
+      "speech": 0.939,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 525.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.88,
+      "pitch_mean": 211.8,
+      "pitch_var": 130.2,
+      "speech": 0.694,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 530.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 47.5,
+      "pitch_mean": 145.8,
+      "pitch_var": 128.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 535.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 51.36,
+      "pitch_mean": 133.8,
+      "pitch_var": 106.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 540.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 72.76,
+      "pitch_mean": 140.7,
+      "pitch_var": 83.4,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 545.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 55.48,
+      "pitch_mean": 211.6,
+      "pitch_var": 142.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 550.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 65.73,
+      "pitch_mean": 139.5,
+      "pitch_var": 102.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 555.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 65.03,
+      "pitch_mean": 243.5,
+      "pitch_var": 124.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 560.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 60.33,
+      "pitch_mean": 269.2,
+      "pitch_var": 128.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 565.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 62.43,
+      "pitch_mean": 230.8,
+      "pitch_var": 128.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 570.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 56.99,
+      "pitch_mean": 218.8,
+      "pitch_var": 141.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 575.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 62.89,
+      "pitch_mean": 147.8,
+      "pitch_var": 111.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 580.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 56.06,
+      "pitch_mean": 119.5,
+      "pitch_var": 97.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 585.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 53.84,
+      "pitch_mean": 201.5,
+      "pitch_var": 128.3,
+      "speech": 0.939,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 590.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 61.59,
+      "pitch_mean": 236.8,
+      "pitch_var": 125.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 595.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 52.98,
+      "pitch_mean": 178.9,
+      "pitch_var": 134.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 600.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.2,
+      "pitch_mean": 180.0,
+      "pitch_var": 139.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 605.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 53.31,
+      "pitch_mean": 159.7,
+      "pitch_var": 108.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 610.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 57.99,
+      "pitch_mean": 170.0,
+      "pitch_var": 104.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 615.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 56.51,
+      "pitch_mean": 203.3,
+      "pitch_var": 134.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 620.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 80.07,
+      "pitch_mean": 244.2,
+      "pitch_var": 139.1,
+      "speech": 0.98,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 625.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 71.19,
+      "pitch_mean": 347.8,
+      "pitch_var": 118.1,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 630.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 96.83,
+      "pitch_mean": 303.4,
+      "pitch_var": 140.3,
+      "speech": 0.755,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 635.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 81.51,
+      "pitch_mean": 307.2,
+      "pitch_var": 130.3,
+      "speech": 0.898,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 640.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 88.51,
+      "pitch_mean": 316.8,
+      "pitch_var": 126.9,
+      "speech": 0.98,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 645.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 88.05,
+      "pitch_mean": 367.0,
+      "pitch_var": 91.1,
+      "speech": 0.857,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 650.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 82.72,
+      "pitch_mean": 323.8,
+      "pitch_var": 127.1,
+      "speech": 0.939,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 655.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 91.03,
+      "pitch_mean": 315.0,
+      "pitch_var": 134.2,
+      "speech": 0.837,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 660.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 87.25,
+      "pitch_mean": 333.9,
+      "pitch_var": 114.2,
+      "speech": 0.98,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 665.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 89.54,
+      "pitch_mean": 322.7,
+      "pitch_var": 116.0,
+      "speech": 0.898,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 670.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 91.33,
+      "pitch_mean": 359.7,
+      "pitch_var": 84.5,
+      "speech": 0.796,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 675.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.31,
+      "pitch_mean": 297.7,
+      "pitch_var": 136.3,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 680.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 19.35,
+      "pitch_mean": 126.6,
+      "pitch_var": 49.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 685.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.99,
+      "pitch_mean": 122.4,
+      "pitch_var": 43.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 690.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.1,
+      "pitch_mean": 97.7,
+      "pitch_var": 15.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 695.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.38,
+      "pitch_mean": 101.7,
+      "pitch_var": 61.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 700.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.67,
+      "pitch_mean": 163.1,
+      "pitch_var": 119.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 705.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.33,
+      "pitch_mean": 112.3,
+      "pitch_var": 72.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 710.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.83,
+      "pitch_mean": 105.2,
+      "pitch_var": 61.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 715.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.61,
+      "pitch_mean": 184.6,
+      "pitch_var": 142.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 720.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.08,
+      "pitch_mean": 160.9,
+      "pitch_var": 120.9,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 725.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.35,
+      "pitch_mean": 106.3,
+      "pitch_var": 62.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 730.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.56,
+      "pitch_mean": 97.1,
+      "pitch_var": 16.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 735.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.88,
+      "pitch_mean": 105.5,
+      "pitch_var": 75.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 740.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.66,
+      "pitch_mean": 97.3,
+      "pitch_var": 19.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 745.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.17,
+      "pitch_mean": 112.6,
+      "pitch_var": 33.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 750.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.83,
+      "pitch_mean": 118.8,
+      "pitch_var": 84.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 755.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 53.44,
+      "pitch_mean": 210.9,
+      "pitch_var": 157.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 760.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 55.85,
+      "pitch_mean": 156.3,
+      "pitch_var": 128.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 765.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.44,
+      "pitch_mean": 106.5,
+      "pitch_var": 87.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 770.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 59.67,
+      "pitch_mean": 166.2,
+      "pitch_var": 138.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 775.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 74.12,
+      "pitch_mean": 139.1,
+      "pitch_var": 117.6,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 780.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 77.97,
+      "pitch_mean": 224.1,
+      "pitch_var": 145.2,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 785.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 55.69,
+      "pitch_mean": 160.1,
+      "pitch_var": 132.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 790.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 56.63,
+      "pitch_mean": 162.8,
+      "pitch_var": 132.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 795.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 54.6,
+      "pitch_mean": 160.3,
+      "pitch_var": 122.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 800.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.0,
+      "pitch_mean": 224.9,
+      "pitch_var": 145.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 805.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 77.87,
+      "pitch_mean": 163.3,
+      "pitch_var": 131.2,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 810.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 71.62,
+      "pitch_mean": 197.5,
+      "pitch_var": 137.9,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 815.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 73.72,
+      "pitch_mean": 170.1,
+      "pitch_var": 130.5,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 820.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 59.17,
+      "pitch_mean": 196.8,
+      "pitch_var": 138.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 825.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 53.94,
+      "pitch_mean": 230.8,
+      "pitch_var": 134.4,
+      "speech": 0.939,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 830.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.59,
+      "pitch_mean": 326.4,
+      "pitch_var": 117.5,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 835.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.14,
+      "pitch_mean": 257.2,
+      "pitch_var": 147.7,
+      "speech": 0.694,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 840.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.22,
+      "pitch_mean": 161.2,
+      "pitch_var": 118.5,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 845.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.66,
+      "pitch_mean": 157.4,
+      "pitch_var": 112.6,
+      "speech": 0.735,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 850.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 52.84,
+      "pitch_mean": 145.1,
+      "pitch_var": 122.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 855.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 59.68,
+      "pitch_mean": 236.0,
+      "pitch_var": 153.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 860.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 55.71,
+      "pitch_mean": 145.9,
+      "pitch_var": 112.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 865.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 53.56,
+      "pitch_mean": 126.7,
+      "pitch_var": 90.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 870.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.2,
+      "pitch_mean": 172.7,
+      "pitch_var": 114.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 875.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.56,
+      "pitch_mean": 109.7,
+      "pitch_var": 49.8,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 880.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.07,
+      "pitch_mean": 132.0,
+      "pitch_var": 74.6,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 885.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.03,
+      "pitch_mean": 106.6,
+      "pitch_var": 18.9,
+      "speech": 0.694,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 890.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.83,
+      "pitch_mean": 150.8,
+      "pitch_var": 110.4,
+      "speech": 0.653,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 895.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.03,
+      "pitch_mean": 262.8,
+      "pitch_var": 148.0,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 900.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.55,
+      "pitch_mean": 216.5,
+      "pitch_var": 133.3,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 905.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 19.61,
+      "pitch_mean": 135.9,
+      "pitch_var": 92.9,
+      "speech": 0.653,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 910.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 21.99,
+      "pitch_mean": 131.9,
+      "pitch_var": 87.4,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 915.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.71,
+      "pitch_mean": 116.2,
+      "pitch_var": 50.1,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 920.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.15,
+      "pitch_mean": 108.7,
+      "pitch_var": 45.7,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 925.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 18.78,
+      "pitch_mean": 124.0,
+      "pitch_var": 86.5,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 930.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 21.37,
+      "pitch_mean": 216.8,
+      "pitch_var": 144.6,
+      "speech": 0.612,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 935.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.58,
+      "pitch_mean": 197.7,
+      "pitch_var": 118.4,
+      "speech": 0.673,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 940.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.16,
+      "pitch_mean": 215.1,
+      "pitch_var": 118.5,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 945.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.82,
+      "pitch_mean": 154.1,
+      "pitch_var": 91.7,
+      "speech": 0.653,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 950.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.78,
+      "pitch_mean": 148.6,
+      "pitch_var": 93.4,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 955.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.63,
+      "pitch_mean": 132.2,
+      "pitch_var": 64.6,
+      "speech": 0.653,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 960.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.43,
+      "pitch_mean": 207.0,
+      "pitch_var": 114.3,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 965.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.35,
+      "pitch_mean": 154.1,
+      "pitch_var": 89.4,
+      "speech": 0.51,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 970.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 89.2,
+      "happy": 0.3,
+      "excited": 3.88,
+      "sad": 20.34,
+      "angry": 21.45,
+      "fear": 7.02,
+      "surprise": 6.63,
+      "disgust": 10.82,
+      "contempt": 7.85,
+      "confused": 20.18
+    },
+    "audio": {
+      "loudness": 30.8,
+      "pitch_mean": 132.7,
+      "pitch_var": 65.3,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 975.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.88,
+      "pitch_mean": 132.7,
+      "pitch_var": 65.1,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 980.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.8,
+      "pitch_mean": 105.8,
+      "pitch_var": 25.7,
+      "speech": 0.857,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 985.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.45,
+      "pitch_mean": 127.4,
+      "pitch_var": 83.7,
+      "speech": 0.857,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 990.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.18,
+      "pitch_mean": 122.2,
+      "pitch_var": 65.7,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 995.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 21.33,
+      "pitch_mean": 157.2,
+      "pitch_var": 98.4,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1000.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.36,
+      "pitch_mean": 115.4,
+      "pitch_var": 55.6,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1005.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.61,
+      "pitch_mean": 138.5,
+      "pitch_var": 103.3,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1010.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.79,
+      "pitch_mean": 124.5,
+      "pitch_var": 61.3,
+      "speech": 0.673,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1015.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.27,
+      "pitch_mean": 252.3,
+      "pitch_var": 142.7,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1020.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.12,
+      "pitch_mean": 166.7,
+      "pitch_var": 106.7,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1025.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.72,
+      "pitch_mean": 137.4,
+      "pitch_var": 72.1,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1030.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.59,
+      "pitch_mean": 148.6,
+      "pitch_var": 100.0,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1035.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.93,
+      "pitch_mean": 113.2,
+      "pitch_var": 34.4,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1040.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 21.07,
+      "pitch_mean": 135.8,
+      "pitch_var": 87.0,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1045.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.72,
+      "pitch_mean": 109.2,
+      "pitch_var": 39.1,
+      "speech": 0.878,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1050.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.19,
+      "pitch_mean": 138.4,
+      "pitch_var": 105.5,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1055.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.75,
+      "pitch_mean": 159.9,
+      "pitch_var": 93.9,
+      "speech": 0.633,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1060.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.93,
+      "pitch_mean": 135.7,
+      "pitch_var": 72.7,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1065.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 18.63,
+      "pitch_mean": 125.1,
+      "pitch_var": 84.1,
+      "speech": 0.857,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1070.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.15,
+      "pitch_mean": 97.3,
+      "pitch_var": 10.6,
+      "speech": 0.837,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1075.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.09,
+      "pitch_mean": 111.0,
+      "pitch_var": 44.7,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1080.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.25,
+      "pitch_mean": 114.1,
+      "pitch_var": 23.3,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1085.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.71,
+      "pitch_mean": 152.9,
+      "pitch_var": 105.9,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1090.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.59,
+      "pitch_mean": 207.7,
+      "pitch_var": 137.6,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1095.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.56,
+      "pitch_mean": 125.3,
+      "pitch_var": 27.3,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1100.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.01,
+      "pitch_mean": 140.9,
+      "pitch_var": 81.0,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1105.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.83,
+      "pitch_mean": 231.4,
+      "pitch_var": 144.9,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1110.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.25,
+      "pitch_mean": 219.6,
+      "pitch_var": 95.5,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1115.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.23,
+      "pitch_mean": 153.1,
+      "pitch_var": 94.0,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1120.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.32,
+      "pitch_mean": 123.9,
+      "pitch_var": 56.3,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1125.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.83,
+      "pitch_mean": 125.6,
+      "pitch_var": 77.6,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1130.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.67,
+      "pitch_mean": 103.3,
+      "pitch_var": 13.0,
+      "speech": 0.857,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1135.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.32,
+      "pitch_mean": 155.5,
+      "pitch_var": 115.1,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1140.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.2,
+      "pitch_mean": 123.9,
+      "pitch_var": 72.4,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1145.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.99,
+      "pitch_mean": 135.1,
+      "pitch_var": 92.8,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1150.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.91,
+      "pitch_mean": 122.1,
+      "pitch_var": 82.7,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1155.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.88,
+      "pitch_mean": 148.6,
+      "pitch_var": 99.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1160.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.14,
+      "pitch_mean": 100.5,
+      "pitch_var": 45.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1165.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.71,
+      "pitch_mean": 103.5,
+      "pitch_var": 44.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1170.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.15,
+      "pitch_mean": 90.6,
+      "pitch_var": 13.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1175.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.18,
+      "pitch_mean": 109.2,
+      "pitch_var": 61.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1180.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.29,
+      "pitch_mean": 108.0,
+      "pitch_var": 44.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1185.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.41,
+      "pitch_mean": 105.2,
+      "pitch_var": 44.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1190.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.85,
+      "pitch_mean": 108.0,
+      "pitch_var": 45.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1195.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.47,
+      "pitch_mean": 97.0,
+      "pitch_var": 14.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1200.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.91,
+      "pitch_mean": 104.4,
+      "pitch_var": 44.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1205.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.93,
+      "pitch_mean": 106.3,
+      "pitch_var": 45.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1210.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.54,
+      "pitch_mean": 155.9,
+      "pitch_var": 109.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1215.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.78,
+      "pitch_mean": 99.4,
+      "pitch_var": 45.8,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1220.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.9,
+      "pitch_mean": 92.5,
+      "pitch_var": 16.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1225.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.68,
+      "pitch_mean": 110.0,
+      "pitch_var": 76.1,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1230.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 22.94,
+      "pitch_mean": 134.9,
+      "pitch_var": 93.9,
+      "speech": 0.571,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1235.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.63,
+      "pitch_mean": 126.4,
+      "pitch_var": 66.0,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1240.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.87,
+      "pitch_mean": 181.0,
+      "pitch_var": 131.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1245.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.36,
+      "pitch_mean": 144.5,
+      "pitch_var": 104.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1250.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.12,
+      "pitch_mean": 207.7,
+      "pitch_var": 140.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1255.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.18,
+      "pitch_mean": 126.8,
+      "pitch_var": 83.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1260.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.24,
+      "pitch_mean": 146.1,
+      "pitch_var": 104.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1265.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.51,
+      "pitch_mean": 130.3,
+      "pitch_var": 81.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1270.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.92,
+      "pitch_mean": 136.9,
+      "pitch_var": 98.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1275.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.56,
+      "pitch_mean": 130.3,
+      "pitch_var": 91.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1280.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.48,
+      "pitch_mean": 138.0,
+      "pitch_var": 98.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1285.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.99,
+      "pitch_mean": 140.9,
+      "pitch_var": 106.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1290.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.8,
+      "pitch_mean": 125.4,
+      "pitch_var": 82.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1295.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.54,
+      "pitch_mean": 123.5,
+      "pitch_var": 71.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1300.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.96,
+      "pitch_mean": 125.0,
+      "pitch_var": 72.0,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1305.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.47,
+      "pitch_mean": 144.0,
+      "pitch_var": 105.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1310.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.52,
+      "pitch_mean": 126.0,
+      "pitch_var": 81.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1315.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.73,
+      "pitch_mean": 178.5,
+      "pitch_var": 128.6,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1320.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.79,
+      "pitch_mean": 309.2,
+      "pitch_var": 129.0,
+      "speech": 0.878,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1325.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.74,
+      "pitch_mean": 334.1,
+      "pitch_var": 121.9,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1330.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.42,
+      "pitch_mean": 229.3,
+      "pitch_var": 132.8,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1335.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.95,
+      "pitch_mean": 251.4,
+      "pitch_var": 139.2,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1340.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 18.85,
+      "pitch_mean": 297.2,
+      "pitch_var": 134.6,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1345.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.98,
+      "pitch_mean": 272.4,
+      "pitch_var": 132.2,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1350.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.48,
+      "pitch_mean": 245.4,
+      "pitch_var": 137.3,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1355.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.5,
+      "pitch_mean": 204.7,
+      "pitch_var": 127.4,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1360.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.65,
+      "pitch_mean": 190.8,
+      "pitch_var": 122.4,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1365.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.29,
+      "pitch_mean": 300.3,
+      "pitch_var": 126.7,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1370.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.13,
+      "pitch_mean": 245.9,
+      "pitch_var": 140.9,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1375.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.51,
+      "pitch_mean": 179.6,
+      "pitch_var": 123.8,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1380.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.09,
+      "pitch_mean": 334.5,
+      "pitch_var": 119.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1385.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.02,
+      "pitch_mean": 331.7,
+      "pitch_var": 123.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1390.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.14,
+      "pitch_mean": 279.7,
+      "pitch_var": 133.1,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1395.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.44,
+      "pitch_mean": 207.6,
+      "pitch_var": 120.2,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1400.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.67,
+      "pitch_mean": 198.2,
+      "pitch_var": 126.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1405.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.91,
+      "pitch_mean": 174.5,
+      "pitch_var": 120.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1410.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.82,
+      "pitch_mean": 290.1,
+      "pitch_var": 136.0,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1415.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.72,
+      "pitch_mean": 215.6,
+      "pitch_var": 140.8,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1420.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.9,
+      "pitch_mean": 134.0,
+      "pitch_var": 90.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1425.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.43,
+      "pitch_mean": 191.6,
+      "pitch_var": 138.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1430.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.93,
+      "pitch_mean": 171.8,
+      "pitch_var": 126.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1435.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.36,
+      "pitch_mean": 140.5,
+      "pitch_var": 93.8,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1440.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.92,
+      "pitch_mean": 115.9,
+      "pitch_var": 60.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1445.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.05,
+      "pitch_mean": 142.9,
+      "pitch_var": 94.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1450.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.15,
+      "pitch_mean": 117.5,
+      "pitch_var": 59.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1455.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.66,
+      "pitch_mean": 130.7,
+      "pitch_var": 81.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1460.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.2,
+      "pitch_mean": 156.9,
+      "pitch_var": 115.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1465.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.12,
+      "pitch_mean": 110.6,
+      "pitch_var": 19.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1470.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.9,
+      "pitch_mean": 130.2,
+      "pitch_var": 94.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1475.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.24,
+      "pitch_mean": 105.0,
+      "pitch_var": 62.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1480.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.12,
+      "pitch_mean": 124.5,
+      "pitch_var": 85.2,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1485.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.13,
+      "pitch_mean": 122.5,
+      "pitch_var": 75.8,
+      "speech": 0.959,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1490.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.74,
+      "pitch_mean": 95.5,
+      "pitch_var": 45.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1495.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.12,
+      "pitch_mean": 116.9,
+      "pitch_var": 74.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1500.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.18,
+      "pitch_mean": 93.5,
+      "pitch_var": 14.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1505.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.61,
+      "pitch_mean": 100.1,
+      "pitch_var": 44.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1510.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.85,
+      "pitch_mean": 172.0,
+      "pitch_var": 134.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1515.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.18,
+      "pitch_mean": 92.2,
+      "pitch_var": 10.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1520.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.25,
+      "pitch_mean": 93.0,
+      "pitch_var": 10.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1525.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.8,
+      "pitch_mean": 104.9,
+      "pitch_var": 61.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1530.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.2,
+      "pitch_mean": 89.9,
+      "pitch_var": 4.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1535.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.88,
+      "pitch_mean": 146.4,
+      "pitch_var": 99.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1540.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.78,
+      "pitch_mean": 101.9,
+      "pitch_var": 45.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1545.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.63,
+      "pitch_mean": 91.0,
+      "pitch_var": 8.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1550.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.82,
+      "pitch_mean": 122.6,
+      "pitch_var": 84.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1555.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.63,
+      "pitch_mean": 97.4,
+      "pitch_var": 18.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1560.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.19,
+      "pitch_mean": 94.2,
+      "pitch_var": 10.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1565.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.47,
+      "pitch_mean": 99.8,
+      "pitch_var": 45.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1570.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.81,
+      "pitch_mean": 108.3,
+      "pitch_var": 61.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1575.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.4,
+      "pitch_mean": 116.9,
+      "pitch_var": 67.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1580.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.59,
+      "pitch_mean": 97.0,
+      "pitch_var": 11.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1585.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.24,
+      "pitch_mean": 94.6,
+      "pitch_var": 11.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1590.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.49,
+      "pitch_mean": 111.3,
+      "pitch_var": 74.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1595.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.59,
+      "pitch_mean": 98.4,
+      "pitch_var": 13.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1600.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.48,
+      "pitch_mean": 96.7,
+      "pitch_var": 44.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1605.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.34,
+      "pitch_mean": 97.8,
+      "pitch_var": 45.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1610.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.94,
+      "pitch_mean": 94.5,
+      "pitch_var": 13.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1615.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.27,
+      "pitch_mean": 168.3,
+      "pitch_var": 125.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1620.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.1,
+      "pitch_mean": 184.6,
+      "pitch_var": 130.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1625.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.67,
+      "pitch_mean": 136.5,
+      "pitch_var": 82.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1630.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.05,
+      "pitch_mean": 226.3,
+      "pitch_var": 144.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1635.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.45,
+      "pitch_mean": 195.1,
+      "pitch_var": 136.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1640.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.09,
+      "pitch_mean": 142.2,
+      "pitch_var": 105.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1645.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.92,
+      "pitch_mean": 110.5,
+      "pitch_var": 44.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1650.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.51,
+      "pitch_mean": 151.0,
+      "pitch_var": 110.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1655.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.44,
+      "pitch_mean": 121.1,
+      "pitch_var": 72.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1660.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.55,
+      "pitch_mean": 110.2,
+      "pitch_var": 43.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1665.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.54,
+      "pitch_mean": 125.0,
+      "pitch_var": 83.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1670.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.54,
+      "pitch_mean": 162.5,
+      "pitch_var": 110.8,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1675.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.21,
+      "pitch_mean": 124.3,
+      "pitch_var": 83.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1680.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.68,
+      "pitch_mean": 116.8,
+      "pitch_var": 73.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1685.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.12,
+      "pitch_mean": 112.9,
+      "pitch_var": 73.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1690.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.9,
+      "pitch_mean": 134.3,
+      "pitch_var": 100.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1695.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.06,
+      "pitch_mean": 123.0,
+      "pitch_var": 64.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1700.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.67,
+      "pitch_mean": 116.5,
+      "pitch_var": 61.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1705.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.16,
+      "pitch_mean": 143.8,
+      "pitch_var": 105.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1710.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.67,
+      "pitch_mean": 145.2,
+      "pitch_var": 104.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1715.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.06,
+      "pitch_mean": 137.1,
+      "pitch_var": 89.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1720.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.36,
+      "pitch_mean": 151.6,
+      "pitch_var": 98.8,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1725.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.41,
+      "pitch_mean": 150.8,
+      "pitch_var": 111.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1730.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.13,
+      "pitch_mean": 139.9,
+      "pitch_var": 106.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1735.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.57,
+      "pitch_mean": 129.6,
+      "pitch_var": 81.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1740.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.52,
+      "pitch_mean": 153.5,
+      "pitch_var": 117.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1745.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.98,
+      "pitch_mean": 128.0,
+      "pitch_var": 81.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1750.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.97,
+      "pitch_mean": 138.0,
+      "pitch_var": 98.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1755.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.74,
+      "pitch_mean": 139.7,
+      "pitch_var": 97.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1760.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.2,
+      "pitch_mean": 132.4,
+      "pitch_var": 90.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1765.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.8,
+      "pitch_mean": 116.2,
+      "pitch_var": 60.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1770.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.16,
+      "pitch_mean": 107.3,
+      "pitch_var": 14.6,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1775.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.98,
+      "pitch_mean": 124.1,
+      "pitch_var": 82.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1780.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.4,
+      "pitch_mean": 134.5,
+      "pitch_var": 66.3,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1785.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 20.84,
+      "pitch_mean": 162.4,
+      "pitch_var": 114.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1790.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.65,
+      "pitch_mean": 129.3,
+      "pitch_var": 11.0,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1795.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.41,
+      "pitch_mean": 141.4,
+      "pitch_var": 62.7,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1800.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.72,
+      "pitch_mean": 154.8,
+      "pitch_var": 76.7,
+      "speech": 0.714,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1805.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.17,
+      "pitch_mean": 139.4,
+      "pitch_var": 73.8,
+      "speech": 0.857,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1810.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.75,
+      "pitch_mean": 133.8,
+      "pitch_var": 46.0,
+      "speech": 0.776,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1815.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.22,
+      "pitch_mean": 145.0,
+      "pitch_var": 72.5,
+      "speech": 0.857,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1820.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.28,
+      "pitch_mean": 160.7,
+      "pitch_var": 95.6,
+      "speech": 0.735,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1825.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.48,
+      "pitch_mean": 105.4,
+      "pitch_var": 47.7,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1830.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.19,
+      "pitch_mean": 114.5,
+      "pitch_var": 65.2,
+      "speech": 0.837,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1835.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.12,
+      "pitch_mean": 143.0,
+      "pitch_var": 73.2,
+      "speech": 0.878,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1840.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.85,
+      "pitch_mean": 122.4,
+      "pitch_var": 68.0,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1845.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.89,
+      "pitch_mean": 120.0,
+      "pitch_var": 59.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1850.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.48,
+      "pitch_mean": 125.5,
+      "pitch_var": 64.8,
+      "speech": 0.735,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1855.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.17,
+      "pitch_mean": 116.1,
+      "pitch_var": 21.9,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1860.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.92,
+      "pitch_mean": 140.5,
+      "pitch_var": 98.8,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1865.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.18,
+      "pitch_mean": 110.7,
+      "pitch_var": 24.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1870.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.01,
+      "pitch_mean": 128.2,
+      "pitch_var": 81.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1875.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.49,
+      "pitch_mean": 147.1,
+      "pitch_var": 92.9,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1880.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.11,
+      "pitch_mean": 110.7,
+      "pitch_var": 31.1,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1885.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 17.18,
+      "pitch_mean": 133.5,
+      "pitch_var": 77.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1890.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 16.3,
+      "pitch_mean": 129.5,
+      "pitch_var": 50.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1895.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.95,
+      "pitch_mean": 126.4,
+      "pitch_var": 51.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1900.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.64,
+      "pitch_mean": 136.2,
+      "pitch_var": 84.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1905.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.41,
+      "pitch_mean": 140.3,
+      "pitch_var": 97.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1910.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.57,
+      "pitch_mean": 128.4,
+      "pitch_var": 81.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1915.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.79,
+      "pitch_mean": 172.2,
+      "pitch_var": 130.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1920.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.21,
+      "pitch_mean": 141.5,
+      "pitch_var": 98.4,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1925.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.91,
+      "pitch_mean": 124.0,
+      "pitch_var": 71.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1930.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.78,
+      "pitch_mean": 141.2,
+      "pitch_var": 97.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1935.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.47,
+      "pitch_mean": 133.5,
+      "pitch_var": 90.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1940.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.08,
+      "pitch_mean": 146.4,
+      "pitch_var": 107.8,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1945.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.13,
+      "pitch_mean": 134.4,
+      "pitch_var": 90.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1950.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.42,
+      "pitch_mean": 129.4,
+      "pitch_var": 91.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1955.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.17,
+      "pitch_mean": 157.0,
+      "pitch_var": 112.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1960.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.87,
+      "pitch_mean": 139.4,
+      "pitch_var": 98.4,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1965.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.96,
+      "pitch_mean": 139.2,
+      "pitch_var": 97.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1970.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.37,
+      "pitch_mean": 183.0,
+      "pitch_var": 130.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1975.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.38,
+      "pitch_mean": 130.2,
+      "pitch_var": 92.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1980.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.23,
+      "pitch_mean": 134.0,
+      "pitch_var": 109.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1985.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.62,
+      "pitch_mean": 160.2,
+      "pitch_var": 136.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1990.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 47.57,
+      "pitch_mean": 180.1,
+      "pitch_var": 123.2,
+      "speech": 0.939,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 1995.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.74,
+      "pitch_mean": 194.7,
+      "pitch_var": 149.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2000.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.05,
+      "pitch_mean": 169.4,
+      "pitch_var": 132.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2005.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.38,
+      "pitch_mean": 120.2,
+      "pitch_var": 94.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2010.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.45,
+      "pitch_mean": 125.3,
+      "pitch_var": 93.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2015.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.88,
+      "pitch_mean": 153.8,
+      "pitch_var": 117.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2020.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.36,
+      "pitch_mean": 145.2,
+      "pitch_var": 105.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2025.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.56,
+      "pitch_mean": 114.4,
+      "pitch_var": 96.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2030.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.3,
+      "pitch_mean": 96.0,
+      "pitch_var": 63.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2035.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.41,
+      "pitch_mean": 108.6,
+      "pitch_var": 85.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2040.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.02,
+      "pitch_mean": 139.5,
+      "pitch_var": 116.8,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2045.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.53,
+      "pitch_mean": 137.2,
+      "pitch_var": 103.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2050.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.53,
+      "pitch_mean": 124.5,
+      "pitch_var": 102.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2055.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.0,
+      "pitch_mean": 114.2,
+      "pitch_var": 71.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2060.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.5,
+      "pitch_mean": 120.9,
+      "pitch_var": 68.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2065.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.38,
+      "pitch_mean": 130.7,
+      "pitch_var": 93.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2070.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 78.41,
+      "happy": 0.06,
+      "excited": 4.08,
+      "sad": 27.0,
+      "angry": 33.4,
+      "fear": 9.91,
+      "surprise": 9.22,
+      "disgust": 10.92,
+      "contempt": 8.48,
+      "confused": 49.94
+    },
+    "audio": {
+      "loudness": 43.72,
+      "pitch_mean": 108.9,
+      "pitch_var": 39.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2075.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.75,
+      "pitch_mean": 210.8,
+      "pitch_var": 138.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2080.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.79,
+      "pitch_mean": 232.2,
+      "pitch_var": 143.0,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2085.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.86,
+      "pitch_mean": 187.3,
+      "pitch_var": 119.2,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2090.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 43.87,
+      "pitch_mean": 176.0,
+      "pitch_var": 121.7,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2095.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.13,
+      "pitch_mean": 223.0,
+      "pitch_var": 138.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2100.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.44,
+      "pitch_mean": 138.0,
+      "pitch_var": 84.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2105.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.95,
+      "pitch_mean": 129.2,
+      "pitch_var": 82.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2110.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.92,
+      "pitch_mean": 193.5,
+      "pitch_var": 112.1,
+      "speech": 0.959,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2115.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.88,
+      "pitch_mean": 181.1,
+      "pitch_var": 122.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2120.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 47.33,
+      "pitch_mean": 114.9,
+      "pitch_var": 44.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2125.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.52,
+      "pitch_mean": 141.4,
+      "pitch_var": 94.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2130.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.13,
+      "pitch_mean": 115.5,
+      "pitch_var": 61.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2135.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.04,
+      "pitch_mean": 125.5,
+      "pitch_var": 61.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2140.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.56,
+      "pitch_mean": 132.0,
+      "pitch_var": 63.5,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2145.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.58,
+      "pitch_mean": 118.2,
+      "pitch_var": 60.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2150.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.43,
+      "pitch_mean": 144.9,
+      "pitch_var": 104.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2155.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.83,
+      "pitch_mean": 126.8,
+      "pitch_var": 82.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2160.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.86,
+      "pitch_mean": 121.2,
+      "pitch_var": 71.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2165.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.48,
+      "pitch_mean": 145.4,
+      "pitch_var": 100.7,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2170.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.31,
+      "pitch_mean": 118.9,
+      "pitch_var": 72.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2175.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.72,
+      "pitch_mean": 112.2,
+      "pitch_var": 86.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2180.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 47.78,
+      "pitch_mean": 106.8,
+      "pitch_var": 87.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2185.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.7,
+      "pitch_mean": 80.6,
+      "pitch_var": 1.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2190.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.44,
+      "pitch_mean": 93.5,
+      "pitch_var": 63.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2195.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.23,
+      "pitch_mean": 93.4,
+      "pitch_var": 63.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2200.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 51.73,
+      "pitch_mean": 159.1,
+      "pitch_var": 133.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2205.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 52.37,
+      "pitch_mean": 96.6,
+      "pitch_var": 63.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2210.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.03,
+      "pitch_mean": 107.2,
+      "pitch_var": 87.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2215.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.42,
+      "pitch_mean": 128.1,
+      "pitch_var": 111.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2220.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 52.91,
+      "pitch_mean": 138.1,
+      "pitch_var": 110.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2225.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 49.1,
+      "pitch_mean": 143.0,
+      "pitch_var": 122.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2230.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.26,
+      "pitch_mean": 160.3,
+      "pitch_var": 129.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2235.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.83,
+      "pitch_mean": 184.8,
+      "pitch_var": 149.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2240.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.76,
+      "pitch_mean": 87.0,
+      "pitch_var": 45.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2245.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 53.59,
+      "pitch_mean": 146.3,
+      "pitch_var": 111.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2250.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 70.87,
+      "pitch_mean": 106.7,
+      "pitch_var": 45.2,
+      "speech": 1.0,
+      "audio_emotion": "shouting"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2255.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 63.32,
+      "pitch_mean": 100.6,
+      "pitch_var": 58.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2260.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 52.73,
+      "pitch_mean": 88.0,
+      "pitch_var": 45.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2265.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 51.12,
+      "pitch_mean": 81.6,
+      "pitch_var": 5.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2270.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.54,
+      "pitch_mean": 101.1,
+      "pitch_var": 76.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2275.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 54.79,
+      "pitch_mean": 100.0,
+      "pitch_var": 76.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2280.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 63.63,
+      "pitch_mean": 142.2,
+      "pitch_var": 108.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2285.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 56.34,
+      "pitch_mean": 113.3,
+      "pitch_var": 86.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2290.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 55.75,
+      "pitch_mean": 107.2,
+      "pitch_var": 87.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2295.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 51.68,
+      "pitch_mean": 115.4,
+      "pitch_var": 89.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2300.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 54.5,
+      "pitch_mean": 117.7,
+      "pitch_var": 80.5,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2305.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 51.23,
+      "pitch_mean": 160.0,
+      "pitch_var": 134.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2310.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 47.98,
+      "pitch_mean": 95.0,
+      "pitch_var": 62.5,
+      "speech": 0.959,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2315.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 57.52,
+      "pitch_mean": 122.8,
+      "pitch_var": 103.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2320.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 52.78,
+      "pitch_mean": 142.1,
+      "pitch_var": 122.8,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2325.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 47.64,
+      "pitch_mean": 106.5,
+      "pitch_var": 87.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2330.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 43.1,
+      "pitch_mean": 106.7,
+      "pitch_var": 76.4,
+      "speech": 0.898,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2335.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.12,
+      "pitch_mean": 111.4,
+      "pitch_var": 92.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2340.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.82,
+      "pitch_mean": 87.8,
+      "pitch_var": 45.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2345.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.95,
+      "pitch_mean": 103.1,
+      "pitch_var": 73.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2350.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.33,
+      "pitch_mean": 132.8,
+      "pitch_var": 118.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2355.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.06,
+      "pitch_mean": 89.5,
+      "pitch_var": 44.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2360.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.66,
+      "pitch_mean": 87.3,
+      "pitch_var": 45.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2365.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 53.5,
+      "pitch_mean": 107.2,
+      "pitch_var": 76.5,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2370.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.96,
+      "pitch_mean": 88.1,
+      "pitch_var": 12.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2375.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.53,
+      "pitch_mean": 139.6,
+      "pitch_var": 123.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2380.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.06,
+      "pitch_mean": 208.5,
+      "pitch_var": 114.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2385.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.62,
+      "pitch_mean": 199.4,
+      "pitch_var": 109.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2390.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.36,
+      "pitch_mean": 121.8,
+      "pitch_var": 45.6,
+      "speech": 0.878,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2395.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.96,
+      "pitch_mean": 157.1,
+      "pitch_var": 50.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2400.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 21.63,
+      "pitch_mean": 158.1,
+      "pitch_var": 54.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2405.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.88,
+      "pitch_mean": 176.2,
+      "pitch_var": 116.0,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2410.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.63,
+      "pitch_mean": 136.3,
+      "pitch_var": 90.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2415.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.28,
+      "pitch_mean": 140.9,
+      "pitch_var": 86.9,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2420.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.19,
+      "pitch_mean": 120.1,
+      "pitch_var": 34.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2425.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.59,
+      "pitch_mean": 134.8,
+      "pitch_var": 91.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2430.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.34,
+      "pitch_mean": 132.0,
+      "pitch_var": 81.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2435.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.85,
+      "pitch_mean": 151.0,
+      "pitch_var": 110.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2440.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.28,
+      "pitch_mean": 137.7,
+      "pitch_var": 99.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2445.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.61,
+      "pitch_mean": 136.9,
+      "pitch_var": 99.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2450.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.3,
+      "pitch_mean": 136.7,
+      "pitch_var": 100.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2455.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.1,
+      "pitch_mean": 148.5,
+      "pitch_var": 111.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2460.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.22,
+      "pitch_mean": 115.4,
+      "pitch_var": 73.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2465.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.21,
+      "pitch_mean": 137.5,
+      "pitch_var": 98.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2470.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.1,
+      "pitch_mean": 132.0,
+      "pitch_var": 91.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2475.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 23.69,
+      "pitch_mean": 122.0,
+      "pitch_var": 84.4,
+      "speech": 0.735,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2480.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.48,
+      "pitch_mean": 108.1,
+      "pitch_var": 43.1,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2485.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.79,
+      "pitch_mean": 189.1,
+      "pitch_var": 142.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2490.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.54,
+      "pitch_mean": 148.4,
+      "pitch_var": 127.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2495.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.82,
+      "pitch_mean": 101.6,
+      "pitch_var": 76.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2500.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.62,
+      "pitch_mean": 189.2,
+      "pitch_var": 147.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2505.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.86,
+      "pitch_mean": 114.0,
+      "pitch_var": 74.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2510.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.36,
+      "pitch_mean": 171.2,
+      "pitch_var": 119.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2515.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.75,
+      "pitch_mean": 158.1,
+      "pitch_var": 114.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2520.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.42,
+      "pitch_mean": 158.5,
+      "pitch_var": 108.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2525.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.6,
+      "pitch_mean": 136.2,
+      "pitch_var": 90.7,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2530.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.42,
+      "pitch_mean": 120.1,
+      "pitch_var": 60.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2535.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.63,
+      "pitch_mean": 142.1,
+      "pitch_var": 88.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2540.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.43,
+      "pitch_mean": 122.5,
+      "pitch_var": 72.9,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2545.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.85,
+      "pitch_mean": 115.1,
+      "pitch_var": 42.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2550.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.25,
+      "pitch_mean": 156.5,
+      "pitch_var": 107.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2555.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.38,
+      "pitch_mean": 130.8,
+      "pitch_var": 91.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2560.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.19,
+      "pitch_mean": 145.8,
+      "pitch_var": 104.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2565.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.99,
+      "pitch_mean": 141.0,
+      "pitch_var": 105.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2570.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.03,
+      "pitch_mean": 138.7,
+      "pitch_var": 106.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2575.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.37,
+      "pitch_mean": 146.7,
+      "pitch_var": 104.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2580.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.26,
+      "pitch_mean": 130.0,
+      "pitch_var": 92.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2585.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.07,
+      "pitch_mean": 166.5,
+      "pitch_var": 132.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2590.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.27,
+      "pitch_mean": 126.8,
+      "pitch_var": 109.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2595.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.29,
+      "pitch_mean": 113.6,
+      "pitch_var": 96.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2600.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 46.44,
+      "pitch_mean": 118.6,
+      "pitch_var": 97.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2605.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.63,
+      "pitch_mean": 147.0,
+      "pitch_var": 127.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2610.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.36,
+      "pitch_mean": 216.1,
+      "pitch_var": 155.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2615.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.56,
+      "pitch_mean": 116.4,
+      "pitch_var": 86.7,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2620.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.62,
+      "pitch_mean": 126.1,
+      "pitch_var": 102.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2625.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 50.62,
+      "pitch_mean": 133.1,
+      "pitch_var": 89.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2630.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.41,
+      "pitch_mean": 115.1,
+      "pitch_var": 75.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2635.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.97,
+      "pitch_mean": 138.7,
+      "pitch_var": 98.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2640.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.71,
+      "pitch_mean": 199.0,
+      "pitch_var": 139.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2645.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.11,
+      "pitch_mean": 124.8,
+      "pitch_var": 82.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2650.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.18,
+      "pitch_mean": 183.2,
+      "pitch_var": 129.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2655.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.53,
+      "pitch_mean": 121.4,
+      "pitch_var": 65.5,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2660.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.02,
+      "pitch_mean": 103.8,
+      "pitch_var": 13.7,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2665.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.74,
+      "pitch_mean": 119.5,
+      "pitch_var": 72.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2670.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.5,
+      "pitch_mean": 211.1,
+      "pitch_var": 143.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2675.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 69.02,
+      "happy": 0.89,
+      "excited": 9.17,
+      "sad": 20.35,
+      "angry": 30.72,
+      "fear": 21.15,
+      "surprise": 18.93,
+      "disgust": 1.81,
+      "contempt": 8.98,
+      "confused": 20.09
+    },
+    "audio": {
+      "loudness": 33.83,
+      "pitch_mean": 128.4,
+      "pitch_var": 91.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2680.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.13,
+      "pitch_mean": 137.5,
+      "pitch_var": 99.5,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2685.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.56,
+      "pitch_mean": 160.6,
+      "pitch_var": 129.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2690.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.49,
+      "pitch_mean": 87.7,
+      "pitch_var": 45.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2695.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 43.85,
+      "pitch_mean": 154.3,
+      "pitch_var": 118.6,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2700.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.88,
+      "pitch_mean": 160.6,
+      "pitch_var": 121.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2705.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.54,
+      "pitch_mean": 138.2,
+      "pitch_var": 98.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2710.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.13,
+      "pitch_mean": 115.9,
+      "pitch_var": 42.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2715.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.5,
+      "pitch_mean": 134.5,
+      "pitch_var": 89.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2720.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.82,
+      "pitch_mean": 112.0,
+      "pitch_var": 43.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2725.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.16,
+      "pitch_mean": 99.3,
+      "pitch_var": 8.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2730.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.46,
+      "pitch_mean": 123.9,
+      "pitch_var": 82.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2735.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.08,
+      "pitch_mean": 141.4,
+      "pitch_var": 105.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2740.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.67,
+      "pitch_mean": 202.7,
+      "pitch_var": 130.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2745.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.34,
+      "pitch_mean": 119.3,
+      "pitch_var": 73.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2750.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.27,
+      "pitch_mean": 118.1,
+      "pitch_var": 72.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2755.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.18,
+      "pitch_mean": 111.2,
+      "pitch_var": 59.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2760.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.48,
+      "pitch_mean": 143.6,
+      "pitch_var": 96.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2765.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.05,
+      "pitch_mean": 127.8,
+      "pitch_var": 91.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2770.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.4,
+      "pitch_mean": 160.2,
+      "pitch_var": 121.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2775.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.02,
+      "pitch_mean": 166.1,
+      "pitch_var": 126.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2780.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.8,
+      "pitch_mean": 118.6,
+      "pitch_var": 72.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2785.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.67,
+      "pitch_mean": 169.0,
+      "pitch_var": 126.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2790.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.83,
+      "pitch_mean": 138.3,
+      "pitch_var": 98.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2795.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.58,
+      "pitch_mean": 110.9,
+      "pitch_var": 43.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2800.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.52,
+      "pitch_mean": 206.2,
+      "pitch_var": 143.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2805.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.04,
+      "pitch_mean": 212.4,
+      "pitch_var": 142.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2810.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.12,
+      "pitch_mean": 227.0,
+      "pitch_var": 150.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2815.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.46,
+      "pitch_mean": 120.0,
+      "pitch_var": 81.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2820.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.18,
+      "pitch_mean": 169.9,
+      "pitch_var": 116.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2825.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.46,
+      "pitch_mean": 178.8,
+      "pitch_var": 133.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2830.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.33,
+      "pitch_mean": 133.5,
+      "pitch_var": 90.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2835.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.97,
+      "pitch_mean": 124.2,
+      "pitch_var": 83.5,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2840.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.89,
+      "pitch_mean": 127.1,
+      "pitch_var": 31.7,
+      "speech": 0.755,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2845.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.61,
+      "pitch_mean": 122.0,
+      "pitch_var": 31.0,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2850.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.16,
+      "pitch_mean": 119.9,
+      "pitch_var": 13.4,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2855.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.18,
+      "pitch_mean": 114.3,
+      "pitch_var": 11.2,
+      "speech": 0.714,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2860.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.26,
+      "pitch_mean": 161.7,
+      "pitch_var": 100.3,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2865.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.67,
+      "pitch_mean": 99.1,
+      "pitch_var": 44.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2870.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.28,
+      "pitch_mean": 100.2,
+      "pitch_var": 44.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2875.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.05,
+      "pitch_mean": 116.7,
+      "pitch_var": 73.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2880.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.69,
+      "pitch_mean": 102.9,
+      "pitch_var": 62.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2885.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 47.17,
+      "pitch_mean": 95.2,
+      "pitch_var": 63.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2890.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.1,
+      "pitch_mean": 175.1,
+      "pitch_var": 141.2,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2895.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.83,
+      "pitch_mean": 239.6,
+      "pitch_var": 141.2,
+      "speech": 0.878,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2900.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.94,
+      "pitch_mean": 245.2,
+      "pitch_var": 142.4,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2905.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 18.32,
+      "pitch_mean": 334.1,
+      "pitch_var": 111.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2910.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.08,
+      "pitch_mean": 317.2,
+      "pitch_var": 116.2,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2915.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 25.37,
+      "pitch_mean": 344.1,
+      "pitch_var": 108.6,
+      "speech": 0.959,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2920.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 35.21,
+      "pitch_mean": 117.2,
+      "pitch_var": 58.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2925.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.22,
+      "pitch_mean": 135.2,
+      "pitch_var": 89.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2930.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.89,
+      "pitch_mean": 194.6,
+      "pitch_var": 140.6,
+      "speech": 0.918,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2935.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 21.37,
+      "pitch_mean": 343.8,
+      "pitch_var": 112.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2940.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 18.29,
+      "pitch_mean": 320.3,
+      "pitch_var": 119.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2945.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 17.85,
+      "pitch_mean": 326.3,
+      "pitch_var": 118.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2950.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.05,
+      "pitch_mean": 307.6,
+      "pitch_var": 124.1,
+      "speech": 0.796,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2955.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.5,
+      "pitch_mean": 125.9,
+      "pitch_var": 65.1,
+      "speech": 0.837,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2960.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.53,
+      "pitch_mean": 124.6,
+      "pitch_var": 91.8,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2965.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.16,
+      "pitch_mean": 149.9,
+      "pitch_var": 101.0,
+      "speech": 0.816,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2970.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 18.7,
+      "pitch_mean": 118.3,
+      "pitch_var": 27.5,
+      "speech": 0.939,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2975.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 24.41,
+      "pitch_mean": 160.1,
+      "pitch_var": 121.9,
+      "speech": 0.898,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2980.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 26.05,
+      "pitch_mean": 157.3,
+      "pitch_var": 123.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2985.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.27,
+      "pitch_mean": 129.1,
+      "pitch_var": 91.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2990.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.95,
+      "pitch_mean": 157.3,
+      "pitch_var": 115.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 2995.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.72,
+      "pitch_mean": 132.3,
+      "pitch_var": 90.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3000.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.3,
+      "pitch_mean": 113.7,
+      "pitch_var": 59.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3005.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.0,
+      "pitch_mean": 127.9,
+      "pitch_var": 81.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3010.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.46,
+      "pitch_mean": 126.5,
+      "pitch_var": 81.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3015.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 29.88,
+      "pitch_mean": 178.6,
+      "pitch_var": 109.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3020.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.12,
+      "pitch_mean": 194.0,
+      "pitch_var": 107.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3025.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.03,
+      "pitch_mean": 300.8,
+      "pitch_var": 124.4,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3030.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.24,
+      "pitch_mean": 366.0,
+      "pitch_var": 82.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3035.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.23,
+      "pitch_mean": 360.0,
+      "pitch_var": 88.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3040.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.96,
+      "pitch_mean": 373.7,
+      "pitch_var": 64.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3045.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.85,
+      "pitch_mean": 354.0,
+      "pitch_var": 92.0,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3050.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.6,
+      "pitch_mean": 332.4,
+      "pitch_var": 112.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3055.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.37,
+      "pitch_mean": 341.0,
+      "pitch_var": 107.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3060.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.1,
+      "pitch_mean": 369.2,
+      "pitch_var": 77.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3065.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.81,
+      "pitch_mean": 388.8,
+      "pitch_var": 28.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3070.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.25,
+      "pitch_mean": 379.5,
+      "pitch_var": 32.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3075.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 90.9,
+      "happy": 0.02,
+      "excited": 2.43,
+      "sad": 21.74,
+      "angry": 22.79,
+      "fear": 5.13,
+      "surprise": 4.48,
+      "disgust": 10.33,
+      "contempt": 7.24,
+      "confused": 22.86
+    },
+    "audio": {
+      "loudness": 32.22,
+      "pitch_mean": 385.0,
+      "pitch_var": 21.1,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3080.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.38,
+      "pitch_mean": 380.8,
+      "pitch_var": 34.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3085.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.09,
+      "pitch_mean": 367.8,
+      "pitch_var": 33.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3090.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.19,
+      "pitch_mean": 393.1,
+      "pitch_var": 22.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3095.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.65,
+      "pitch_mean": 390.1,
+      "pitch_var": 17.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3100.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.67,
+      "pitch_mean": 381.0,
+      "pitch_var": 59.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3105.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 38.08,
+      "pitch_mean": 351.2,
+      "pitch_var": 101.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3110.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.67,
+      "pitch_mean": 370.4,
+      "pitch_var": 78.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3115.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.68,
+      "pitch_mean": 379.3,
+      "pitch_var": 43.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3120.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.02,
+      "pitch_mean": 323.1,
+      "pitch_var": 67.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3125.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 33.25,
+      "pitch_mean": 381.5,
+      "pitch_var": 45.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3130.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.6,
+      "pitch_mean": 392.8,
+      "pitch_var": 8.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3135.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.23,
+      "pitch_mean": 369.1,
+      "pitch_var": 20.3,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3140.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.72,
+      "pitch_mean": 381.1,
+      "pitch_var": 43.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3145.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.67,
+      "pitch_mean": 374.8,
+      "pitch_var": 48.5,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3150.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 30.58,
+      "pitch_mean": 383.2,
+      "pitch_var": 42.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3155.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 34.75,
+      "pitch_mean": 391.1,
+      "pitch_var": 30.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3160.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 40.48,
+      "pitch_mean": 400.0,
+      "pitch_var": 0.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3165.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.29,
+      "pitch_mean": 400.0,
+      "pitch_var": 0.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3170.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 39.31,
+      "pitch_mean": 400.0,
+      "pitch_var": 0.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3175.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.4,
+      "pitch_mean": 400.0,
+      "pitch_var": 0.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3180.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 36.96,
+      "pitch_mean": 397.3,
+      "pitch_var": 7.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3185.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.96,
+      "pitch_mean": 390.2,
+      "pitch_var": 28.2,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3190.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.97,
+      "pitch_mean": 385.1,
+      "pitch_var": 37.6,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3195.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 37.85,
+      "pitch_mean": 360.6,
+      "pitch_var": 86.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3200.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.31,
+      "pitch_mean": 386.9,
+      "pitch_var": 24.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3205.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.5,
+      "pitch_mean": 393.1,
+      "pitch_var": 19.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3210.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.91,
+      "pitch_mean": 390.4,
+      "pitch_var": 17.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3215.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.88,
+      "pitch_mean": 390.2,
+      "pitch_var": 32.7,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3220.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 31.91,
+      "pitch_mean": 394.1,
+      "pitch_var": 18.0,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3225.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 28.03,
+      "pitch_mean": 200.2,
+      "pitch_var": 109.9,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3230.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 27.11,
+      "pitch_mean": 146.9,
+      "pitch_var": 62.3,
+      "speech": 0.98,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3235.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 32.14,
+      "pitch_mean": 163.1,
+      "pitch_var": 61.8,
+      "speech": 1.0,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3240.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.14,
+      "pitch_mean": 279.1,
+      "pitch_var": 123.9,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3245.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.91,
+      "pitch_mean": 279.9,
+      "pitch_var": 129.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3250.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 48.75,
+      "pitch_mean": 265.8,
+      "pitch_var": 136.1,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3255.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.48,
+      "pitch_mean": 259.1,
+      "pitch_var": 124.3,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3260.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 45.83,
+      "pitch_mean": 287.8,
+      "pitch_var": 132.5,
+      "speech": 0.959,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3265.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.19,
+      "pitch_mean": 300.0,
+      "pitch_var": 113.5,
+      "speech": 0.959,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3270.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 42.87,
+      "pitch_mean": 317.1,
+      "pitch_var": 127.3,
+      "speech": 0.959,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3275.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 44.8,
+      "pitch_mean": 287.9,
+      "pitch_var": 132.2,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3280.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.89,
+      "pitch_mean": 303.6,
+      "pitch_var": 127.6,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3285.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 54.08,
+      "pitch_mean": 259.1,
+      "pitch_var": 133.8,
+      "speech": 0.98,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3290.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 41.7,
+      "pitch_mean": 311.0,
+      "pitch_var": 118.6,
+      "speech": 1.0,
+      "audio_emotion": "excited"
+    },
+    "caption": "",
+    "caption_events": []
+  },
+  {
+    "t": 3295.0,
+    "emotion": "none",
+    "scores": {},
+    "audio": {
+      "loudness": 13.35,
+      "pitch_mean": 163.7,
+      "pitch_var": 89.9,
+      "speech": 0.829,
+      "audio_emotion": "speaking"
+    },
+    "caption": "",
+    "caption_events": []
+  }
+]

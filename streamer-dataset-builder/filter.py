@@ -12,6 +12,8 @@ from pathlib import Path
 from config import (
     MIN_DURATION_SECONDS,
     PREFER_DURATION_SECONDS,
+    MIN_SHORT_DURATION_SECONDS,
+    MAX_SHORT_DURATION_SECONDS,
     PREFERRED_KEYWORDS,
     SEEN_IDS_FILE,
 )
@@ -51,14 +53,12 @@ def _keyword_score(title: str) -> int:
 def _reject_reason(video: dict) -> str | None:
     """
     Return a rejection reason string, or None if the video should be kept.
-    """
-    duration = video.get("duration")
 
-    # Hard floor — reject if duration unknown or too short
-    if duration is None:
+    No duration floor — all video lengths are accepted.
+    Only rejects videos with unknown duration.
+    """
+    if video.get("duration") is None:
         return "duration unknown"
-    if duration < MIN_DURATION_SECONDS:
-        return f"too short ({duration//60} min < {MIN_DURATION_SECONDS//60} min)"
 
     return None  # passed
 
@@ -103,14 +103,6 @@ def filter_videos(
             rejected_count += 1
             continue
 
-        # Override min_duration if caller supplied one
-        if v["duration"] < floor:
-            log.info(
-                "REJECT %s — below caller min_duration (%ds) — %s",
-                vid_id, floor, v.get("title", ""),
-            )
-            rejected_count += 1
-            continue
 
         # Attach preference flags for ranking
         v["_preferred"]     = v["duration"] >= PREFER_DURATION_SECONDS
