@@ -3,11 +3,13 @@ detector.py — Automatically locate the streamer's facecam bounding box.
 
 Strategy:
   1. Sample N frames evenly across the video.
-  2. Run MediaPipe FaceDetection (falls back to OpenCV Haar cascade).
-  3. Collect all face bounding boxes and find the most stable cluster
+  2. Upscale each frame to at least 640px wide (helps low-res 256x144 videos).
+  3. Run MediaPipe FaceLandmarker (Tasks API, MP 0.10+).
+     Falls back to OpenCV Haar cascade if model unavailable.
+  4. Collect all face bounding boxes and find the most stable cluster
      (median position across frames with detections).
-  4. Expand the box to include the body (shoulders + torso).
-  5. Optionally snap the region to the nearest screen corner.
+  5. Expand the box to include the body (shoulders + torso).
+  6. Optionally snap the region to the nearest screen corner.
 
 Returns a BBox(x, y, w, h) in pixel coordinates, or None if no face found.
 """
@@ -30,6 +32,9 @@ from config import (
 )
 
 log = logging.getLogger("detector")
+
+# Minimum width to upscale frames to before detection (helps tiny facecams)
+_DETECT_MIN_WIDTH = 640
 
 
 @dataclass
@@ -55,29 +60,73 @@ class BBox:
         return BBox(x, y, w, h)
 
 
-# ── MediaPipe detector ─────────────────────────────────────────────────────
+# ── Frame upscaling ────────────────────────────────────────────────────────
+
+def _upscale(frame: np.ndarray) -> tuple[np.ndarray, float]:
+    """
+    Upscale frame so its width is at least _DETECT_MIN_WIDTH.
+    Returns (upscaled_frame, scale_factor).  scale_factor < 1.0 means no change.
+    """
+    h, w = frame.shape[:2]
+    if w >= _DETECT_MIN_WIDTH:
+        return frame, 1.0
+    scale = _DETECT_MIN_WIDTH / w
+    new_w = int(w * scale)
+    new_h = int(h * scale)
+    return cv2.resize(frame, (new_w, new_h), interpolation=cv2.INTER_LINEAR), scale
+
+
+# ── MediaPipe FaceLandmarker detector (Tasks API, MP 0.10+) ───────────────
+
+_landmarker = None
+
+def _get_landmarker():
+    """Lazy-init MediaPipe FaceLandmarker (reuses model downloaded by emotion_scanner)."""
+    global _landmarker
+    if _landmarker is not None:
+        return _landmarker
+    try:
+        import mediapipe as mp
+        from mediapipe.tasks import python as mp_python
+        from mediapipe.tasks.python import vision as mp_vision
+        from emotion_scanner import _ensure_model
+        model_path = _ensure_model()
+        options = mp_vision.FaceLandmarkerOptions(
+            base_options=mp_python.BaseOptions(model_asset_path=str(model_path)),
+            output_face_blendshapes=False,
+            num_faces=1,
+            min_face_detection_confidence=0.2,
+        )
+        _landmarker = mp_vision.FaceLandmarker.create_from_options(options)
+        return _landmarker
+    except Exception as exc:
+        log.warning("Could not init MediaPipe FaceLandmarker: %s", exc)
+        return None
+
 
 def _detect_faces_mediapipe(frame_bgr: np.ndarray) -> list[tuple[int, int, int, int]]:
-    """Return list of (x, y, w, h) face boxes using MediaPipe."""
+    """Return list of (x, y, w, h) face boxes using MediaPipe FaceLandmarker."""
     import mediapipe as mp
-    mp_face = mp.solutions.face_detection
-
-    with mp_face.FaceDetection(model_selection=1, min_detection_confidence=0.5) as fd:
-        rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
-        res = fd.process(rgb)
-
-    if not res.detections:
+    lm = _get_landmarker()
+    if lm is None:
         return []
 
     h, w = frame_bgr.shape[:2]
+    rgb    = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
+    mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
+    result = lm.detect(mp_img)
+
+    if not result.face_landmarks:
+        return []
+
     boxes = []
-    for det in res.detections:
-        bb = det.location_data.relative_bounding_box
-        bx = max(0, int(bb.xmin * w))
-        by = max(0, int(bb.ymin * h))
-        bw = int(bb.width * w)
-        bh = int(bb.height * h)
-        boxes.append((bx, by, bw, bh))
+    for face_lm in result.face_landmarks:
+        xs = [p.x * w for p in face_lm]
+        ys = [p.y * h for p in face_lm]
+        x1, y1 = int(min(xs)), int(min(ys))
+        x2, y2 = int(max(xs)), int(max(ys))
+        bw, bh = max(1, x2 - x1), max(1, y2 - y1)
+        boxes.append((x1, y1, bw, bh))
     return boxes
 
 
@@ -96,7 +145,7 @@ def _get_haar():
 
 def _detect_faces_haar(frame_bgr: np.ndarray) -> list[tuple[int, int, int, int]]:
     gray  = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2GRAY)
-    faces = _get_haar().detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(40, 40))
+    faces = _get_haar().detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3, minSize=(20, 20))
     if len(faces) == 0:
         return []
     return [(int(x), int(y), int(w), int(h)) for x, y, w, h in faces]
@@ -127,8 +176,6 @@ def _sample_frames(video_path: Path, n: int) -> list[np.ndarray]:
 
 def _dominant_box(
     all_boxes: list[tuple[int, int, int, int]],
-    frame_w: int,
-    frame_h: int,
 ) -> tuple[int, int, int, int] | None:
     """Return the median bounding box from all detections."""
     if not all_boxes:
@@ -149,7 +196,6 @@ def _expand_to_body(
 ) -> BBox:
     """Scale face box outward to cover shoulders + torso."""
     cx = fx + fw // 2
-    cy = fy + fh // 2
 
     new_w = int(fw * BODY_WIDTH_SCALE)
     new_h = int(fh * BODY_HEIGHT_SCALE)
@@ -177,15 +223,15 @@ def _snap_to_corner(box: BBox, frame_w: int, frame_h: int) -> BBox:
     x, y, w, h = box.x, box.y, box.w, box.h
 
     # Horizontal snap
-    if cx < snap_x:          # near left edge
+    if cx < snap_x:
         x = 0
-    elif cx > frame_w - snap_x:  # near right edge
+    elif cx > frame_w - snap_x:
         x = frame_w - w
 
     # Vertical snap
-    if cy < snap_y:           # near top edge
+    if cy < snap_y:
         y = 0
-    elif cy > frame_h - snap_y:  # near bottom edge
+    elif cy > frame_h - snap_y:
         y = frame_h - h
 
     return BBox(x, y, w, h).clamp(frame_w, frame_h)
@@ -197,9 +243,13 @@ def detect_facecam_region(video_path: Path, use_mediapipe: bool = True) -> BBox 
     """
     Analyse video_path and return the estimated facecam BBox.
 
+    Frames are upscaled to at least 640px wide before detection so that
+    tiny facecam overlays on low-res (e.g. 256x144) videos are detectable.
+    Detected coordinates are scaled back to native resolution before returning.
+
     Args:
         video_path:     path to the raw.mp4 file
-        use_mediapipe:  try MediaPipe first; fall back to Haar if unavailable
+        use_mediapipe:  try MediaPipe FaceLandmarker first; fall back to Haar
 
     Returns:
         BBox or None if no stable face region was found.
@@ -219,31 +269,28 @@ def detect_facecam_region(video_path: Path, use_mediapipe: bool = True) -> BBox 
         log.warning("Could not read frames from %s", video_path)
         return None
 
-    # Choose detector
-    detect_fn = None
+    # Choose detector — prefer new MediaPipe Tasks API
+    detect_fn = _detect_faces_haar  # default fallback
     if use_mediapipe:
-        try:
-            import mediapipe as _mp
-            _ = _mp.solutions.face_detection  # will raise AttributeError on 0.10+
+        if _get_landmarker() is not None:
             detect_fn = _detect_faces_mediapipe
-            log.debug("Using MediaPipe face detector")
-        except (ImportError, AttributeError):
-            log.warning("MediaPipe solutions API unavailable; falling back to Haar cascade")
+            log.debug("Using MediaPipe FaceLandmarker detector")
+        else:
+            log.warning("MediaPipe FaceLandmarker unavailable; using Haar cascade fallback")
 
-    if detect_fn is None:
-        detect_fn = _detect_faces_haar
-        log.debug("Using OpenCV Haar cascade")
-
-    # Collect detections
+    # Collect detections (upscale each frame first)
     all_boxes: list[tuple[int, int, int, int]] = []
     hit_frames = 0
 
     for frame in frames:
-        boxes = detect_fn(frame)
+        upscaled, scale = _upscale(frame)
+        boxes = detect_fn(upscaled)
         if boxes:
             hit_frames += 1
-            # Take the largest face in this frame (most likely the streamer)
+            # Take the largest face, then scale coordinates back to native res
             largest = max(boxes, key=lambda b: b[2] * b[3])
+            if scale != 1.0:
+                largest = tuple(int(v / scale) for v in largest)
             all_boxes.append(largest)
 
     hit_rate = hit_frames / len(frames)
@@ -254,7 +301,7 @@ def detect_facecam_region(video_path: Path, use_mediapipe: bool = True) -> BBox 
                     hit_rate * 100, MIN_FACE_HIT_RATE * 100)
         return None
 
-    dominant = _dominant_box(all_boxes, fw, fh)
+    dominant = _dominant_box(all_boxes)
     if dominant is None:
         return None
 

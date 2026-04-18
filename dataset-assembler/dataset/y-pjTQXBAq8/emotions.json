@@ -1,0 +1,411 @@
+[
+  {
+    "t": 0.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 60.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 92.41,
+      "happy": 0.11,
+      "excited": 2.33,
+      "sad": 20.93,
+      "angry": 22.42,
+      "fear": 4.46,
+      "surprise": 4.12,
+      "disgust": 7.94,
+      "contempt": 5.89,
+      "confused": 22.87
+    }
+  },
+  {
+    "t": 120.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 85.38,
+      "happy": 0.14,
+      "excited": 0.26,
+      "sad": 34.44,
+      "angry": 45.62,
+      "fear": 0.21,
+      "surprise": 0.33,
+      "disgust": 15.45,
+      "contempt": 11.34,
+      "confused": 34.82
+    }
+  },
+  {
+    "t": 180.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 240.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 300.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 360.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 420.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 480.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 540.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 600.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 660.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 88.44,
+      "happy": 2.22,
+      "excited": 3.41,
+      "sad": 31.12,
+      "angry": 40.06,
+      "fear": 0.28,
+      "surprise": 3.51,
+      "disgust": 15.79,
+      "contempt": 11.57,
+      "confused": 29.6
+    }
+  },
+  {
+    "t": 720.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 780.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 840.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 900.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 960.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1020.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1080.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1140.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1200.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1260.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1320.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1380.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 90.96,
+      "happy": 0.34,
+      "excited": 0.66,
+      "sad": 28.58,
+      "angry": 34.65,
+      "fear": 0.31,
+      "surprise": 0.79,
+      "disgust": 16.25,
+      "contempt": 11.07,
+      "confused": 30.93
+    }
+  },
+  {
+    "t": 1440.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1500.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1560.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1620.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1680.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1740.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1800.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1860.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1920.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 89.99,
+      "happy": 0.72,
+      "excited": 1.19,
+      "sad": 29.6,
+      "angry": 36.27,
+      "fear": 0.28,
+      "surprise": 1.33,
+      "disgust": 14.74,
+      "contempt": 10.01,
+      "confused": 34.03
+    }
+  },
+  {
+    "t": 1980.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2040.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2100.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2160.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2220.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2280.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2340.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2400.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2460.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2520.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2580.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2640.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2700.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2760.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 89.99,
+      "happy": 0.1,
+      "excited": 0.27,
+      "sad": 29.62,
+      "angry": 36.74,
+      "fear": 0.3,
+      "surprise": 0.39,
+      "disgust": 13.84,
+      "contempt": 9.71,
+      "confused": 29.73
+    }
+  },
+  {
+    "t": 2820.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2880.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2940.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3000.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3060.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3120.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3180.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 73.36,
+      "happy": 0.57,
+      "excited": 0.5,
+      "sad": 46.13,
+      "angry": 70.24,
+      "fear": 0.11,
+      "surprise": 0.25,
+      "disgust": 13.78,
+      "contempt": 13.75,
+      "confused": 53.99
+    }
+  },
+  {
+    "t": 3240.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3300.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3360.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3420.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 90.27,
+      "happy": 0.44,
+      "excited": 0.78,
+      "sad": 29.37,
+      "angry": 36.02,
+      "fear": 0.25,
+      "surprise": 0.89,
+      "disgust": 16.49,
+      "contempt": 11.27,
+      "confused": 36.17
+    }
+  },
+  {
+    "t": 3480.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 89.46,
+      "happy": 0.06,
+      "excited": 0.14,
+      "sad": 30.26,
+      "angry": 37.89,
+      "fear": 0.37,
+      "surprise": 0.23,
+      "disgust": 12.32,
+      "contempt": 8.76,
+      "confused": 51.48
+    }
+  },
+  {
+    "t": 3540.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3600.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3660.0,
+    "emotion": "none",
+    "scores": {}
+  }
+]

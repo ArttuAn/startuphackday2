@@ -1,0 +1,249 @@
+[
+  {
+    "t": 0.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 93.96,
+      "happy": 0.31,
+      "excited": 0.77,
+      "sad": 25.06,
+      "angry": 34.35,
+      "fear": 0.74,
+      "surprise": 1.04,
+      "disgust": 11.96,
+      "contempt": 11.97,
+      "confused": 26.32
+    }
+  },
+  {
+    "t": 60.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 120.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 180.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 240.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 300.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 360.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 420.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 87.26,
+      "happy": 0.05,
+      "excited": 0.22,
+      "sad": 32.24,
+      "angry": 43.78,
+      "fear": 0.34,
+      "surprise": 0.36,
+      "disgust": 16.25,
+      "contempt": 13.09,
+      "confused": 37.28
+    }
+  },
+  {
+    "t": 480.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 540.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 600.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 660.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 720.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 780.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 840.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 900.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 960.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 94.9,
+      "happy": 0.05,
+      "excited": 0.34,
+      "sad": 24.19,
+      "angry": 28.51,
+      "fear": 0.64,
+      "surprise": 0.58,
+      "disgust": 12.76,
+      "contempt": 9.56,
+      "confused": 29.91
+    }
+  },
+  {
+    "t": 1020.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1080.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1140.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1200.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1260.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 92.02,
+      "happy": 0.16,
+      "excited": 1.01,
+      "sad": 25.61,
+      "angry": 29.86,
+      "fear": 1.6,
+      "surprise": 1.66,
+      "disgust": 17.72,
+      "contempt": 12.17,
+      "confused": 39.8
+    }
+  },
+  {
+    "t": 1320.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1380.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1440.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 91.64,
+      "happy": 0.21,
+      "excited": 0.47,
+      "sad": 27.54,
+      "angry": 37.25,
+      "fear": 0.58,
+      "surprise": 0.61,
+      "disgust": 17.16,
+      "contempt": 14.57,
+      "confused": 30.63
+    }
+  },
+  {
+    "t": 1500.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1560.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 90.49,
+      "happy": 0.37,
+      "excited": 0.72,
+      "sad": 28.98,
+      "angry": 35.26,
+      "fear": 0.39,
+      "surprise": 0.89,
+      "disgust": 16.77,
+      "contempt": 11.43,
+      "confused": 28.63
+    }
+  },
+  {
+    "t": 1620.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1680.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1740.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1800.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1860.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1920.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1980.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 93.38,
+      "happy": 1.14,
+      "excited": 1.19,
+      "sad": 24.71,
+      "angry": 35.99,
+      "fear": 1.26,
+      "surprise": 0.7,
+      "disgust": 12.35,
+      "contempt": 14.27,
+      "confused": 25.01
+    }
+  }
+]

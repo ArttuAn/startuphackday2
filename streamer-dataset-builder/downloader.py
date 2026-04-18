@@ -51,17 +51,18 @@ def _ydl_opts(out_dir: Path, vid_id: str) -> dict:
 
     if _has_ffmpeg():
         fmt = (
-            "worstvideo[ext=mp4]+worstaudio[ext=m4a]"
-            "/worstvideo+worstaudio"
-            "/worst[ext=mp4]/worst"
+            "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]"
+            "/bestvideo[height<=720]+bestaudio"
+            "/best[height<=720][ext=mp4]"
+            "/best[height<=720]"
+            "/best[ext=mp4]/best"
         )
         opts = {
             "format":              fmt,
             "merge_output_format": "mp4",
         }
     else:
-        # No ffmpeg — grab a pre-muxed mp4 at lowest quality
-        fmt = "worst[ext=mp4]/worst"
+        fmt = "best[height<=720][ext=mp4]/best[height<=720]/best[ext=mp4]/best"
         opts = {"format": fmt}
 
     return {
@@ -72,6 +73,7 @@ def _ydl_opts(out_dir: Path, vid_id: str) -> dict:
         "no_warnings":  True,
         "ignoreerrors": False,
         "noprogress":   True,
+        "age_limit":    0,          # skip age-restricted videos silently
     }
 
 

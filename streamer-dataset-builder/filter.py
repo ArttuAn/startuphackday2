@@ -25,7 +25,14 @@ log = get_logger("filter")
 def load_seen_ids() -> set[str]:
     if not SEEN_IDS_FILE.exists():
         return set()
-    return set(SEEN_IDS_FILE.read_text().splitlines())
+    ids = set(SEEN_IDS_FILE.read_text().splitlines())
+    # Remove IDs where raw.mp4 no longer exists on disk
+    from config import RAW_VIDEOS_DIR
+    active = {vid_id for vid_id in ids if (RAW_VIDEOS_DIR / vid_id / "raw.mp4").exists()}
+    if len(active) != len(ids):
+        # Rewrite seen_ids with only active entries
+        SEEN_IDS_FILE.write_text("\n".join(active) + "\n" if active else "")
+    return active
 
 
 def save_seen_id(vid_id: str) -> None:

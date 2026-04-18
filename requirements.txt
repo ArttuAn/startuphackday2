@@ -1,0 +1,35 @@
+# ============================================================
+# Full requirements for the Streamer Reaction Dataset project
+# ============================================================
+# Compatible with Python 3.11, 3.12, 3.13, 3.14
+#
+# Install:
+#   pip install -r requirements.txt
+#
+# System dependency (install separately):
+#   ffmpeg  → winget install ffmpeg
+# ============================================================
+
+# ── Scraper (Block 1) ─────────────────────────────────────
+yt-dlp>=2024.3.10
+tqdm>=4.66.0
+
+# ── Audio processing ──────────────────────────────────────
+webrtcvad>=2.0.10
+
+# ── Video / image processing ──────────────────────────────
+opencv-python>=4.9.0
+numpy>=1.24.0
+
+# ── Face detection, landmarks & emotion (Blocks 2 + 4) ───
+# MediaPipe handles everything: face detection, 468 landmarks,
+# head pose, AND 52 blendshape expression coefficients
+# (browInnerUp, eyeWideLeft, mouthSmile, etc.)
+# No TensorFlow needed.
+mediapipe>=0.10.9
+
+# ── Voice separation (Block 3) ────────────────────────────
+# Optional — pipeline falls back to raw audio if unavailable.
+# Requires Python <=3.12 due to upstream torch constraints.
+# Install separately once on a compatible Python:
+#   pip install demucs

@@ -1,0 +1,474 @@
+[
+  {
+    "t": 0.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 60.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 120.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 180.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 240.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 300.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 360.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 420.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 480.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 540.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 600.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 660.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 77.85,
+      "happy": 0.14,
+      "excited": 0.12,
+      "sad": 41.87,
+      "angry": 58.55,
+      "fear": 0.12,
+      "surprise": 0.15,
+      "disgust": 10.8,
+      "contempt": 8.65,
+      "confused": 49.09
+    }
+  },
+  {
+    "t": 720.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 780.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 840.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 900.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 960.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1020.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1080.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1140.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1200.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1260.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 91.43,
+      "happy": 0.05,
+      "excited": 0.2,
+      "sad": 28.14,
+      "angry": 35.07,
+      "fear": 0.29,
+      "surprise": 0.33,
+      "disgust": 12.12,
+      "contempt": 9.1,
+      "confused": 44.5
+    }
+  },
+  {
+    "t": 1320.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1380.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1440.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1500.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 92.12,
+      "happy": 0.19,
+      "excited": 0.24,
+      "sad": 27.37,
+      "angry": 34.16,
+      "fear": 0.4,
+      "surprise": 0.24,
+      "disgust": 7.3,
+      "contempt": 6.2,
+      "confused": 33.67
+    }
+  },
+  {
+    "t": 1560.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1620.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1680.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1740.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1800.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 83.77,
+      "happy": 0.09,
+      "excited": 0.13,
+      "sad": 35.92,
+      "angry": 48.2,
+      "fear": 0.22,
+      "surprise": 0.32,
+      "disgust": 8.3,
+      "contempt": 6.65,
+      "confused": 68.58
+    }
+  },
+  {
+    "t": 1860.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1920.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 1980.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2040.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2100.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2160.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2220.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2280.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2340.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2400.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2460.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2520.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 72.89,
+      "happy": 0.05,
+      "excited": 0.05,
+      "sad": 46.89,
+      "angry": 65.53,
+      "fear": 0.13,
+      "surprise": 0.15,
+      "disgust": 9.05,
+      "contempt": 6.53,
+      "confused": 52.22
+    }
+  },
+  {
+    "t": 2580.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2640.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2700.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2760.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2820.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 2880.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 84.35,
+      "happy": 0.24,
+      "excited": 0.2,
+      "sad": 35.22,
+      "angry": 47.46,
+      "fear": 0.19,
+      "surprise": 0.24,
+      "disgust": 10.86,
+      "contempt": 8.63,
+      "confused": 83.56
+    }
+  },
+  {
+    "t": 2940.0,
+    "emotion": "neutral",
+    "scores": {
+      "neutral": 87.47,
+      "happy": 0.07,
+      "excited": 0.14,
+      "sad": 32.36,
+      "angry": 41.36,
+      "fear": 0.12,
+      "surprise": 0.22,
+      "disgust": 14.52,
+      "contempt": 10.2,
+      "confused": 34.67
+    }
+  },
+  {
+    "t": 3000.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3060.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3120.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3180.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3240.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3300.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3360.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3420.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3480.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3540.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3600.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3660.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3720.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3780.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3840.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3900.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 3960.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4020.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4080.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4140.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4200.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4260.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4320.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4380.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4440.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4500.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4560.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4620.0,
+    "emotion": "none",
+    "scores": {}
+  },
+  {
+    "t": 4680.0,
+    "emotion": "none",
+    "scores": {}
+  }
+]
