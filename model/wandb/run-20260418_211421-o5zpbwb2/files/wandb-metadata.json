@@ -1,0 +1,44 @@
+{
+  "os":  "Windows-11-10.0.26200-SP0",
+  "python":  "CPython 3.13.5",
+  "startedAt":  "2026-04-18T18:14:21.788224Z",
+  "args":  [
+    "--wandb_key",
+    "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"
+  ],
+  "program":  "C:\\Users\\Admin\\OneDrive\\Desktop\\startuphackYT\\model\\train.py",
+  "codePath":  "model\\train.py",
+  "codePathLocal":  "train.py",
+  "git":  {
+    "remote":  "https://github.com/nzeulin/startup-hack.git",
+    "commit":  "38f005f9309843658e77eaf55aee658b07507e2e"
+  },
+  "email":  "arttu.antikainen@outlook.com",
+  "root":  "C:\\Users\\Admin\\OneDrive\\Desktop\\startuphackYT\\model",
+  "host":  "Arttu",
+  "executable":  "C:\\Users\\Admin\\anaconda3\\python.exe",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "gpu":  "Quadro T2000",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "511217897472",
+      "used":  "477473431552"
+    }
+  },
+  "memory":  {
+    "total":  "34046373888"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Quadro T2000",
+      "memoryTotal":  "4294967296",
+      "cudaCores":  1024,
+      "architecture":  "Turing",
+      "uuid":  "GPU-8ad99038-a6a3-0295-c374-6515e2240edf"
+    }
+  ],
+  "cudaVersion":  "12.8",
+  "writerId":  "qgv0c1e2o4u1fdnsa3g5zzbrvp1wv5bm"
+}

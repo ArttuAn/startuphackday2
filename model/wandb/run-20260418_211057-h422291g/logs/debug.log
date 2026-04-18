@@ -1,0 +1,20 @@
+2026-04-18 21:10:57,872 INFO    MainThread:18484 [wandb_setup.py:_flush():81] Current SDK version is 0.26.0
+2026-04-18 21:10:57,872 INFO    MainThread:18484 [wandb_setup.py:_flush():81] Configure stats pid to 18484
+2026-04-18 21:10:57,872 INFO    MainThread:18484 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-04-18 21:10:57,872 INFO    MainThread:18484 [wandb_init.py:setup_run_log_directory():721] Logging user logs to C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\wandb\run-20260418_211057-h422291g\logs\debug.log
+2026-04-18 21:10:57,872 INFO    MainThread:18484 [wandb_init.py:setup_run_log_directory():722] Logging internal logs to C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\wandb\run-20260418_211057-h422291g\logs\debug-internal.log
+2026-04-18 21:10:57,875 INFO    MainThread:18484 [wandb_init.py:init():848] calling init triggers
+2026-04-18 21:10:57,875 INFO    MainThread:18484 [wandb_init.py:init():853] wandb.init called with sweep_config: {}
+config: {'model_name': 'google/siglip-base-patch16-224', 'epochs': 30, 'batch_size': 4, 'lr': 0.001, 'n_frames': 4, 'n_emotions': 10, 'emotions': ['neutral', 'happy', 'excited', 'sad', 'angry', 'fear', 'surprise', 'disgust', 'contempt', 'confused'], 'device': 'cpu', '_wandb': {}}
+2026-04-18 21:10:57,875 INFO    MainThread:18484 [wandb_init.py:init():896] starting backend
+2026-04-18 21:11:00,261 INFO    MainThread:18484 [wandb_init.py:init():911] sending inform_init request
+2026-04-18 21:11:00,305 INFO    MainThread:18484 [wandb_init.py:init():919] backend started and connected
+2026-04-18 21:11:00,337 INFO    MainThread:18484 [wandb_init.py:init():989] updated telemetry
+2026-04-18 21:11:00,383 INFO    MainThread:18484 [wandb_init.py:init():1013] communicating run to backend with 90.0 second timeout
+2026-04-18 21:11:01,826 INFO    MainThread:18484 [wandb_init.py:init():1058] starting run threads in backend
+2026-04-18 21:11:02,652 INFO    MainThread:18484 [wandb_run.py:_console_start():2542] atexit reg
+2026-04-18 21:11:02,652 INFO    MainThread:18484 [wandb_run.py:_redirect():2391] redirect: wrap_raw
+2026-04-18 21:11:02,652 INFO    MainThread:18484 [wandb_run.py:_redirect():2460] Wrapping output streams.
+2026-04-18 21:11:02,653 INFO    MainThread:18484 [wandb_run.py:_redirect():2483] Redirects installed.
+2026-04-18 21:11:02,657 INFO    MainThread:18484 [wandb_init.py:init():1098] run started, returning control to user process
+2026-04-18 21:11:38,242 INFO    MainThread:18484 [wandb_watch.py:_watch():69] Watching

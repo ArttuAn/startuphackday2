@@ -85,7 +85,8 @@ def build_steps(max_videos: int, shorts_only: bool = False) -> list[dict]:
         {
             "name":   "9. Evaluate (emotion consistency + FID)",
             "script": BASE / "model" / "evaluate.py",
-            "args":   ["--skip_fid"],   # FID is slow; remove --skip_fid if GPU available
+            "args":   ["--skip_fid",
+                       "--cross_game_dir", str(BASE / "eval-scraper" / "data")],
             "flag":   "skip_eval",
         },
     ]

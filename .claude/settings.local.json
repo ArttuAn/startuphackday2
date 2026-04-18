@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python -c \"import ast; ast.parse\\(open\\('run_pipeline.py'\\).read\\(\\)\\); print\\('OK'\\)\")"
-    ]
-  }
-}

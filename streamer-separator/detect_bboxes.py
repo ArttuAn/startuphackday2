@@ -48,13 +48,32 @@ def detect_face_in_frame(frame):
 
 
 def grab_frame(video_path: Path):
-    """Return the middle frame of the video."""
+    """
+    Try up to 10 evenly-spaced frames and return the first one where a face
+    is detected. Falls back to the middle frame if none have a face.
+    """
     cap   = cv2.VideoCapture(str(video_path))
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    cap.set(cv2.CAP_PROP_POS_FRAMES, total // 2)
-    ok, frame = cap.read()
+    if total <= 0:
+        cap.release()
+        return None
+
+    indices = [int(total * r) for r in (0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)]
+    best_frame = None
+
+    for idx in indices:
+        cap.set(cv2.CAP_PROP_POS_FRAMES, idx)
+        ok, frame = cap.read()
+        if not ok:
+            continue
+        if best_frame is None:
+            best_frame = frame          # fallback if nothing has a face
+        if detect_face_in_frame(frame) is not None:
+            cap.release()
+            return frame                # return first frame with a detected face
+
     cap.release()
-    return frame if ok else None
+    return best_frame
 
 
 def main():

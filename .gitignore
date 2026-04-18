@@ -20,3 +20,4 @@ __pycache__/
 
 # This script (optional — remove line if you want it in the repo)
 push_to_github.ps1
+.claude 

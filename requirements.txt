@@ -38,3 +38,5 @@ mediapipe>=0.10.9
 torch>=2.2.0
 torchvision>=0.17.0
 scikit-learn>=1.4.0
+transformers>=4.40.0
+wandb>=0.17.0

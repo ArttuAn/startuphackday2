@@ -1,0 +1,22 @@
+2026-04-18 21:09:03,674 INFO    MainThread:23408 [wandb_setup.py:_flush():81] Current SDK version is 0.26.0
+2026-04-18 21:09:03,674 INFO    MainThread:23408 [wandb_setup.py:_flush():81] Configure stats pid to 23408
+2026-04-18 21:09:03,674 INFO    MainThread:23408 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-04-18 21:09:03,675 INFO    MainThread:23408 [wandb_init.py:setup_run_log_directory():721] Logging user logs to C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\wandb\run-20260418_210903-gg68xhfa\logs\debug.log
+2026-04-18 21:09:03,675 INFO    MainThread:23408 [wandb_init.py:setup_run_log_directory():722] Logging internal logs to C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\wandb\run-20260418_210903-gg68xhfa\logs\debug-internal.log
+2026-04-18 21:09:03,675 INFO    MainThread:23408 [wandb_init.py:init():848] calling init triggers
+2026-04-18 21:09:03,675 INFO    MainThread:23408 [wandb_init.py:init():853] wandb.init called with sweep_config: {}
+config: {'model_name': 'google/siglip-base-patch16-224', 'epochs': 30, 'batch_size': 4, 'lr': 0.001, 'n_frames': 4, 'n_emotions': 10, 'emotions': ['neutral', 'happy', 'excited', 'sad', 'angry', 'fear', 'surprise', 'disgust', 'contempt', 'confused'], 'device': 'cpu', '_wandb': {}}
+2026-04-18 21:09:03,675 INFO    MainThread:23408 [wandb_init.py:init():896] starting backend
+2026-04-18 21:09:06,684 INFO    MainThread:23408 [wandb_init.py:init():911] sending inform_init request
+2026-04-18 21:09:06,729 INFO    MainThread:23408 [wandb_init.py:init():919] backend started and connected
+2026-04-18 21:09:06,763 INFO    MainThread:23408 [wandb_init.py:init():989] updated telemetry
+2026-04-18 21:09:06,802 INFO    MainThread:23408 [wandb_init.py:init():1013] communicating run to backend with 90.0 second timeout
+2026-04-18 21:09:09,155 INFO    MainThread:23408 [wandb_init.py:init():1058] starting run threads in backend
+2026-04-18 21:09:09,974 INFO    MainThread:23408 [wandb_run.py:_console_start():2542] atexit reg
+2026-04-18 21:09:09,974 INFO    MainThread:23408 [wandb_run.py:_redirect():2391] redirect: wrap_raw
+2026-04-18 21:09:09,974 INFO    MainThread:23408 [wandb_run.py:_redirect():2460] Wrapping output streams.
+2026-04-18 21:09:09,975 INFO    MainThread:23408 [wandb_run.py:_redirect():2483] Redirects installed.
+2026-04-18 21:09:09,979 INFO    MainThread:23408 [wandb_init.py:init():1098] run started, returning control to user process
+2026-04-18 21:09:45,041 INFO    MainThread:23408 [wandb_watch.py:_watch():69] Watching
+2026-04-18 21:09:49,319 INFO    wandb-AsyncioManager-main:23408 [service_client.py:_forward_responses():134] Reached EOF.
+2026-04-18 21:09:49,319 INFO    wandb-AsyncioManager-main:23408 [mailbox.py:close():155] Closing mailbox, abandoning 1 handles.

@@ -1345,7 +1345,7 @@
   },
   {
     "t": 480.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 65.21,
       "happy": 7.56,
@@ -2574,7 +2574,7 @@
   },
   {
     "t": 915.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.14,
       "happy": 0.67,
@@ -2599,7 +2599,7 @@
   },
   {
     "t": 920.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 86.71,
       "happy": 0.44,
@@ -2624,7 +2624,7 @@
   },
   {
     "t": 925.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 85.17,
       "happy": 1.3,
@@ -2649,7 +2649,7 @@
   },
   {
     "t": 930.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 81.68,
       "happy": 0.69,
@@ -2674,7 +2674,7 @@
   },
   {
     "t": 935.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.58,
       "happy": 0.23,
@@ -2699,7 +2699,7 @@
   },
   {
     "t": 940.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 85.82,
       "happy": 0.08,
@@ -3018,7 +3018,7 @@
   },
   {
     "t": 1050.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 95.13,
       "happy": 0.1,
@@ -3043,7 +3043,7 @@
   },
   {
     "t": 1055.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 94.98,
       "happy": 1.13,
@@ -3068,7 +3068,7 @@
   },
   {
     "t": 1060.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 84.54,
       "happy": 0.96,
@@ -3093,7 +3093,7 @@
   },
   {
     "t": 1065.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 95.13,
       "happy": 1.0,
@@ -3118,7 +3118,7 @@
   },
   {
     "t": 1070.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.33,
       "happy": 1.21,
@@ -3143,7 +3143,7 @@
   },
   {
     "t": 1075.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 72.56,
       "happy": 0.7,
@@ -3168,7 +3168,7 @@
   },
   {
     "t": 1080.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.12,
       "happy": 1.11,
@@ -3193,7 +3193,7 @@
   },
   {
     "t": 1085.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 78.39,
       "happy": 0.29,
@@ -3218,7 +3218,7 @@
   },
   {
     "t": 1090.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.36,
       "happy": 0.75,
@@ -3243,7 +3243,7 @@
   },
   {
     "t": 1095.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 74.77,
       "happy": 1.82,
@@ -4066,7 +4066,7 @@
   },
   {
     "t": 1385.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 91.79,
       "happy": 1.03,
@@ -4091,7 +4091,7 @@
   },
   {
     "t": 1390.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.48,
       "happy": 0.07,
@@ -4116,7 +4116,7 @@
   },
   {
     "t": 1395.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.81,
       "happy": 1.12,
@@ -4141,7 +4141,7 @@
   },
   {
     "t": 1400.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 89.89,
       "happy": 1.2,
@@ -4166,7 +4166,7 @@
   },
   {
     "t": 1405.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 78.24,
       "happy": 0.41,
@@ -4191,7 +4191,7 @@
   },
   {
     "t": 1410.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 77.06,
       "happy": 1.95,
@@ -4216,7 +4216,7 @@
   },
   {
     "t": 1415.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 84.65,
       "happy": 1.2,
@@ -4241,7 +4241,7 @@
   },
   {
     "t": 1420.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 72.65,
       "happy": 1.27,
@@ -4266,7 +4266,7 @@
   },
   {
     "t": 1425.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 83.97,
       "happy": 2.05,
@@ -4795,7 +4795,7 @@
   },
   {
     "t": 1610.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 79.51,
       "happy": 3.41,
@@ -4820,7 +4820,7 @@
   },
   {
     "t": 1615.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 78.81,
       "happy": 2.08,
@@ -4845,7 +4845,7 @@
   },
   {
     "t": 1620.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 84.46,
       "happy": 0.74,
@@ -4884,7 +4884,7 @@
   },
   {
     "t": 1630.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 84.8,
       "happy": 1.7,
@@ -4909,7 +4909,7 @@
   },
   {
     "t": 1635.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 77.49,
       "happy": 4.57,
@@ -7104,7 +7104,7 @@
   },
   {
     "t": 2415.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.59,
       "happy": 1.13,
@@ -7129,7 +7129,7 @@
   },
   {
     "t": 2420.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 95.31,
       "happy": 1.18,
@@ -7154,7 +7154,7 @@
   },
   {
     "t": 2425.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.39,
       "happy": 2.15,
@@ -7179,7 +7179,7 @@
   },
   {
     "t": 2430.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 83.5,
       "happy": 2.33,
@@ -7204,7 +7204,7 @@
   },
   {
     "t": 2435.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 85.69,
       "happy": 0.65,
@@ -7229,7 +7229,7 @@
   },
   {
     "t": 2440.0,
-    "emotion": "neutral",
+    "emotion": "happy",
     "scores": {
       "neutral": 63.42,
       "happy": 38.03,
@@ -7254,7 +7254,7 @@
   },
   {
     "t": 2445.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 85.38,
       "happy": 1.4,
@@ -7279,7 +7279,7 @@
   },
   {
     "t": 2450.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 70.99,
       "happy": 1.14,
@@ -7304,7 +7304,7 @@
   },
   {
     "t": 2455.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 76.39,
       "happy": 0.89,
@@ -7329,7 +7329,7 @@
   },
   {
     "t": 2460.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 78.79,
       "happy": 0.19,
@@ -7368,7 +7368,7 @@
   },
   {
     "t": 2470.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.02,
       "happy": 0.07,
@@ -7393,7 +7393,7 @@
   },
   {
     "t": 2475.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 80.0,
       "happy": 0.89,
@@ -7572,7 +7572,7 @@
   },
   {
     "t": 2535.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.26,
       "happy": 0.37,
@@ -7597,7 +7597,7 @@
   },
   {
     "t": 2540.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 86.91,
       "happy": 0.09,
@@ -7622,7 +7622,7 @@
   },
   {
     "t": 2545.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.89,
       "happy": 1.28,
@@ -7647,7 +7647,7 @@
   },
   {
     "t": 2550.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.26,
       "happy": 1.59,
@@ -7672,7 +7672,7 @@
   },
   {
     "t": 2555.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 87.93,
       "happy": 4.6,
@@ -7697,7 +7697,7 @@
   },
   {
     "t": 2560.0,
-    "emotion": "neutral",
+    "emotion": "happy",
     "scores": {
       "neutral": 65.12,
       "happy": 42.03,
@@ -7722,7 +7722,7 @@
   },
   {
     "t": 2565.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.16,
       "happy": 1.43,
@@ -7747,7 +7747,7 @@
   },
   {
     "t": 2570.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.36,
       "happy": 0.61,
@@ -7772,7 +7772,7 @@
   },
   {
     "t": 2575.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.51,
       "happy": 0.7,
@@ -8497,7 +8497,7 @@
   },
   {
     "t": 2830.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.9,
       "happy": 0.09,
@@ -8522,7 +8522,7 @@
   },
   {
     "t": 2835.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.47,
       "happy": 2.87,
@@ -8547,7 +8547,7 @@
   },
   {
     "t": 2840.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 93.56,
       "happy": 4.64,
@@ -8572,7 +8572,7 @@
   },
   {
     "t": 2845.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.16,
       "happy": 0.95,
@@ -8597,7 +8597,7 @@
   },
   {
     "t": 2850.0,
-    "emotion": "neutral",
+    "emotion": "contempt",
     "scores": {
       "neutral": 67.43,
       "happy": 19.57,
@@ -8622,7 +8622,7 @@
   },
   {
     "t": 2855.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 92.54,
       "happy": 3.24,
@@ -8647,7 +8647,7 @@
   },
   {
     "t": 2860.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 80.8,
       "happy": 0.52,
@@ -8672,7 +8672,7 @@
   },
   {
     "t": 2865.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.15,
       "happy": 0.58,
@@ -8697,7 +8697,7 @@
   },
   {
     "t": 2870.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 89.65,
       "happy": 1.8,
@@ -9422,7 +9422,7 @@
   },
   {
     "t": 3125.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.09,
       "happy": 0.61,
@@ -9447,7 +9447,7 @@
   },
   {
     "t": 3130.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.45,
       "happy": 2.66,
@@ -9472,7 +9472,7 @@
   },
   {
     "t": 3135.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 72.11,
       "happy": 0.81,
@@ -9497,7 +9497,7 @@
   },
   {
     "t": 3140.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 82.78,
       "happy": 0.19,
@@ -9522,7 +9522,7 @@
   },
   {
     "t": 3145.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 91.3,
       "happy": 2.8,
@@ -9547,7 +9547,7 @@
   },
   {
     "t": 3150.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.11,
       "happy": 1.27,
@@ -9572,7 +9572,7 @@
   },
   {
     "t": 3155.0,
-    "emotion": "neutral",
+    "emotion": "surprise",
     "scores": {
       "neutral": 73.54,
       "happy": 4.14,
@@ -10745,7 +10745,7 @@
   },
   {
     "t": 3570.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.18,
       "happy": 0.68,
@@ -10770,7 +10770,7 @@
   },
   {
     "t": 3575.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.31,
       "happy": 0.63,
@@ -10795,7 +10795,7 @@
   },
   {
     "t": 3580.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 86.2,
       "happy": 3.51,
@@ -10820,7 +10820,7 @@
   },
   {
     "t": 3585.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 83.63,
       "happy": 1.09,
@@ -10845,7 +10845,7 @@
   },
   {
     "t": 3590.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.72,
       "happy": 1.71,
@@ -10870,7 +10870,7 @@
   },
   {
     "t": 3595.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 83.54,
       "happy": 0.06,
@@ -10895,7 +10895,7 @@
   },
   {
     "t": 3600.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 79.81,
       "happy": 1.73,
@@ -10920,7 +10920,7 @@
   },
   {
     "t": 3605.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 85.89,
       "happy": 0.59,
@@ -10945,7 +10945,7 @@
   },
   {
     "t": 3610.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 80.0,
       "happy": 0.6,
@@ -10970,7 +10970,7 @@
   },
   {
     "t": 3615.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.5,
       "happy": 0.94,
@@ -10995,7 +10995,7 @@
   },
   {
     "t": 3620.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 77.98,
       "happy": 3.62,
@@ -11020,7 +11020,7 @@
   },
   {
     "t": 3625.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.16,
       "happy": 2.98,
@@ -11045,7 +11045,7 @@
   },
   {
     "t": 3630.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 89.81,
       "happy": 4.3,
@@ -11070,7 +11070,7 @@
   },
   {
     "t": 3635.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.96,
       "happy": 0.85,
@@ -11095,7 +11095,7 @@
   },
   {
     "t": 3640.0,
-    "emotion": "neutral",
+    "emotion": "surprise",
     "scores": {
       "neutral": 72.91,
       "happy": 2.94,
@@ -11120,7 +11120,7 @@
   },
   {
     "t": 3645.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.34,
       "happy": 0.79,
@@ -11145,7 +11145,7 @@
   },
   {
     "t": 3650.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 86.81,
       "happy": 0.66,
@@ -11982,7 +11982,7 @@
   },
   {
     "t": 3945.0,
-    "emotion": "neutral",
+    "emotion": "surprise",
     "scores": {
       "neutral": 62.73,
       "happy": 0.57,
@@ -12077,7 +12077,7 @@
   },
   {
     "t": 3975.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.29,
       "happy": 0.01,
@@ -12102,7 +12102,7 @@
   },
   {
     "t": 3980.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 82.72,
       "happy": 0.15,
@@ -12127,7 +12127,7 @@
   },
   {
     "t": 3985.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.46,
       "happy": 0.53,
@@ -12152,7 +12152,7 @@
   },
   {
     "t": 3990.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.62,
       "happy": 0.73,
@@ -12177,7 +12177,7 @@
   },
   {
     "t": 3995.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 88.57,
       "happy": 0.91,
@@ -12202,7 +12202,7 @@
   },
   {
     "t": 4000.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 78.76,
       "happy": 1.12,
@@ -12227,7 +12227,7 @@
   },
   {
     "t": 4005.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 90.13,
       "happy": 0.54,
@@ -12252,7 +12252,7 @@
   },
   {
     "t": 4010.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 81.04,
       "happy": 0.15,
@@ -12277,7 +12277,7 @@
   },
   {
     "t": 4015.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 82.1,
       "happy": 0.57,
@@ -12302,7 +12302,7 @@
   },
   {
     "t": 4020.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 82.44,
       "happy": 2.54,
@@ -12327,7 +12327,7 @@
   },
   {
     "t": 4025.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 82.74,
       "happy": 1.74,
@@ -12352,7 +12352,7 @@
   },
   {
     "t": 4030.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 72.04,
       "happy": 1.16,
@@ -12377,7 +12377,7 @@
   },
   {
     "t": 4035.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 79.45,
       "happy": 0.99,
@@ -12402,7 +12402,7 @@
   },
   {
     "t": 4040.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 81.51,
       "happy": 0.1,
@@ -12427,7 +12427,7 @@
   },
   {
     "t": 4045.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 79.48,
       "happy": 0.67,
@@ -12452,7 +12452,7 @@
   },
   {
     "t": 4050.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 70.58,
       "happy": 0.19,
@@ -12477,7 +12477,7 @@
   },
   {
     "t": 4055.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 92.29,
       "happy": 1.57,
@@ -12502,7 +12502,7 @@
   },
   {
     "t": 4060.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 84.12,
       "happy": 3.92,
@@ -12527,7 +12527,7 @@
   },
   {
     "t": 4065.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 90.41,
       "happy": 4.43,
@@ -12552,7 +12552,7 @@
   },
   {
     "t": 4070.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 75.71,
       "happy": 0.07,
@@ -12577,7 +12577,7 @@
   },
   {
     "t": 4075.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 91.25,
       "happy": 0.85,
@@ -12602,7 +12602,7 @@
   },
   {
     "t": 4080.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 80.22,
       "happy": 0.18,
@@ -12627,7 +12627,7 @@
   },
   {
     "t": 4085.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 70.78,
       "happy": 1.81,
@@ -12652,7 +12652,7 @@
   },
   {
     "t": 4090.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 74.29,
       "happy": 0.61,
@@ -12677,7 +12677,7 @@
   },
   {
     "t": 4095.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 69.2,
       "happy": 0.55,
@@ -12702,7 +12702,7 @@
   },
   {
     "t": 4100.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 91.6,
       "happy": 0.03,
@@ -12979,7 +12979,7 @@
   },
   {
     "t": 4195.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 83.86,
       "happy": 0.29,
@@ -13046,7 +13046,7 @@
   },
   {
     "t": 4215.0,
-    "emotion": "neutral",
+    "emotion": "happy",
     "scores": {
       "neutral": 70.73,
       "happy": 36.62,
@@ -13561,7 +13561,7 @@
   },
   {
     "t": 4395.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.97,
       "happy": 3.08,
@@ -13586,7 +13586,7 @@
   },
   {
     "t": 4400.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 91.61,
       "happy": 1.71,
@@ -13611,7 +13611,7 @@
   },
   {
     "t": 4405.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 89.37,
       "happy": 2.47,
@@ -13636,7 +13636,7 @@
   },
   {
     "t": 4410.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 90.83,
       "happy": 3.07,
@@ -13661,7 +13661,7 @@
   },
   {
     "t": 4415.0,
-    "emotion": "neutral",
+    "emotion": "surprise",
     "scores": {
       "neutral": 62.2,
       "happy": 7.86,
@@ -13686,7 +13686,7 @@
   },
   {
     "t": 4420.0,
-    "emotion": "neutral",
+    "emotion": "surprise",
     "scores": {
       "neutral": 72.29,
       "happy": 7.57,
@@ -13711,7 +13711,7 @@
   },
   {
     "t": 4425.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.15,
       "happy": 4.88,
@@ -13736,7 +13736,7 @@
   },
   {
     "t": 4430.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 90.82,
       "happy": 5.14,
@@ -13761,7 +13761,7 @@
   },
   {
     "t": 4435.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.72,
       "happy": 0.91,
@@ -13786,7 +13786,7 @@
   },
   {
     "t": 4440.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 89.49,
       "happy": 1.22,
@@ -14091,7 +14091,7 @@
   },
   {
     "t": 4545.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 71.66,
       "happy": 1.32,
@@ -14116,7 +14116,7 @@
   },
   {
     "t": 4550.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 80.18,
       "happy": 0.07,
@@ -14141,7 +14141,7 @@
   },
   {
     "t": 4555.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.32,
       "happy": 0.71,
@@ -14166,7 +14166,7 @@
   },
   {
     "t": 4560.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.81,
       "happy": 0.24,
@@ -14191,7 +14191,7 @@
   },
   {
     "t": 4565.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 88.37,
       "happy": 5.91,
@@ -14216,7 +14216,7 @@
   },
   {
     "t": 4570.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 91.32,
       "happy": 0.6,
@@ -14241,7 +14241,7 @@
   },
   {
     "t": 4575.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.69,
       "happy": 0.97,
@@ -14266,7 +14266,7 @@
   },
   {
     "t": 4580.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.97,
       "happy": 0.46,
@@ -14291,7 +14291,7 @@
   },
   {
     "t": 4585.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.66,
       "happy": 0.6,
@@ -14316,7 +14316,7 @@
   },
   {
     "t": 4590.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 92.51,
       "happy": 0.08,
@@ -14355,7 +14355,7 @@
   },
   {
     "t": 4600.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.78,
       "happy": 1.19,
@@ -14380,7 +14380,7 @@
   },
   {
     "t": 4605.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 94.37,
       "happy": 0.88,
@@ -14405,7 +14405,7 @@
   },
   {
     "t": 4610.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.56,
       "happy": 0.24,
@@ -14430,7 +14430,7 @@
   },
   {
     "t": 4615.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.65,
       "happy": 0.75,
@@ -14455,7 +14455,7 @@
   },
   {
     "t": 4620.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 83.12,
       "happy": 0.44,
@@ -14480,7 +14480,7 @@
   },
   {
     "t": 4625.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.63,
       "happy": 0.08,
@@ -14505,7 +14505,7 @@
   },
   {
     "t": 4630.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.77,
       "happy": 0.44,
@@ -14530,7 +14530,7 @@
   },
   {
     "t": 4635.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.26,
       "happy": 1.96,
@@ -14555,7 +14555,7 @@
   },
   {
     "t": 4640.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 90.64,
       "happy": 2.07,
@@ -14580,7 +14580,7 @@
   },
   {
     "t": 4645.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 92.05,
       "happy": 0.71,
@@ -14605,7 +14605,7 @@
   },
   {
     "t": 4650.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.03,
       "happy": 0.63,
@@ -14630,7 +14630,7 @@
   },
   {
     "t": 4655.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 93.16,
       "happy": 0.6,
@@ -14655,7 +14655,7 @@
   },
   {
     "t": 4660.0,
-    "emotion": "neutral",
+    "emotion": "sad",
     "scores": {
       "neutral": 66.91,
       "happy": 0.33,
@@ -14680,7 +14680,7 @@
   },
   {
     "t": 4665.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 89.49,
       "happy": 0.15,
@@ -14705,7 +14705,7 @@
   },
   {
     "t": 4670.0,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
       "neutral": 91.9,
       "happy": 1.22,
@@ -14730,7 +14730,7 @@
   },
   {
     "t": 4675.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 89.51,
       "happy": 0.94,
@@ -14755,7 +14755,7 @@
   },
   {
     "t": 4680.0,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
       "neutral": 92.47,
       "happy": 0.07,

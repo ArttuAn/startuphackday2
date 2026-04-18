@@ -1,0 +1,27 @@
+wandb run: https://wandb.ai/arttu-antikainen-aalto/streamer-reaction-model/runs/o5zpbwb2
+Loading SigLIP...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███| 408/408 [00:00<00:00, 5441.05it/s]
+[GameplayDataset] 341 clips
+  confused    : 135
+  angry       : 112
+  neutral     : 55
+  happy       : 20
+  contempt    : 8
+  surprise    : 6
+  excited     : 3
+  fear        : 1
+  sad         : 1
+[GameplayDataset] 341 clips
+  confused    : 135
+  angry       : 112
+  neutral     : 55
+  happy       : 20
+  contempt    : 8
+  surprise    : 6
+  excited     : 3
+  fear        : 1
+  sad         : 1
+Train: 289 | Val: 52
+Trainable params: 199,434 (head only)
+  train e1:  10%| | 7/73 [00:27<04:24,  4.00s/it, loss=0.0004

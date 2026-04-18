@@ -1,0 +1,88 @@
+_wandb:
+    value:
+        cli_version: 0.26.0
+        e:
+            owtqjc12lwypjjd0332vu0tkvnrnqzbn:
+                args:
+                    - --wandb_key
+                    - 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
+                codePath: model\train.py
+                codePathLocal: train.py
+                cpu_count: 6
+                cpu_count_logical: 12
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "511217897472"
+                        used: "477295067136"
+                email: zeulin.n@gmail.com
+                executable: C:\Users\Admin\anaconda3\python.exe
+                git:
+                    commit: 38f005f9309843658e77eaf55aee658b07507e2e
+                    remote: https://github.com/nzeulin/startup-hack.git
+                gpu: Quadro T2000
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 1024
+                      memoryTotal: "4294967296"
+                      name: Quadro T2000
+                      uuid: GPU-8ad99038-a6a3-0295-c374-6515e2240edf
+                host: Arttu
+                memory:
+                    total: "34046373888"
+                os: Windows-11-10.0.26200-SP0
+                program: C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\train.py
+                python: CPython 3.13.5
+                root: C:\Users\Admin\OneDrive\Desktop\startuphackYT\model
+                startedAt: "2026-04-18T18:09:03.668263Z"
+                writerId: owtqjc12lwypjjd0332vu0tkvnrnqzbn
+        m: []
+        python_version: 3.13.5
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+            "3":
+                - 1
+                - 16
+            "4": 3.13.5
+            "5": 0.26.0
+            "8":
+                - 3
+            "12": 0.26.0
+            "13": windows-amd64
+batch_size:
+    value: 4
+device:
+    value: cpu
+emotions:
+    value:
+        - neutral
+        - happy
+        - excited
+        - sad
+        - angry
+        - fear
+        - surprise
+        - disgust
+        - contempt
+        - confused
+epochs:
+    value: 30
+lr:
+    value: 0.001
+model_name:
+    value: google/siglip-base-patch16-224
+n_emotions:
+    value: 10
+n_frames:
+    value: 4

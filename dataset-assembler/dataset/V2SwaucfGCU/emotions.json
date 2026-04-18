@@ -15,18 +15,18 @@
   },
   {
     "t": 4.97,
-    "emotion": "neutral",
+    "emotion": "confused",
     "scores": {
-      "neutral": 83.27,
-      "happy": 4.58,
-      "excited": 8.35,
-      "sad": 19.24,
-      "angry": 21.61,
-      "fear": 9.68,
-      "surprise": 9.37,
-      "disgust": 8.79,
-      "contempt": 10.73,
-      "confused": 20.76
+      "neutral": 78.64,
+      "happy": 7.3,
+      "excited": 11.29,
+      "sad": 18.32,
+      "angry": 19.86,
+      "fear": 12.14,
+      "surprise": 11.23,
+      "disgust": 9.71,
+      "contempt": 13.33,
+      "confused": 20.2
     },
     "audio": {
       "loudness": 90.28,
@@ -40,18 +40,18 @@
   },
   {
     "t": 9.94,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
-      "neutral": 91.97,
-      "happy": 0.22,
-      "excited": 1.91,
-      "sad": 21.13,
-      "angry": 22.18,
-      "fear": 4.85,
-      "surprise": 5.02,
-      "disgust": 4.79,
-      "contempt": 3.54,
-      "confused": 22.42
+      "neutral": 92.89,
+      "happy": 0.55,
+      "excited": 2.47,
+      "sad": 20.76,
+      "angry": 21.38,
+      "fear": 4.39,
+      "surprise": 4.97,
+      "disgust": 6.54,
+      "contempt": 4.51,
+      "confused": 20.75
     },
     "audio": {
       "loudness": 99.24,
@@ -65,18 +65,18 @@
   },
   {
     "t": 14.91,
-    "emotion": "neutral",
+    "emotion": "angry",
     "scores": {
-      "neutral": 91.28,
-      "happy": 1.77,
-      "excited": 4.92,
-      "sad": 20.58,
-      "angry": 21.12,
-      "fear": 5.55,
-      "surprise": 7.79,
-      "disgust": 6.52,
-      "contempt": 4.44,
-      "confused": 20.02
+      "neutral": 85.0,
+      "happy": 5.91,
+      "excited": 13.18,
+      "sad": 20.2,
+      "angry": 20.53,
+      "fear": 10.03,
+      "surprise": 18.05,
+      "disgust": 5.16,
+      "contempt": 3.58,
+      "confused": 14.73
     },
     "audio": {
       "loudness": 100.0,

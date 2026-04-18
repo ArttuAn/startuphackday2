@@ -1,0 +1,36 @@
+wandb run: https://wandb.ai/nzeulin-tampere-university/streamer-reaction-model/runs/gg68xhfa
+Loading SigLIP...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|███| 408/408 [00:00<00:00, 4723.42it/s]
+[GameplayDataset] 341 clips
+  confused    : 135
+  angry       : 112
+  neutral     : 55
+  happy       : 20
+  contempt    : 8
+  surprise    : 6
+  excited     : 3
+  fear        : 1
+  sad         : 1
+[GameplayDataset] 341 clips
+  confused    : 135
+  angry       : 112
+  neutral     : 55
+  happy       : 20
+  contempt    : 8
+  surprise    : 6
+  excited     : 3
+  fear        : 1
+  sad         : 1
+Train: 289 | Val: 52
+Trainable params: 199,434 (head only)
+Traceback (most recent call last):
+  File "C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\train.py", line 315, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\train.py", line 232, in main
+    train_m = run_epoch(model, train_loader, optimizer, device, train=True)
+  File "C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\train.py", line 136, in run_epoch
+    all_preds.append(pred.cpu().numpy())
+                     ~~~~~~~~~~~~~~~~^^
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.

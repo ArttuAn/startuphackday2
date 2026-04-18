@@ -1,12 +1,12 @@
 """
-dataset.py — PyTorch dataset for gameplay → emotion training.
+dataset.py — PyTorch dataset for gameplay → soft emotion distribution training.
 
 Reads from dataset-assembler/dataset/<video_id>/clips/<ts>_<emotion>/
-  - gameplay.mp4  → sampled frames → tensor input
-  - meta.json     → emotion label
+  - gameplay.mp4  → sampled frames → preprocessed for SigLIP
+  - meta.json     → soft emotion probability vector (normalised scores)
 
 Usage:
-    ds = GameplayDataset(dataset_dir, n_frames=8, img_size=224)
+    ds = GameplayDataset(dataset_dir, n_frames=8)
     loader = DataLoader(ds, batch_size=16, shuffle=True)
 """
 
@@ -21,24 +21,65 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
-# Emotions we train on (neutral/none are background noise)
+_face_cascade = cv2.CascadeClassifier(
+    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+)
+
+
+def has_face(video_path: Path, n_checks: int = 3) -> bool:
+    """Return True if at least one of n_checks sampled frames contains a face."""
+    cap   = cv2.VideoCapture(str(video_path))
+    total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    if total <= 0:
+        cap.release()
+        return False
+
+    indices = np.linspace(0, total - 1, n_checks, dtype=int)
+    for idx in indices:
+        cap.set(cv2.CAP_PROP_POS_FRAMES, int(idx))
+        ok, frame = cap.read()
+        if not ok:
+            continue
+        gray  = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        faces = _face_cascade.detectMultiScale(
+            gray, scaleFactor=1.1, minNeighbors=3, minSize=(20, 20))
+        if len(faces) > 0:
+            cap.release()
+            return True
+
+    cap.release()
+    return False
+
+# Emotion classes — must match keys produced by classify_emotions.py blendshape_to_emotions()
 EMOTION_CLASSES = [
-    "happy",
-    "surprised",
-    "fearful",
-    "disgusted",
-    "angry",
-    "sad",
-    "neutral",
+    "neutral", "happy", "excited", "sad",
+    "angry", "fear", "surprise", "disgust", "contempt", "confused",
 ]
+N_EMOTIONS = len(EMOTION_CLASSES)
 
-EMOTION_TO_IDX = {e: i for i, e in enumerate(EMOTION_CLASSES)}
+
+def get_soft_labels(meta: dict) -> torch.Tensor:
+    """
+    Convert meta.json scores dict → normalised soft probability vector.
+
+    scores values are 0-100 floats. We softmax over them so the vector
+    sums to 1 and the model learns a distribution, not just a hard class.
+    """
+    scores = meta.get("scores", {})
+    raw = torch.tensor(
+        [max(0.0, float(scores.get(e, 0.0))) for e in EMOTION_CLASSES],
+        dtype=torch.float32,
+    )
+    # If all zeros (no blendshapes detected), fall back to one-hot neutral
+    if raw.sum() < 1e-6:
+        raw[EMOTION_CLASSES.index("neutral")] = 1.0
+    return torch.softmax(raw, dim=0)
 
 
-def sample_frames(video_path: Path, n: int, img_size: int) -> np.ndarray | None:
+def sample_frames_rgb(video_path: Path, n: int, img_size: int) -> np.ndarray | None:
     """
     Sample n evenly-spaced frames from video_path.
-    Returns float32 array of shape (n, 3, img_size, img_size) or None on failure.
+    Returns uint8 RGB array (n, img_size, img_size, 3) or None on failure.
     """
     cap = cv2.VideoCapture(str(video_path))
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -56,133 +97,123 @@ def sample_frames(video_path: Path, n: int, img_size: int) -> np.ndarray | None:
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame = cv2.resize(frame, (img_size, img_size), interpolation=cv2.INTER_LINEAR)
         frames.append(frame)
-
     cap.release()
 
-    if len(frames) < n:
-        # Pad by repeating last frame
-        while len(frames) < n:
-            frames.append(frames[-1] if frames else np.zeros((img_size, img_size, 3), dtype=np.uint8))
-
-    arr = np.stack(frames[:n]).astype(np.float32) / 255.0  # (n, H, W, 3)
-    # ImageNet normalisation
-    mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
-    std  = np.array([0.229, 0.224, 0.225], dtype=np.float32)
-    arr  = (arr - mean) / std
-    arr  = arr.transpose(0, 3, 1, 2)  # (n, 3, H, W)
-    return arr
+    if not frames:
+        return None
+    while len(frames) < n:
+        frames.append(frames[-1])
+    return np.stack(frames[:n], axis=0)  # (n, H, W, 3) uint8
 
 
 class GameplayDataset(Dataset):
     """
-    Iterates over all clip directories and returns (frames, label) pairs.
+    Returns (pixel_values, soft_labels) per clip.
 
-    Args:
-        dataset_dir: path to dataset-assembler/dataset/
-        n_frames:    frames to sample per gameplay clip
-        img_size:    spatial size after resize (square)
-        augment:     random horizontal flip during training
+    pixel_values: (n_frames, 3, img_size, img_size) float32, normalised for SigLIP
+    soft_labels:  (N_EMOTIONS,) float32 probability distribution
     """
 
     def __init__(
         self,
         dataset_dir: Path | str,
+        processor,                  # SigLIP AutoProcessor
         n_frames: int = 8,
-        img_size: int = 224,
         augment: bool = True,
     ):
         self.dataset_dir = Path(dataset_dir)
-        self.n_frames = n_frames
-        self.img_size = img_size
-        self.augment = augment
+        self.processor   = processor
+        self.n_frames    = n_frames
+        self.augment     = augment
+        self.img_size    = processor.image_processor.size.get("height", 224)
 
-        self.samples: list[tuple[Path, int]] = []
+        self.samples: list[tuple[Path, dict]] = []
         self._discover()
 
     def _discover(self):
-        """Walk dataset_dir and collect (clip_dir, label_idx) pairs."""
         for vid_dir in sorted(self.dataset_dir.iterdir()):
             clips_dir = vid_dir / "clips"
             if not clips_dir.is_dir():
                 continue
             for clip_dir in sorted(clips_dir.iterdir()):
-                gameplay = clip_dir / "gameplay.mp4"
+                if not (clip_dir / "gameplay.mp4").exists():
+                    continue
                 meta_file = clip_dir / "meta.json"
-                if not gameplay.exists() or not meta_file.exists():
+                if not meta_file.exists():
                     continue
                 try:
                     meta = json.loads(meta_file.read_text())
-                    emotion = meta.get("emotion", "neutral")
-                    # Map to known class; unknown → neutral
-                    if emotion not in EMOTION_TO_IDX:
-                        emotion = "neutral"
-                    label = EMOTION_TO_IDX[emotion]
-                    self.samples.append((clip_dir, label))
+                    # Skip clips where emotion was never detected
+                    if meta.get("emotion") == "none":
+                        continue
+                    # Skip clips where facecam has no detectable face
+                    facecam = clip_dir / "facecam.mp4"
+                    if facecam.exists() and not has_face(facecam):
+                        continue
+                    self.samples.append((clip_dir, meta))
                 except Exception:
                     continue
 
-        print(f"[GameplayDataset] {len(self.samples)} clips found across "
-              f"{len(EMOTION_CLASSES)} emotion classes")
-        self._print_class_distribution()
+        print(f"[GameplayDataset] {len(self.samples)} clips")
+        self._print_distribution()
 
-    def _print_class_distribution(self):
+    def _print_distribution(self):
         from collections import Counter
-        counts = Counter(label for _, label in self.samples)
-        for idx, name in enumerate(EMOTION_CLASSES):
-            print(f"  {name:12s}: {counts.get(idx, 0)}")
+        counts: Counter = Counter()
+        for _, meta in self.samples:
+            counts[meta.get("emotion", "none")] += 1
+        for e, c in sorted(counts.items(), key=lambda x: -x[1]):
+            print(f"  {e:12s}: {c}")
 
-    def __len__(self) -> int:
+    def __len__(self):
         return len(self.samples)
 
     def __getitem__(self, idx: int):
-        clip_dir, label = self.samples[idx]
-        gameplay = clip_dir / "gameplay.mp4"
+        clip_dir, meta = self.samples[idx]
+        frames_np = sample_frames_rgb(
+            clip_dir / "gameplay.mp4", self.n_frames, self.img_size)
 
-        frames = sample_frames(gameplay, self.n_frames, self.img_size)
-        if frames is None:
-            # Return zeros + label on corrupt file
-            frames = np.zeros((self.n_frames, 3, self.img_size, self.img_size),
-                              dtype=np.float32)
-
-        frames_tensor = torch.from_numpy(frames)  # (n, 3, H, W)
+        if frames_np is None:
+            frames_np = np.zeros(
+                (self.n_frames, self.img_size, self.img_size, 3), dtype=np.uint8)
 
         if self.augment and random.random() < 0.5:
-            frames_tensor = torch.flip(frames_tensor, dims=[-1])  # horizontal flip
+            frames_np = frames_np[:, :, ::-1, :].copy()  # horizontal flip
 
-        return frames_tensor, label
+        # Use SigLIP processor for each frame
+        processed = self.processor(
+            images=[frames_np[i] for i in range(self.n_frames)],
+            return_tensors="pt",
+        )
+        pixel_values = processed["pixel_values"]  # (n_frames, 3, H, W)
+
+        soft_labels = get_soft_labels(meta)
+        return pixel_values, soft_labels
 
 
 def build_loaders(
     dataset_dir: Path | str,
+    processor,
     val_split: float = 0.15,
-    batch_size: int = 16,
+    batch_size: int = 8,
     n_frames: int = 8,
-    img_size: int = 224,
-    num_workers: int = 4,
+    num_workers: int = 0,
 ):
-    """
-    Build train/val DataLoaders with a stratified split.
-
-    Returns (train_loader, val_loader, n_classes)
-    """
     from sklearn.model_selection import train_test_split
     from torch.utils.data import DataLoader, Subset
 
-    full_ds = GameplayDataset(dataset_dir, n_frames=n_frames,
-                              img_size=img_size, augment=True)
+    full_ds = GameplayDataset(dataset_dir, processor, n_frames=n_frames, augment=True)
 
     if len(full_ds) == 0:
-        raise RuntimeError(
-            f"No clips found in {dataset_dir}. "
-            "Run extract_clips.py first."
-        )
+        raise RuntimeError(f"No clips found in {dataset_dir}. Run extract_clips.py first.")
 
     indices = list(range(len(full_ds)))
-    labels  = [full_ds.samples[i][1] for i in indices]
+    # Stratify on hard emotion label for balanced split
+    labels = [full_ds.samples[i][1].get("emotion", "neutral") for i in indices]
 
     from collections import Counter
-    label_counts = Counter(labels)
-    can_stratify = len(set(labels)) > 1 and min(label_counts.values()) >= 2
+    counts = Counter(labels)
+    can_stratify = len(set(labels)) > 1 and min(counts.values()) >= 2
 
     train_idx, val_idx = train_test_split(
         indices, test_size=val_split,
@@ -190,18 +221,13 @@ def build_loaders(
         random_state=42,
     )
 
-    train_ds = Subset(full_ds, train_idx)
-    val_ds   = Subset(
-        GameplayDataset(dataset_dir, n_frames=n_frames,
-                        img_size=img_size, augment=False),
-        val_idx,
-    )
+    val_ds = GameplayDataset(dataset_dir, processor, n_frames=n_frames, augment=False)
 
-    train_loader = DataLoader(train_ds, batch_size=batch_size,
-                              shuffle=True, num_workers=num_workers,
-                              pin_memory=True)
-    val_loader   = DataLoader(val_ds, batch_size=batch_size,
-                              shuffle=False, num_workers=num_workers,
-                              pin_memory=True)
+    train_loader = DataLoader(
+        Subset(full_ds, train_idx), batch_size=batch_size,
+        shuffle=True, num_workers=num_workers)
+    val_loader = DataLoader(
+        Subset(val_ds, val_idx), batch_size=batch_size,
+        shuffle=False, num_workers=num_workers)
 
-    return train_loader, val_loader, len(EMOTION_CLASSES)
+    return train_loader, val_loader

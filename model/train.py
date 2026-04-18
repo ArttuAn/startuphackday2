@@ -1,248 +1,329 @@
 """
-train.py — Train an emotion predictor on gameplay clips.
+train.py — Train a soft emotion predictor on top of frozen SigLIP embeddings.
 
 Architecture:
-  - Backbone: EfficientNet-B0 (pretrained on ImageNet)
-  - Temporal pooling: mean-pool frame features → single vector
-  - Head: Linear(1280 → n_classes)
+  - Encoder: SigLIP vision model (frozen) → 768-dim patch embeddings → mean-pool
+  - Temporal pool: mean over n_frames
+  - MLP head: Linear(768, 256) → GELU → Dropout → Linear(256, N_EMOTIONS) → Softmax
+  - Loss: KL divergence between predicted distribution and soft target from blendshapes
 
-Training takes ~10-30 min on GPU for a small dataset.
+Only the MLP head is trained — the SigLIP encoder stays frozen.
 
 Usage:
-    python train.py
-    python train.py --epochs 30 --batch_size 8 --lr 3e-4
-    python train.py --dataset_dir ../dataset-assembler/dataset --out checkpoints/
-
-Output:
-    checkpoints/best_model.pt   — best validation accuracy checkpoint
-    checkpoints/last_model.pt   — final epoch checkpoint
+    pip install transformers wandb
+    python train.py --wandb_key YOUR_KEY
+    python train.py --epochs 30 --batch_size 4 --wandb_key YOUR_KEY
+    python train.py --no_wandb   # disable wandb
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import time
 from pathlib import Path
 
+import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
+from sklearn.metrics import f1_score
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import CosineAnnealingLR
 
-try:
-    import torchvision.models as tvm
-    HAS_TV = True
-except ImportError:
-    HAS_TV = False
-
-from dataset import EMOTION_CLASSES, build_loaders
+from dataset import N_EMOTIONS, EMOTION_CLASSES, build_loaders
 
 BASE = Path(__file__).parent
 DEFAULT_DATASET = BASE.parent / "dataset-assembler" / "dataset"
 DEFAULT_OUT     = BASE / "checkpoints"
+DEFAULT_MODEL   = "google/siglip-base-patch16-224"
 
 
-# ── Model ──────────────────────────────────────────────────────────────────
+# ── Model ───────────────────────────────────────────────────────────────────
 
-class EmotionPredictor(nn.Module):
+class SigLIPEmotionPredictor(nn.Module):
     """
-    Frame-level EfficientNet-B0 backbone + temporal mean-pool + classifier.
+    Frozen SigLIP encoder + trainable MLP head → soft emotion distribution.
 
     Input:  (batch, n_frames, 3, H, W)
-    Output: (batch, n_classes) logits
+    Output: (batch, N_EMOTIONS) — softmax probabilities
     """
 
-    def __init__(self, n_classes: int, dropout: float = 0.3):
+    def __init__(self, siglip_model, hidden_dim: int = 256, dropout: float = 0.3):
         super().__init__()
-        if not HAS_TV:
-            raise ImportError("pip install torchvision")
+        self.encoder = siglip_model
 
-        backbone = tvm.efficientnet_b0(
-            weights=tvm.EfficientNet_B0_Weights.IMAGENET1K_V1
-        )
-        # Remove the classifier — keep only the feature extractor
-        self.features  = backbone.features
-        self.avgpool   = backbone.avgpool
-        feat_dim       = 1280  # EfficientNet-B0 output channels
+        for p in self.encoder.parameters():
+            p.requires_grad = False
 
-        self.classifier = nn.Sequential(
-            nn.Dropout(p=dropout),
-            nn.Linear(feat_dim, n_classes),
+        embed_dim = self.encoder.config.hidden_size  # 768 for base
+
+        self.head = nn.Sequential(
+            nn.Linear(embed_dim, hidden_dim),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_dim, N_EMOTIONS),
         )
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # x: (B, T, C, H, W)
-        B, T, C, H, W = x.shape
-        x = x.view(B * T, C, H, W)
-        x = self.features(x)          # (B*T, 1280, h, w)
-        x = self.avgpool(x)           # (B*T, 1280, 1, 1)
-        x = x.flatten(1)              # (B*T, 1280)
-        x = x.view(B, T, -1).mean(1)  # (B, 1280)  — temporal mean-pool
-        return self.classifier(x)     # (B, n_classes)
+    def forward(self, pixel_values: torch.Tensor) -> torch.Tensor:
+        B, T, C, H, W = pixel_values.shape
+        x = pixel_values.view(B * T, C, H, W)
+
+        with torch.no_grad():
+            out   = self.encoder(pixel_values=x)
+            feats = out.last_hidden_state.mean(dim=1)   # (B*T, 768)
+
+        feats  = feats.view(B, T, -1).mean(dim=1)       # (B, 768)
+        logits = self.head(feats)                        # (B, N_EMOTIONS)
+        return torch.softmax(logits, dim=-1)
 
 
-# ── Training loop ──────────────────────────────────────────────────────────
+# ── Metrics ─────────────────────────────────────────────────────────────────
 
-def train_one_epoch(model, loader, optimizer, criterion, device, scaler=None):
-    model.train()
-    total_loss, correct, n = 0.0, 0, 0
-
-    for frames, labels in loader:
-        frames = frames.to(device, non_blocking=True)
-        labels = labels.to(device, non_blocking=True)
-
-        optimizer.zero_grad()
-
-        if scaler is not None:
-            with torch.cuda.amp.autocast():
-                logits = model(frames)
-                loss   = criterion(logits, labels)
-            scaler.scale(loss).backward()
-            scaler.unscale_(optimizer)
-            nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            scaler.step(optimizer)
-            scaler.update()
-        else:
-            logits = model(frames)
-            loss   = criterion(logits, labels)
-            loss.backward()
-            nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            optimizer.step()
-
-        total_loss += loss.item() * labels.size(0)
-        correct    += (logits.argmax(1) == labels).sum().item()
-        n          += labels.size(0)
-
-    return total_loss / n, correct / n
+def kl_loss(pred: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+    return F.kl_div(pred.log(), target, reduction="batchmean")
 
 
-@torch.no_grad()
-def evaluate(model, loader, criterion, device):
-    model.eval()
-    total_loss, correct, n = 0.0, 0, 0
+def compute_metrics(preds: np.ndarray, targets: np.ndarray) -> dict:
+    """
+    preds:   (N, N_EMOTIONS) predicted probability distributions
+    targets: (N, N_EMOTIONS) soft target distributions
 
-    for frames, labels in loader:
-        frames = frames.to(device, non_blocking=True)
-        labels = labels.to(device, non_blocking=True)
-        logits = model(frames)
-        loss   = criterion(logits, labels)
-        total_loss += loss.item() * labels.size(0)
-        correct    += (logits.argmax(1) == labels).sum().item()
-        n          += labels.size(0)
+    Returns top-1 acc, top-3 acc, macro F1.
+    """
+    pred_top1  = preds.argmax(axis=1)
+    true_top1  = targets.argmax(axis=1)
 
-    return total_loss / n, correct / n
+    top1_acc = float((pred_top1 == true_top1).mean())
+
+    # Top-3: true class is within predicted top-3
+    top3_idx  = np.argsort(preds, axis=1)[:, -3:]
+    top3_acc  = float(np.array([true_top1[i] in top3_idx[i]
+                                 for i in range(len(true_top1))]).mean())
+
+    macro_f1 = float(f1_score(true_top1, pred_top1,
+                               average="macro", zero_division=0))
+
+    return {"top1_acc": top1_acc, "top3_acc": top3_acc, "macro_f1": macro_f1}
 
 
-# ── Main ───────────────────────────────────────────────────────────────────
+# ── Training loop ────────────────────────────────────────────────────────────
+
+def run_epoch(model, loader, optimizer, device, train: bool,
+              wandb_run=None, epoch: int = 0, global_step: list = None):
+    from tqdm import tqdm
+
+    model.train() if train else model.eval()
+
+    total_loss  = 0.0
+    all_preds   = []
+    all_targets = []
+    phase       = "train" if train else "val"
+
+    ctx = torch.enable_grad() if train else torch.no_grad()
+    with ctx:
+        pbar = tqdm(loader, desc=f"  {phase} e{epoch}", leave=False, dynamic_ncols=True)
+        for batch_idx, (pixel_values, soft_labels) in enumerate(pbar):
+            pixel_values = pixel_values.to(device)
+            soft_labels  = soft_labels.to(device)
+
+            pred = model(pixel_values)
+            loss = kl_loss(pred, soft_labels)
+
+            if train:
+                optimizer.zero_grad()
+                loss.backward()
+                nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                optimizer.step()
+                # Log every batch to wandb so metrics appear immediately
+                if wandb_run and global_step is not None:
+                    global_step[0] += 1
+                    wandb_run.log({"train/batch_kl_loss": loss.item()},
+                                  step=global_step[0])
+
+            total_loss  += loss.item() * soft_labels.size(0)
+            all_preds.append(pred.detach().cpu().numpy())
+            all_targets.append(soft_labels.detach().cpu().numpy())
+            pbar.set_postfix(loss=f"{loss.item():.4f}")
+
+    n        = sum(len(p) for p in all_preds)
+    avg_loss = total_loss / n
+    preds    = np.concatenate(all_preds,   axis=0)
+    targets  = np.concatenate(all_targets, axis=0)
+    metrics  = compute_metrics(preds, targets)
+    metrics["kl_loss"] = avg_loss
+    return metrics
+
+
+# ── Main ────────────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="Train gameplay emotion predictor")
-    parser.add_argument("--dataset_dir", type=Path, default=DEFAULT_DATASET)
-    parser.add_argument("--out",         type=Path, default=DEFAULT_OUT)
-    parser.add_argument("--epochs",      type=int,   default=20)
-    parser.add_argument("--batch_size",  type=int,   default=8)
-    parser.add_argument("--lr",          type=float, default=3e-4)
-    parser.add_argument("--n_frames",    type=int,   default=8,
-                        help="Frames to sample per gameplay clip")
-    parser.add_argument("--img_size",    type=int,   default=224)
-    parser.add_argument("--workers",     type=int,   default=4)
+    parser = argparse.ArgumentParser(description="Train SigLIP emotion predictor")
+    parser.add_argument("--dataset_dir", type=Path,  default=DEFAULT_DATASET)
+    parser.add_argument("--out",         type=Path,  default=DEFAULT_OUT)
+    parser.add_argument("--model_name",  type=str,   default=DEFAULT_MODEL)
+    parser.add_argument("--epochs",      type=int,   default=30)
+    parser.add_argument("--batch_size",  type=int,   default=4)
+    parser.add_argument("--lr",          type=float, default=1e-3)
+    parser.add_argument("--n_frames",    type=int,   default=4)
+    parser.add_argument("--workers",     type=int,   default=0)
     parser.add_argument("--val_split",   type=float, default=0.15)
-    parser.add_argument("--no_amp",      action="store_true",
-                        help="Disable mixed-precision training")
+    # wandb
+    parser.add_argument("--wandb_key",   type=str,   default=None,
+                        help="Weights & Biases API key")
+    parser.add_argument("--wandb_project", type=str, default="streamer-reaction-model")
+    parser.add_argument("--no_wandb",    action="store_true",
+                        help="Disable wandb logging")
     args = parser.parse_args()
 
     args.out.mkdir(parents=True, exist_ok=True)
-
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Device: {device}")
-    print(f"Dataset: {args.dataset_dir}")
+    print(f"Device: {device} | Model: {args.model_name}")
 
-    # ── Data ──────────────────────────────────────────────────────────────
-    train_loader, val_loader, n_classes = build_loaders(
-        args.dataset_dir,
+    # ── wandb setup ──────────────────────────────────────────────────────
+    use_wandb = not args.no_wandb
+    run = None
+    if use_wandb:
+        try:
+            import wandb
+            if args.wandb_key:
+                wandb.login(key=args.wandb_key)
+            run = wandb.init(
+                project=args.wandb_project,
+                config={
+                    "model_name":  args.model_name,
+                    "epochs":      args.epochs,
+                    "batch_size":  args.batch_size,
+                    "lr":          args.lr,
+                    "n_frames":    args.n_frames,
+                    "n_emotions":  N_EMOTIONS,
+                    "emotions":    EMOTION_CLASSES,
+                    "device":      str(device),
+                },
+            )
+            print(f"wandb run: {run.url}")
+        except ImportError:
+            print("wandb not installed — run: pip install wandb")
+            use_wandb = False
+
+    # ── Load SigLIP ──────────────────────────────────────────────────────
+    from transformers import AutoProcessor, AutoModel
+    print("Loading SigLIP...")
+    processor    = AutoProcessor.from_pretrained(args.model_name)
+    siglip_model = AutoModel.from_pretrained(args.model_name).vision_model
+
+    # ── Data ─────────────────────────────────────────────────────────────
+    train_loader, val_loader = build_loaders(
+        args.dataset_dir, processor,
         val_split=args.val_split,
         batch_size=args.batch_size,
         n_frames=args.n_frames,
-        img_size=args.img_size,
         num_workers=args.workers,
     )
     print(f"Train: {len(train_loader.dataset)} | Val: {len(val_loader.dataset)}")
 
-    # ── Model ─────────────────────────────────────────────────────────────
-    model = EmotionPredictor(n_classes=n_classes).to(device)
-    print(f"Model: EmotionPredictor (EfficientNet-B0), {n_classes} classes")
+    # ── Model ────────────────────────────────────────────────────────────
+    model     = SigLIPEmotionPredictor(siglip_model).to(device)
+    optimizer = AdamW(model.head.parameters(), lr=args.lr, weight_decay=1e-4)
+    scheduler = CosineAnnealingLR(optimizer, T_max=args.epochs)
 
-    # Freeze backbone initially; fine-tune last 3 blocks after warmup
-    for name, param in model.features.named_parameters():
-        param.requires_grad = False
+    n_params = sum(p.numel() for p in model.head.parameters())
+    print(f"Trainable params: {n_params:,} (head only)")
 
-    criterion  = nn.CrossEntropyLoss(label_smoothing=0.1)
-    optimizer  = AdamW(filter(lambda p: p.requires_grad, model.parameters()),
-                       lr=args.lr, weight_decay=1e-4)
-    scheduler  = CosineAnnealingLR(optimizer, T_max=args.epochs)
-    scaler     = torch.cuda.amp.GradScaler() if (
-        not args.no_amp and device.type == "cuda") else None
+    if use_wandb and run:
+        wandb.watch(model.head, log="gradients", log_freq=10)
 
-    best_val_acc = 0.0
-    history = []
+    best_val_loss = float("inf")
+    history      = []
+    global_step  = [0]   # mutable so run_epoch can increment it
 
     for epoch in range(1, args.epochs + 1):
-        # Unfreeze backbone after 5 warmup epochs
-        if epoch == 6:
-            print("Unfreezing backbone for fine-tuning...")
-            for param in model.features.parameters():
-                param.requires_grad = True
-            optimizer = AdamW(model.parameters(), lr=args.lr / 10,
-                              weight_decay=1e-4)
-            scheduler = CosineAnnealingLR(optimizer, T_max=args.epochs - 5)
-
         t0 = time.time()
-        train_loss, train_acc = train_one_epoch(
-            model, train_loader, optimizer, criterion, device, scaler)
-        val_loss, val_acc = evaluate(model, val_loader, criterion, device)
+
+        train_m = run_epoch(model, train_loader, optimizer, device, train=True,
+                            wandb_run=run if use_wandb else None,
+                            epoch=epoch, global_step=global_step)
+        val_m   = run_epoch(model, val_loader, optimizer, device, train=False,
+                            epoch=epoch)
         scheduler.step()
-
         elapsed = time.time() - t0
-        print(f"Epoch {epoch:3d}/{args.epochs} | "
-              f"train loss={train_loss:.4f} acc={train_acc:.3f} | "
-              f"val loss={val_loss:.4f} acc={val_acc:.3f} | "
-              f"{elapsed:.1f}s")
 
-        history.append({
-            "epoch": epoch,
-            "train_loss": train_loss, "train_acc": train_acc,
-            "val_loss":   val_loss,   "val_acc":   val_acc,
-        })
+        print(
+            f"Epoch {epoch:3d}/{args.epochs} | "
+            f"train KL={train_m['kl_loss']:.4f} top1={train_m['top1_acc']:.3f} "
+            f"top3={train_m['top3_acc']:.3f} f1={train_m['macro_f1']:.3f} | "
+            f"val KL={val_m['kl_loss']:.4f} top1={val_m['top1_acc']:.3f} "
+            f"top3={val_m['top3_acc']:.3f} f1={val_m['macro_f1']:.3f} | "
+            f"{elapsed:.1f}s"
+        )
 
-        if val_acc > best_val_acc:
-            best_val_acc = val_acc
-            torch.save({
+        if use_wandb and run:
+            wandb.log({
                 "epoch": epoch,
-                "model_state": model.state_dict(),
-                "val_acc": val_acc,
-                "n_classes": n_classes,
+                "train/kl_loss":  train_m["kl_loss"],
+                "train/top1_acc": train_m["top1_acc"],
+                "train/top3_acc": train_m["top3_acc"],
+                "train/macro_f1": train_m["macro_f1"],
+                "val/kl_loss":    val_m["kl_loss"],
+                "val/top1_acc":   val_m["top1_acc"],
+                "val/top3_acc":   val_m["top3_acc"],
+                "val/macro_f1":   val_m["macro_f1"],
+                "lr": scheduler.get_last_lr()[0],
+            })
+
+        row = {"epoch": epoch, **{f"train_{k}": v for k, v in train_m.items()},
+               **{f"val_{k}": v for k, v in val_m.items()}}
+        history.append(row)
+
+        if val_m["kl_loss"] < best_val_loss:
+            best_val_loss = val_m["kl_loss"]
+            ckpt_path = args.out / "best_model.pt"
+            torch.save({
+                "epoch":           epoch,
+                "model_state":     model.state_dict(),
+                "val_loss":        val_m["kl_loss"],
+                "val_top1_acc":    val_m["top1_acc"],
+                "val_top3_acc":    val_m["top3_acc"],
+                "val_macro_f1":    val_m["macro_f1"],
+                "model_name":      args.model_name,
+                "n_frames":        args.n_frames,
                 "emotion_classes": EMOTION_CLASSES,
-                "n_frames": args.n_frames,
-                "img_size": args.img_size,
-            }, args.out / "best_model.pt")
-            print(f"  → saved best_model.pt (val_acc={val_acc:.3f})")
+            }, ckpt_path)
+            print(f"  → saved best_model.pt (val_KL={val_m['kl_loss']:.4f})")
 
-    # Save last checkpoint
+            # Log checkpoint as wandb artifact
+            if use_wandb and run:
+                artifact = wandb.Artifact(
+                    name="best_model",
+                    type="model",
+                    description=f"Best checkpoint at epoch {epoch}, val_KL={val_m['kl_loss']:.4f}",
+                    metadata={"epoch": epoch, **{f"val_{k}": v for k, v in val_m.items()}},
+                )
+                artifact.add_file(str(ckpt_path))
+                run.log_artifact(artifact)
+
+    # Save final checkpoint
+    last_path = args.out / "last_model.pt"
     torch.save({
-        "epoch": args.epochs,
-        "model_state": model.state_dict(),
-        "val_acc": val_acc,
-        "n_classes": n_classes,
+        "epoch":           args.epochs,
+        "model_state":     model.state_dict(),
+        "model_name":      args.model_name,
+        "n_frames":        args.n_frames,
         "emotion_classes": EMOTION_CLASSES,
-        "n_frames": args.n_frames,
-        "img_size": args.img_size,
-    }, args.out / "last_model.pt")
-
-    # Save training history
+    }, last_path)
     (args.out / "history.json").write_text(json.dumps(history, indent=2))
-    print(f"\nDone — best val acc: {best_val_acc:.3f}")
-    print(f"Checkpoints saved to {args.out}")
+
+    # Log final artifact
+    if use_wandb and run:
+        artifact = wandb.Artifact(name="last_model", type="model")
+        artifact.add_file(str(last_path))
+        artifact.add_file(str(args.out / "history.json"))
+        run.log_artifact(artifact)
+        run.finish()
+
+    print(f"\nDone — best val KL: {best_val_loss:.4f}")
+    print(f"Checkpoints: {args.out}")
 
 
 if __name__ == "__main__":

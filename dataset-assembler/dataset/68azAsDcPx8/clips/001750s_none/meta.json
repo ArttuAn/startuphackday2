@@ -1,0 +1,16 @@
+{
+  "t": 1750.0,
+  "emotion": "none",
+  "audio": {
+    "loudness": 33.05,
+    "pitch_mean": 88.6,
+    "pitch_var": 45.3,
+    "speech": 1.0,
+    "audio_emotion": "speaking"
+  },
+  "caption": "",
+  "caption_events": [],
+  "scores": {},
+  "clip_start": 1747.5,
+  "clip_end": 1752.5
+}
