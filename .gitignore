@@ -26,3 +26,7 @@ push_to_github.ps1
 "*.pth" 
 "model/checkpoints/" 
 "dataset-assembler/dataset/" 
+"*.pt" 
+"*.pth" 
+"model/checkpoints/" 
+"dataset-assembler/dataset/" 
