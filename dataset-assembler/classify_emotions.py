@@ -190,7 +190,15 @@ def blendshapes_to_emotions(bs: dict[str, float]) -> tuple[str, dict[str, float]
         "contempt": round(min(100, (smile_asym*0.6 + mouth_press*0.2 + eye_squint*0.2) * 100), 2),
         "confused": round(min(100, (brow_asym*0.5  + brow_down*0.3  + (1-mouth_open)*0.2) * 100), 2),
     }
-    dominant = max(scores, key=lambda k: scores[k])
+    # Pick dominant: if any reaction emotion exceeds threshold, prefer it over neutral.
+    # (Neutral starts at 100 and always wins argmax — use threshold instead.)
+    REACTION_THRESHOLD = 15.0
+    reaction_scores = {k: v for k, v in scores.items() if k != "neutral"}
+    best_reaction = max(reaction_scores, key=lambda k: reaction_scores[k])
+    if reaction_scores[best_reaction] >= REACTION_THRESHOLD:
+        dominant = best_reaction
+    else:
+        dominant = "neutral"
     return dominant, scores
 
 
