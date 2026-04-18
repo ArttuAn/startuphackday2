@@ -22,3 +22,7 @@ __pycache__/
 push_to_github.ps1
 .claude 
 "model/checkpoints/*.pt" 
+"*.pt" 
+"*.pth" 
+"model/checkpoints/" 
+"dataset-assembler/dataset/" 
