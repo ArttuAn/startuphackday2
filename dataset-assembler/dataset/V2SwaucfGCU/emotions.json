@@ -1,8 +1,16 @@
 [
   {
     "t": 0.0,
-    "emotion": "none",
-    "scores": {},
+    "emotion": "angry",
+    "scores": {
+      "angry": 81.55,
+      "disgust": 0.0,
+      "fear": 0.06,
+      "happy": 2.15,
+      "sad": 3.15,
+      "surprise": 2.98,
+      "neutral": 10.1
+    },
     "audio": {
       "loudness": 32.01,
       "pitch_mean": 107.8,
@@ -15,18 +23,15 @@
   },
   {
     "t": 4.97,
-    "emotion": "confused",
+    "emotion": "happy",
     "scores": {
-      "neutral": 78.64,
-      "happy": 7.3,
-      "excited": 11.29,
-      "sad": 18.32,
-      "angry": 19.86,
-      "fear": 12.14,
-      "surprise": 11.23,
-      "disgust": 9.71,
-      "contempt": 13.33,
-      "confused": 20.2
+      "angry": 2.59,
+      "disgust": 0.01,
+      "fear": 21.88,
+      "happy": 73.05,
+      "sad": 0.97,
+      "surprise": 0.29,
+      "neutral": 1.21
     },
     "audio": {
       "loudness": 90.28,
@@ -40,18 +45,15 @@
   },
   {
     "t": 9.94,
-    "emotion": "angry",
+    "emotion": "fear",
     "scores": {
-      "neutral": 92.89,
-      "happy": 0.55,
-      "excited": 2.47,
-      "sad": 20.76,
-      "angry": 21.38,
-      "fear": 4.39,
-      "surprise": 4.97,
-      "disgust": 6.54,
-      "contempt": 4.51,
-      "confused": 20.75
+      "angry": 4.37,
+      "disgust": 0.0,
+      "fear": 93.82,
+      "happy": 0.01,
+      "sad": 1.21,
+      "surprise": 0.59,
+      "neutral": 0.01
     },
     "audio": {
       "loudness": 99.24,
@@ -65,18 +67,15 @@
   },
   {
     "t": 14.91,
-    "emotion": "angry",
+    "emotion": "fear",
     "scores": {
-      "neutral": 85.0,
-      "happy": 5.91,
-      "excited": 13.18,
-      "sad": 20.2,
-      "angry": 20.53,
-      "fear": 10.03,
-      "surprise": 18.05,
-      "disgust": 5.16,
-      "contempt": 3.58,
-      "confused": 14.73
+      "angry": 39.8,
+      "disgust": 0.0,
+      "fear": 57.88,
+      "happy": 0.04,
+      "sad": 1.8,
+      "surprise": 0.45,
+      "neutral": 0.02
     },
     "audio": {
       "loudness": 100.0,

@@ -32,11 +32,6 @@ from tqdm import tqdm
 from config import DATASET_DIR
 from parse_captions import load_captions, nearest_caption
 
-# ── Expressiveness filter ──────────────────────────────────────────────────
-# Fraction of classified frames that must show a non-neutral, non-none emotion.
-# Streamers below this threshold are deleted from the dataset — they barely
-# react and won't contribute useful training signal.
-MIN_REACTION_RATE = 0.15   # 15 % of frames must be expressive
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger(__name__)
@@ -158,6 +153,62 @@ def analyse_audio_window(samples: np.ndarray, sr: int, t: float) -> dict:
     }
 
 
+# ── Alternative emotion backends ──────────────────────────────────────────
+
+def fer_emotions(face_crop_bgr: np.ndarray) -> tuple[str, dict[str, float]]:
+    """
+    FER backend — proper CNN trained on FER2013.
+    pip install fer
+    Returns (dominant_emotion, scores_0_to_100).
+    Emotions: angry, disgust, fear, happy, sad, surprise, neutral
+    """
+    try:
+        from fer import FER
+    except ImportError:
+        raise ImportError("pip install fer")
+
+    detector = FER(mtcnn=False)   # mtcnn=False = faster, uses OpenCV face detect
+    result   = detector.detect_emotions(face_crop_bgr)
+
+    if not result:
+        return "none", {}
+
+    emotions = result[0]["emotions"]   # dict e.g. {"happy": 0.92, "neutral": 0.05 ...}
+    scores   = {k: round(v * 100, 2) for k, v in emotions.items()}
+    dominant = max(scores, key=lambda k: scores[k])
+    return dominant, scores
+
+
+def deepface_emotions(face_crop_bgr: np.ndarray) -> tuple[str, dict[str, float]]:
+    """
+    DeepFace backend — ensemble of pretrained models.
+    pip install deepface
+    Returns (dominant_emotion, scores_0_to_100).
+    Emotions: angry, disgust, fear, happy, sad, surprise, neutral
+    """
+    try:
+        from deepface import DeepFace
+    except ImportError:
+        raise ImportError("pip install deepface")
+
+    try:
+        result = DeepFace.analyze(
+            face_crop_bgr,
+            actions=["emotion"],
+            enforce_detection=False,
+            silent=True,
+        )
+        if isinstance(result, list):
+            result = result[0]
+        emotions = result["emotion"]   # already 0–100
+        scores   = {k: round(float(v), 2) for k, v in emotions.items()}
+        dominant = result["dominant_emotion"]
+        return dominant, scores
+    except Exception as e:
+        log.debug("deepface error: %s", e)
+        return "none", {}
+
+
 # ── 10-emotion blendshape mapping ──────────────────────────────────────────
 
 def blendshapes_to_emotions(bs: dict[str, float]) -> tuple[str, dict[str, float]]:
@@ -204,10 +255,15 @@ def blendshapes_to_emotions(bs: dict[str, float]) -> tuple[str, dict[str, float]
 
 # ── Per-video classifier ───────────────────────────────────────────────────
 
-def classify_video(vid_dir: Path, out_path: Path) -> bool:
-    import mediapipe as mp
-    from mediapipe.tasks import python as mp_python
-    from mediapipe.tasks.python import vision as mp_vision
+def classify_video(vid_dir: Path, out_path: Path,
+                   backend: str = "mediapipe") -> bool:
+    """
+    backend: "mediapipe" (blendshapes) | "fer" (FER2013 CNN) | "deepface"
+    """
+    if backend == "mediapipe":
+        import mediapipe as mp
+        from mediapipe.tasks import python as mp_python
+        from mediapipe.tasks.python import vision as mp_vision
 
     facecam_path = vid_dir / "facecam.mp4" if (vid_dir / "facecam.mp4").exists() else vid_dir / "raw.mp4"
     audio_path   = vid_dir / "audio.wav"
@@ -226,14 +282,17 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
         except Exception as e:
             log.warning("  could not parse bbox.txt (%s) — running on full frame", e)
 
-    model_path = _ensure_model()
-    options = mp_vision.FaceLandmarkerOptions(
-        base_options=mp_python.BaseOptions(model_asset_path=str(model_path)),
-        output_face_blendshapes=True,
-        num_faces=1,
-        min_face_detection_confidence=0.2,
-    )
-    landmarker = mp_vision.FaceLandmarker.create_from_options(options)
+    if backend == "mediapipe":
+        model_path = _ensure_model()
+        options = mp_vision.FaceLandmarkerOptions(
+            base_options=mp_python.BaseOptions(model_asset_path=str(model_path)),
+            output_face_blendshapes=True,
+            num_faces=1,
+            min_face_detection_confidence=0.2,
+        )
+        landmarker = mp_vision.FaceLandmarker.create_from_options(options)
+    else:
+        landmarker = None   # not used for fer/deepface
 
     # Load captions (VTT auto-captions downloaded alongside video)
     captions = load_captions(vid_dir)
@@ -299,12 +358,18 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
 
             # ── Face emotion ───────────────────────────────────────────────
             emotion, scores = "none", {}
-            rgb    = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
-            result = landmarker.detect(mp_img)
-            if result.face_blendshapes:
-                bs = {c.category_name: c.score for c in result.face_blendshapes[0]}
-                emotion, scores = blendshapes_to_emotions(bs)
+            if backend == "mediapipe":
+                rgb    = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
+                result = landmarker.detect(mp_img)
+                if result.face_blendshapes:
+                    bs = {c.category_name: c.score
+                          for c in result.face_blendshapes[0]}
+                    emotion, scores = blendshapes_to_emotions(bs)
+            elif backend == "fer":
+                emotion, scores = fer_emotions(frame)
+            elif backend == "deepface":
+                emotion, scores = deepface_emotions(frame)
 
             # ── Audio analysis ─────────────────────────────────────────────
             audio_info = {}
@@ -329,7 +394,8 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
             frame_idx += step
 
     cap.release()
-    landmarker.close()
+    if landmarker is not None:
+        landmarker.close()
 
     out_path.write_text(json.dumps(timeline, indent=2))
     no_face   = sum(1 for e in timeline if e["emotion"] == "none")
@@ -346,11 +412,38 @@ def classify_video(vid_dir: Path, out_path: Path) -> bool:
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def main():
-    try:
-        import mediapipe
-    except ImportError:
-        log.error("mediapipe not installed — run: pip install mediapipe")
-        sys.exit(1)
+    import argparse
+    parser = argparse.ArgumentParser(description="Classify emotions in streamer videos")
+    parser.add_argument(
+        "--backend", default="mediapipe",
+        choices=["mediapipe", "fer", "deepface"],
+        help=(
+            "Emotion detection backend:\n"
+            "  mediapipe — MediaPipe blendshapes (default, no extra install)\n"
+            "  fer        — FER2013 CNN (pip install fer)  ← recommended\n"
+            "  deepface   — DeepFace ensemble (pip install deepface)  ← most accurate"
+        ),
+    )
+    args = parser.parse_args()
+
+    if args.backend == "mediapipe":
+        try:
+            import mediapipe
+        except ImportError:
+            log.error("pip install mediapipe")
+            sys.exit(1)
+    elif args.backend == "fer":
+        try:
+            from fer import FER
+        except ImportError:
+            log.error("pip install fer")
+            sys.exit(1)
+    elif args.backend == "deepface":
+        try:
+            from deepface import DeepFace
+        except ImportError:
+            log.error("pip install deepface")
+            sys.exit(1)
 
     vid_dirs = sorted(d for d in DATASET_DIR.iterdir()
                       if d.is_dir() and (
@@ -361,12 +454,14 @@ def main():
         log.error("No videos found in %s — run assemble.py first", DATASET_DIR)
         sys.exit(1)
 
-    log.info("Classifying emotions for %d videos (1 frame/5s)...", len(vid_dirs))
+    log.info("Backend: %s | Classifying %d videos (1 frame/5s)...",
+             args.backend, len(vid_dirs))
 
     ok = 0
     for i, vid_dir in enumerate(vid_dirs, 1):
         log.info("[%d/%d] %s", i, len(vid_dirs), vid_dir.name)
-        result = classify_video(vid_dir, vid_dir / "emotions.json")
+        result = classify_video(vid_dir, vid_dir / "emotions.json",
+                                backend=args.backend)
         if result:
             ok += 1
 

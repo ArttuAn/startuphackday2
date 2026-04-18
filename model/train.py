@@ -81,8 +81,31 @@ class SigLIPEmotionPredictor(nn.Module):
 
 # ── Metrics ─────────────────────────────────────────────────────────────────
 
-def kl_loss(pred: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
-    return F.kl_div(pred.log(), target, reduction="batchmean")
+def focal_loss(pred: torch.Tensor, target: torch.Tensor,
+               class_weights: torch.Tensor, gamma: float = 2.0) -> torch.Tensor:
+    """
+    Class-weighted focal loss for soft (distribution) targets.
+    Loss = -Σ_c  w_c * y_c * (1 - p_c)^γ * log(p_c + ε)
+    """
+    eps = 1e-8
+    log_p   = torch.log(pred + eps)
+    focal_w = (1.0 - pred) ** gamma
+    w       = class_weights.to(pred.device)          # (N_EMOTIONS,)
+    loss    = -(w * target * focal_w * log_p).sum(dim=1)
+    return loss.mean()
+
+
+def build_class_weights(loader, n_classes: int) -> torch.Tensor:
+    """Inverse-frequency class weights from soft label argmax counts."""
+    counts = torch.zeros(n_classes)
+    for _, soft_labels in loader:
+        indices = soft_labels.argmax(dim=1)
+        for idx in indices:
+            counts[idx] += 1
+    counts  = counts.clamp(min=1.0)
+    weights = 1.0 / counts
+    weights = weights / weights.sum() * n_classes   # normalise so mean weight ≈ 1
+    return weights
 
 
 def compute_metrics(preds: np.ndarray, targets: np.ndarray) -> dict:
@@ -111,6 +134,7 @@ def compute_metrics(preds: np.ndarray, targets: np.ndarray) -> dict:
 # ── Training loop ────────────────────────────────────────────────────────────
 
 def run_epoch(model, loader, optimizer, device, train: bool,
+              class_weights: torch.Tensor = None,
               wandb_run=None, epoch: int = 0, global_step: list = None):
     from tqdm import tqdm
 
@@ -129,7 +153,7 @@ def run_epoch(model, loader, optimizer, device, train: bool,
             soft_labels  = soft_labels.to(device)
 
             pred = model(pixel_values)
-            loss = kl_loss(pred, soft_labels)
+            loss = focal_loss(pred, soft_labels, class_weights)
 
             if train:
                 optimizer.zero_grad()
@@ -139,7 +163,7 @@ def run_epoch(model, loader, optimizer, device, train: bool,
                 # Log every batch to wandb so metrics appear immediately
                 if wandb_run and global_step is not None:
                     global_step[0] += 1
-                    wandb_run.log({"train/batch_kl_loss": loss.item()},
+                    wandb_run.log({"train/batch_focal_loss": loss.item()},
                                   step=global_step[0])
 
             total_loss  += loss.item() * soft_labels.size(0)
@@ -152,7 +176,7 @@ def run_epoch(model, loader, optimizer, device, train: bool,
     preds    = np.concatenate(all_preds,   axis=0)
     targets  = np.concatenate(all_targets, axis=0)
     metrics  = compute_metrics(preds, targets)
-    metrics["kl_loss"]     = avg_loss
+    metrics["focal_loss"]  = avg_loss
     metrics["pred_labels"] = preds.argmax(axis=1).tolist()
     metrics["true_labels"] = targets.argmax(axis=1).tolist()
     return metrics
@@ -265,6 +289,14 @@ def main():
     )
     print(f"Train: {len(train_loader.dataset)} | Val: {len(val_loader.dataset)}")
 
+    # ── Class weights (focal loss) ────────────────────────────────────────
+    print("Computing class weights...")
+    class_weights = build_class_weights(train_loader, N_EMOTIONS)
+    print("  weights:", {EMOTION_CLASSES[i]: f"{class_weights[i]:.3f}" for i in range(N_EMOTIONS)})
+    if use_wandb and run:
+        wandb.log({"class_weights": {EMOTION_CLASSES[i]: float(class_weights[i])
+                                      for i in range(N_EMOTIONS)}})
+
     # ── Model ────────────────────────────────────────────────────────────
     model     = SigLIPEmotionPredictor(siglip_model).to(device)
     optimizer = AdamW(model.head.parameters(), lr=args.lr, weight_decay=1e-4)
@@ -284,18 +316,20 @@ def main():
         t0 = time.time()
 
         train_m = run_epoch(model, train_loader, optimizer, device, train=True,
+                            class_weights=class_weights,
                             wandb_run=run if use_wandb else None,
                             epoch=epoch, global_step=global_step)
         val_m   = run_epoch(model, val_loader, optimizer, device, train=False,
+                            class_weights=class_weights,
                             epoch=epoch)
         scheduler.step()
         elapsed = time.time() - t0
 
         print(
             f"Epoch {epoch:3d}/{args.epochs} | "
-            f"train KL={train_m['kl_loss']:.4f} top1={train_m['top1_acc']:.3f} "
+            f"train FL={train_m['focal_loss']:.4f} top1={train_m['top1_acc']:.3f} "
             f"top3={train_m['top3_acc']:.3f} f1={train_m['macro_f1']:.3f} | "
-            f"val KL={val_m['kl_loss']:.4f} top1={val_m['top1_acc']:.3f} "
+            f"val FL={val_m['focal_loss']:.4f} top1={val_m['top1_acc']:.3f} "
             f"top3={val_m['top3_acc']:.3f} f1={val_m['macro_f1']:.3f} | "
             f"{elapsed:.1f}s"
         )
@@ -303,14 +337,14 @@ def main():
         if use_wandb and run:
             log_dict = {
                 "epoch": epoch,
-                "train/kl_loss":  train_m["kl_loss"],
-                "train/top1_acc": train_m["top1_acc"],
-                "train/top3_acc": train_m["top3_acc"],
-                "train/macro_f1": train_m["macro_f1"],
-                "val/kl_loss":    val_m["kl_loss"],
-                "val/top1_acc":   val_m["top1_acc"],
-                "val/top3_acc":   val_m["top3_acc"],
-                "val/macro_f1":   val_m["macro_f1"],
+                "train/focal_loss": train_m["focal_loss"],
+                "train/top1_acc":   train_m["top1_acc"],
+                "train/top3_acc":   train_m["top3_acc"],
+                "train/macro_f1":   train_m["macro_f1"],
+                "val/focal_loss":   val_m["focal_loss"],
+                "val/top1_acc":     val_m["top1_acc"],
+                "val/top3_acc":     val_m["top3_acc"],
+                "val/macro_f1":     val_m["macro_f1"],
                 "lr": scheduler.get_last_lr()[0],
             }
             # Confusion matrix — matplotlib heatmap logged as image
@@ -322,13 +356,13 @@ def main():
                **{f"val_{k}": v for k, v in val_m.items()}}
         history.append(row)
 
-        if val_m["kl_loss"] < best_val_loss:
-            best_val_loss = val_m["kl_loss"]
+        if val_m["focal_loss"] < best_val_loss:
+            best_val_loss = val_m["focal_loss"]
             ckpt_path = args.out / "best_model.pt"
             torch.save({
                 "epoch":           epoch,
                 "model_state":     model.state_dict(),
-                "val_loss":        val_m["kl_loss"],
+                "val_loss":        val_m["focal_loss"],
                 "val_top1_acc":    val_m["top1_acc"],
                 "val_top3_acc":    val_m["top3_acc"],
                 "val_macro_f1":    val_m["macro_f1"],
@@ -336,7 +370,7 @@ def main():
                 "n_frames":        args.n_frames,
                 "emotion_classes": EMOTION_CLASSES,
             }, ckpt_path)
-            print(f"  → saved best_model.pt (val_KL={val_m['kl_loss']:.4f})")
+            print(f"  → saved best_model.pt (val_FL={val_m['focal_loss']:.4f})")
 
             # Log checkpoint as wandb artifact
             if use_wandb and run:
@@ -368,7 +402,7 @@ def main():
         run.log_artifact(artifact)
         run.finish()
 
-    print(f"\nDone — best val KL: {best_val_loss:.4f}")
+    print(f"\nDone — best val focal loss: {best_val_loss:.4f}")
     print(f"Checkpoints: {args.out}")
 
 

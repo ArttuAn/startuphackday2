@@ -29,7 +29,8 @@ from pathlib import Path
 BASE = Path(__file__).parent
 
 
-def build_steps(max_videos: int, shorts_only: bool = False) -> list[dict]:
+def build_steps(max_videos: int, shorts_only: bool = False,
+                emotion_backend: str = "mediapipe") -> list[dict]:
     scrape_args = ["--max_videos", str(max_videos), "--download"]
     if shorts_only:
         scrape_args.append("--shorts_only")
@@ -59,9 +60,9 @@ def build_steps(max_videos: int, shorts_only: bool = False) -> list[dict]:
             "flag":   "skip_assemble",
         },
         {
-            "name":   "5. Classify emotions + remove emotionless streamers",
+            "name":   "5. Classify emotions",
             "script": BASE / "dataset-assembler" / "classify_emotions.py",
-            "args":   [],
+            "args":   ["--backend", emotion_backend],
             "flag":   "skip_emotions",
         },
         {
@@ -114,13 +115,17 @@ def main():
                         help="Max videos to scrape and download (default: 50)")
     parser.add_argument("--shorts_only", action="store_true",
                         help="Only scrape YouTube Shorts")
+    parser.add_argument("--emotion_backend", default="mediapipe",
+                        choices=["mediapipe", "fer", "deepface"],
+                        help="Emotion detection backend for step 5 (default: mediapipe)")
     steps = build_steps(50)  # placeholder; rebuilt after parsing
     for step in steps:
         parser.add_argument(f"--{step['flag']}", action="store_true",
                             help=f"Skip: {step['name']}")
     args = parser.parse_args()
 
-    steps = build_steps(args.max_videos, shorts_only=args.shorts_only)
+    steps = build_steps(args.max_videos, shorts_only=args.shorts_only,
+                        emotion_backend=args.emotion_backend)
 
     print(f"Starting pipeline (max_videos={args.max_videos})...\n")
     failed = False
