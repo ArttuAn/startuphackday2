@@ -134,9 +134,13 @@ def analyse_audio_window(samples: np.ndarray, sr: int, t: float) -> dict:
 
     # ── Coarse audio emotion label ─────────────────────────────────────────
     if loudness < 5:
-        audio_emotion = "silent"
+        audio_emotion = "silence"
     elif loudness < 20 and speech_ratio < 0.3:
         audio_emotion = "quiet"
+    elif loudness > 45 and pitch_var > 55 and speech_ratio > 0.4:
+        audio_emotion = "laughing"      # rhythmic energy + high pitch variability
+    elif loudness > 45 and speech_ratio < 0.25:
+        audio_emotion = "gasp"          # energy burst with little sustained speech
     elif loudness > 70:
         audio_emotion = "shouting"
     elif loudness > 40 and pitch_var > 30:
@@ -151,6 +155,92 @@ def analyse_audio_window(samples: np.ndarray, sr: int, t: float) -> dict:
         "speech":       speech_ratio,
         "audio_emotion": audio_emotion,
     }
+
+
+# ── Arousal / valence / head pose helpers ─────────────────────────────────
+
+def compute_arousal_valence(bs: dict) -> tuple[float, float]:
+    """
+    Derive arousal (0–1) and valence (−1..+1) from MediaPipe blendshapes.
+
+    Arousal  — how activated/intense the face is (0 = neutral rest).
+    Valence  — affective tone (+1 = very pleasant, −1 = very unpleasant).
+    """
+    eye_wide      = (bs.get("eyeWideLeft",0)         + bs.get("eyeWideRight",0)) / 2
+    brow_up       = (bs.get("browInnerUp",0)          +
+                     bs.get("browOuterUpLeft",0)       +
+                     bs.get("browOuterUpRight",0)) / 3
+    brow_down     = (bs.get("browDownLeft",0)         + bs.get("browDownRight",0)) / 2
+    jaw_open      = bs.get("jawOpen", 0)
+    smile         = (bs.get("mouthSmileLeft",0)       + bs.get("mouthSmileRight",0)) / 2
+    frown         = (bs.get("mouthFrownLeft",0)       + bs.get("mouthFrownRight",0)) / 2
+    nose_sneer    = (bs.get("noseSneerLeft",0)        + bs.get("noseSneerRight",0)) / 2
+    mouth_stretch = (bs.get("mouthStretchLeft",0)     + bs.get("mouthStretchRight",0)) / 2
+
+    arousal = min(1.0,
+                  eye_wide * 0.20 + brow_up * 0.20 + brow_down * 0.15 +
+                  jaw_open * 0.25 + mouth_stretch * 0.20)
+
+    valence = smile * 0.6 - frown * 0.3 - nose_sneer * 0.2 - brow_down * 0.1
+    valence = max(-1.0, min(1.0, valence * 2.0))
+
+    return round(arousal, 3), round(valence, 3)
+
+
+def compute_surprise_tension(bs: dict) -> tuple[float, float]:
+    """
+    Surprise (0–1): sudden widening of eyes + brows + mouth.
+    Tension  (0–1): compressed, braced face — brow furrow + lip press + squint.
+    """
+    eye_wide   = (bs.get("eyeWideLeft",0)   + bs.get("eyeWideRight",0)) / 2
+    brow_up    = (bs.get("browInnerUp",0)   + bs.get("browOuterUpLeft",0) +
+                  bs.get("browOuterUpRight",0)) / 3
+    jaw_open   = bs.get("jawOpen", 0)
+    brow_down  = (bs.get("browDownLeft",0)  + bs.get("browDownRight",0)) / 2
+    mouth_press = (bs.get("mouthPressLeft",0) + bs.get("mouthPressRight",0)) / 2
+    eye_squint = (bs.get("eyeSquintLeft",0) + bs.get("eyeSquintRight",0)) / 2
+
+    surprise = min(1.0, eye_wide * 0.35 + brow_up * 0.35 + jaw_open * 0.30)
+    tension  = min(1.0, brow_down * 0.40 + mouth_press * 0.35 + eye_squint * 0.25)
+
+    return round(surprise, 3), round(tension, 3)
+
+
+def arousal_valence_from_scores(scores: dict) -> tuple[float, float]:
+    """
+    Fallback for FER / DeepFace backends — estimate arousal/valence
+    from the discrete emotion probability scores (0–100).
+    """
+    total = sum(scores.values())
+    if total < 1e-6:
+        return 0.0, 0.0
+    n = {k: v / 100.0 for k, v in scores.items()}
+    arousal = round(1.0 - n.get("neutral", 0), 3)
+    positive = n.get("happy", 0) + n.get("excited", 0) * 0.7 + n.get("surprise", 0) * 0.3
+    negative = (n.get("sad", 0) + n.get("angry", 0) + n.get("fear", 0) +
+                n.get("disgust", 0) + n.get("contempt", 0) * 0.5)
+    valence  = round(max(-1.0, min(1.0, (positive - negative) * 2.0)), 3)
+    return arousal, valence
+
+
+def extract_head_pose(mat) -> dict:
+    """
+    Extract yaw / pitch / roll (degrees) from a 4×4 facial-transformation matrix
+    returned by MediaPipe FaceLandmarker.
+    """
+    import math
+    try:
+        pitch = math.atan2(-mat[2][0],
+                           math.sqrt(mat[2][1] ** 2 + mat[2][2] ** 2))
+        yaw   = math.atan2(mat[1][0], mat[0][0])
+        roll  = math.atan2(mat[2][1], mat[2][2])
+        return {
+            "yaw":   round(math.degrees(yaw),   1),
+            "pitch": round(math.degrees(pitch), 1),
+            "roll":  round(math.degrees(roll),  1),
+        }
+    except Exception:
+        return {"yaw": 0.0, "pitch": 0.0, "roll": 0.0}
 
 
 # ── Alternative emotion backends ──────────────────────────────────────────
@@ -305,6 +395,7 @@ def classify_video(vid_dir: Path, out_path: Path,
         options = mp_vision.FaceLandmarkerOptions(
             base_options=mp_python.BaseOptions(model_asset_path=str(model_path)),
             output_face_blendshapes=True,
+            output_facial_transformation_matrixes=True,
             num_faces=1,
             min_face_detection_confidence=0.2,
         )
@@ -341,8 +432,9 @@ def classify_video(vid_dir: Path, out_path: Path,
     step     = max(1, int(fps * 5))    # sample every 5 seconds
     n_frames = total_f // step
 
-    timeline  = []
-    frame_idx = 0
+    timeline      = []
+    frame_idx     = 0
+    prev_nose_pos = None   # (x, y) normalised — for head motion energy
 
     with tqdm(total=n_frames, unit="s", desc=vid_dir.name, dynamic_ncols=True) as pbar:
         while frame_idx < total_f:
@@ -374,8 +466,14 @@ def classify_video(vid_dir: Path, out_path: Path,
                     interpolation=cv2.INTER_LANCZOS4,
                 )
 
-            # ── Face emotion ───────────────────────────────────────────────
-            emotion, scores = "none", {}
+            # ── Face emotion + richer signals ─────────────────────────────
+            emotion, scores  = "none", {}
+            blendshapes_dict = {}
+            arousal, valence = 0.0, 0.0
+            surprise, tension = 0.0, 0.0
+            head_pose        = {"yaw": 0.0, "pitch": 0.0, "roll": 0.0}
+            head_motion      = 0.0   # displacement of nose tip (normalised px)
+
             if backend == "mediapipe":
                 rgb    = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
@@ -383,11 +481,32 @@ def classify_video(vid_dir: Path, out_path: Path,
                 if result.face_blendshapes:
                     bs = {c.category_name: c.score
                           for c in result.face_blendshapes[0]}
-                    emotion, scores = blendshapes_to_emotions(bs)
+                    emotion, scores          = blendshapes_to_emotions(bs)
+                    arousal, valence         = compute_arousal_valence(bs)
+                    surprise, tension        = compute_surprise_tension(bs)
+                    blendshapes_dict         = {k: round(v, 4) for k, v in bs.items()}
+
+                # Head pose from transformation matrix
+                if result.facial_transformation_matrixes:
+                    head_pose = extract_head_pose(
+                        result.facial_transformation_matrixes[0])
+
+                # Head motion: nose tip displacement since last sample
+                if result.face_landmarks:
+                    nose = result.face_landmarks[0][1]   # index 1 = nose tip
+                    nose_pos = (nose.x, nose.y)
+                    if prev_nose_pos is not None:
+                        head_motion = round(
+                            ((nose_pos[0] - prev_nose_pos[0]) ** 2 +
+                             (nose_pos[1] - prev_nose_pos[1]) ** 2) ** 0.5, 4)
+                    prev_nose_pos = nose_pos
+
             elif backend == "fer":
-                emotion, scores = fer_emotions(frame)
+                emotion, scores  = fer_emotions(frame)
+                arousal, valence = arousal_valence_from_scores(scores)
             elif backend == "deepface":
-                emotion, scores = deepface_emotions(frame)
+                emotion, scores  = deepface_emotions(frame)
+                arousal, valence = arousal_valence_from_scores(scores)
 
             # ── Audio analysis ─────────────────────────────────────────────
             audio_info = {}
@@ -401,6 +520,17 @@ def classify_video(vid_dir: Path, out_path: Path,
                 "t":              t,
                 "emotion":        emotion,
                 "scores":         scores,
+                # ── dimensional affect ────────────────────────────────────
+                "arousal":        arousal,        # 0–1  (intensity)
+                "valence":        valence,        # −1..+1 (pleasant vs unpleasant)
+                "surprise":       surprise,       # 0–1
+                "tension":        tension,        # 0–1
+                # ── head motion ───────────────────────────────────────────
+                "head_pose":      head_pose,      # {yaw, pitch, roll} degrees
+                "head_motion":    head_motion,    # nose-tip displacement (norm. coords)
+                # ── raw expression embedding ──────────────────────────────
+                "blendshapes":    blendshapes_dict,   # 52 MediaPipe coefficients
+                # ── audio ─────────────────────────────────────────────────
                 "audio":          audio_info,
                 "caption":        caption_entry.get("text", ""),
                 "caption_events": caption_entry.get("events", []),

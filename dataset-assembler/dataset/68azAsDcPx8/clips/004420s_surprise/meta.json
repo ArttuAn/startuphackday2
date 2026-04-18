@@ -11,13 +11,16 @@
   "caption": "",
   "caption_events": [],
   "scores": {
-    "angry": 0.02,
-    "disgust": 0.0,
-    "fear": 8.94,
-    "happy": 1.05,
-    "sad": 0.03,
-    "surprise": 89.92,
-    "neutral": 0.04
+    "neutral": 72.29,
+    "happy": 7.57,
+    "excited": 20.31,
+    "sad": 0.1,
+    "angry": 0.12,
+    "fear": 18.51,
+    "surprise": 27.71,
+    "disgust": 7.76,
+    "contempt": 5.35,
+    "confused": 12.46
   },
   "clip_start": 4417.5,
   "clip_end": 4422.5
