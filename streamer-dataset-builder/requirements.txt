@@ -1,0 +1,9 @@
+yt-dlp>=2024.3.10
+ffmpeg-python>=0.2.0
+webrtcvad>=2.0.10
+tqdm>=4.66.0
+# Optional — uncomment if you want Whisper transcripts
+# openai-whisper>=20231117
+# Optional — uncomment for facecam detection
+# opencv-python>=4.9.0
+# torch>=2.2.0

@@ -1,0 +1,22 @@
+# Large media files
+*.mp4
+*.webm
+*.mkv
+*.wav
+*.part
+
+# Pipeline data folders (raw downloads & processed output)
+streamer-dataset-builder/data/
+streamer-dataset-builder/dataset/
+streamer-separator/output/
+streamer-dataset-builder/logs/
+streamer-separator/logs/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# This script (optional — remove line if you want it in the repo)
+push_to_github.ps1
