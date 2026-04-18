@@ -1,0 +1,24 @@
+{
+  "t": 2645.0,
+  "emotion": "sad",
+  "audio": {
+    "loudness": 23.23,
+    "pitch_mean": 110.8,
+    "pitch_var": 48.7,
+    "speech": 0.837,
+    "audio_emotion": "speaking"
+  },
+  "caption": "",
+  "caption_events": [],
+  "scores": {
+    "angry": 0.0,
+    "disgust": 0.0,
+    "fear": 0.01,
+    "happy": 0.01,
+    "sad": 99.32,
+    "surprise": 0.0,
+    "neutral": 0.66
+  },
+  "clip_start": 2642.5,
+  "clip_end": 2647.5
+}

@@ -1,0 +1,24 @@
+{
+  "t": 3080.0,
+  "emotion": "angry",
+  "audio": {
+    "loudness": 35.88,
+    "pitch_mean": 86.9,
+    "pitch_var": 45.2,
+    "speech": 1.0,
+    "audio_emotion": "speaking"
+  },
+  "caption": "",
+  "caption_events": [],
+  "scores": {
+    "angry": 47.01,
+    "disgust": 0.0,
+    "fear": 0.59,
+    "happy": 0.04,
+    "sad": 35.63,
+    "surprise": 0.0,
+    "neutral": 16.73
+  },
+  "clip_start": 3077.5,
+  "clip_end": 3082.5
+}

@@ -388,3 +388,933 @@
 {"time":"2026-04-18T22:09:41.6013954+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
 {"time":"2026-04-18T22:09:42.604676+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":155,"events_lines":1}
 {"time":"2026-04-18T22:09:42.8557483+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:09:56.5938856+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:09:57.613016+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":156,"events_lines":1}
+{"time":"2026-04-18T22:09:57.8019059+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:10:11.5863665+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:10:12.6050916+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":157,"events_lines":1}
+{"time":"2026-04-18T22:10:12.8528749+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:10:26.7197082+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:10:27.6041831+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":158,"events_lines":1}
+{"time":"2026-04-18T22:10:28.0519405+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:10:41.5825918+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:10:42.6049624+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":159,"events_lines":1}
+{"time":"2026-04-18T22:10:42.8228781+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:10:56.5823203+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:10:57.6042674+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":160,"events_lines":1}
+{"time":"2026-04-18T22:10:57.8820406+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:11:11.5828647+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:11:12.6107947+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":161,"events_lines":1}
+{"time":"2026-04-18T22:11:12.8121019+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:11:26.6008024+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:11:27.6043364+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":162,"events_lines":1}
+{"time":"2026-04-18T22:11:27.8110674+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:11:41.6255798+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:11:42.6042596+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":163,"events_lines":1}
+{"time":"2026-04-18T22:11:42.8034355+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:11:56.6090474+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:11:57.6083325+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":164,"events_lines":1}
+{"time":"2026-04-18T22:11:57.8140304+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:12:11.6792118+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:12:12.6042564+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":165,"events_lines":1}
+{"time":"2026-04-18T22:12:26.6518501+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:12:31.7775369+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": read tcp 192.168.70.152:64081->34.8.250.101:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2026-04-18T22:12:33.9418909+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:12:38.4075154+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:12:41.5910608+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:12:47.0099213+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:12:56.584941+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:13:04.9786292+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:13:11.5823393+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:13:26.6009606+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:13:40.5703453+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:13:41.6463768+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:13:56.5949699+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:14:11.5766629+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:14:26.6006107+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:14:40.5858792+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:14:41.5796147+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:14:56.577577+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:15:11.5952064+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:15:26.5986132+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:15:40.6046306+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:15:41.6469143+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:15:56.5915222+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:16:11.6049733+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:16:26.6050521+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:16:40.6544121+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:16:41.5816318+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:16:56.5771312+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:17:11.6110648+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:17:26.5991597+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:17:40.6719249+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:17:41.6265411+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:17:56.6028172+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:18:11.6034437+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:18:26.5928103+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:18:40.6864957+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:18:41.6034947+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:18:56.6086292+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:19:11.6029726+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:19:26.6043965+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:19:40.7024206+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:19:41.6044415+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:19:56.603025+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:20:11.597339+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:20:26.6126663+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:20:40.7350516+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:20:41.6121877+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:20:56.6009014+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:21:11.6217621+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:21:26.6150851+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:21:40.7494822+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:21:41.7046799+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:21:56.600255+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:22:11.5885575+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:22:26.6047161+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:22:40.7709297+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:22:41.6307562+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:22:56.6055967+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:23:11.6403282+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:23:26.6050985+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:23:40.7996752+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:23:41.5943058+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:23:56.6028174+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:24:11.6173614+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:24:26.6038789+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:24:40.850344+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:24:41.6005556+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:24:56.6029081+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:25:11.6396549+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:25:26.6097934+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:25:40.8995617+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:25:41.6014137+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:25:56.5801361+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:26:11.6006507+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:26:26.5834236+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:26:40.9343249+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:26:41.6136317+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:26:56.6060426+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:27:11.60367+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:27:26.5933657+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:27:40.9672933+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:27:41.6025301+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:27:56.6173441+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:28:11.5747567+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:28:26.6130879+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:28:41.013024+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:28:41.5792716+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:28:56.6250181+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:29:11.6061162+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:29:26.617398+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:29:41.1093734+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:29:41.6356669+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:29:56.5901986+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:30:11.5933214+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:30:26.6054309+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:30:41.1335423+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:30:41.6165614+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:30:56.6048417+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:31:11.6623089+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:31:26.583911+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:31:41.1825478+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:31:41.614855+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:31:56.6033362+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:32:11.6038396+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:32:26.6286058+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:32:41.3072009+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:32:41.6137377+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:32:56.6043183+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:33:11.6243113+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:33:26.5935982+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:33:41.3086081+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/arttu-antikainen-aalto/streamer-reaction-model/kgu0xtiu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2026-04-18T22:33:41.5789365+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:33:56.6269488+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:34:11.6028266+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:34:27.0080764+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:34:41.6001325+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:34:41.6324011+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:34:41.6324011+03:00","level":"INFO","msg":"filestream: sending request","total_files":0}
+{"time":"2026-04-18T22:34:41.8551957+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:34:41.8557506+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":166,"events_lines":89}
+{"time":"2026-04-18T22:34:42.2251733+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:34:42.2251733+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":255,"events_lines":1}
+{"time":"2026-04-18T22:34:42.541527+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:34:56.6041027+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:34:56.9593109+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":256,"events_lines":1}
+{"time":"2026-04-18T22:34:57.2908197+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:35:11.604234+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:35:11.9816082+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":257,"events_lines":1}
+{"time":"2026-04-18T22:35:12.3450955+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:35:26.5865691+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:35:26.9820921+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":258,"events_lines":1}
+{"time":"2026-04-18T22:35:27.3044373+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:35:41.596667+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:35:41.9821522+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":259,"events_lines":1}
+{"time":"2026-04-18T22:35:42.2648283+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:35:56.5943001+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:35:56.982053+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":260,"events_lines":1}
+{"time":"2026-04-18T22:35:57.4308241+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:36:11.5787359+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:36:11.9822908+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":261,"events_lines":1}
+{"time":"2026-04-18T22:36:12.1866164+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:36:26.5802975+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:36:26.982065+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":262,"events_lines":1}
+{"time":"2026-04-18T22:36:27.2081225+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:36:41.5880572+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:36:41.9831154+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":263,"events_lines":1}
+{"time":"2026-04-18T22:36:42.2410867+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:36:56.5785045+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:36:56.983933+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":264,"events_lines":1}
+{"time":"2026-04-18T22:36:57.211394+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:37:11.5786847+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:37:11.9841802+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":265,"events_lines":1}
+{"time":"2026-04-18T22:37:12.2449696+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:37:26.6080829+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:37:26.9844403+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":266,"events_lines":1}
+{"time":"2026-04-18T22:37:27.4006682+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:37:41.5879042+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:37:41.9929937+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":267,"events_lines":1}
+{"time":"2026-04-18T22:37:42.210615+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:37:56.6012114+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:37:56.9844558+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":268,"events_lines":1}
+{"time":"2026-04-18T22:37:57.2336096+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:38:11.577626+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:38:11.9845868+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":269,"events_lines":1}
+{"time":"2026-04-18T22:38:12.2247659+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:38:26.5768041+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:38:26.9840531+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":270,"events_lines":1}
+{"time":"2026-04-18T22:38:27.2363673+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:38:41.6178411+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:38:41.9844274+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":271,"events_lines":1}
+{"time":"2026-04-18T22:38:42.3892105+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:38:56.585133+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:38:56.9845727+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":272,"events_lines":1}
+{"time":"2026-04-18T22:38:57.7143408+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:39:11.5809014+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:39:11.9926265+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":273,"events_lines":1}
+{"time":"2026-04-18T22:39:12.2340561+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:39:26.5886899+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:39:26.9930023+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":274,"events_lines":1}
+{"time":"2026-04-18T22:39:27.2183398+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:39:41.629334+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:39:41.9929056+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":275,"events_lines":1}
+{"time":"2026-04-18T22:39:42.2971841+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:39:56.6049052+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:39:56.9928866+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":276,"events_lines":1}
+{"time":"2026-04-18T22:39:57.2634761+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:40:11.5800526+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:40:11.9944044+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":277,"events_lines":1}
+{"time":"2026-04-18T22:40:12.2340558+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:40:26.5787396+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:40:26.9931015+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":278,"events_lines":1}
+{"time":"2026-04-18T22:40:27.4588884+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:40:41.5786838+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:40:41.9938081+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":279,"events_lines":1}
+{"time":"2026-04-18T22:40:42.2510742+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:40:56.5857697+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:40:56.9930986+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":280,"events_lines":1}
+{"time":"2026-04-18T22:40:57.2643194+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:41:11.6499955+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:41:11.9934353+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":281,"events_lines":1}
+{"time":"2026-04-18T22:41:12.3086857+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:41:26.6085038+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:41:26.9927858+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":282,"events_lines":1}
+{"time":"2026-04-18T22:41:27.400825+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:41:41.6273597+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:41:42.0054279+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":283,"events_lines":1}
+{"time":"2026-04-18T22:41:42.2237013+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:41:56.5829819+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:41:56.9933296+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":284,"events_lines":1}
+{"time":"2026-04-18T22:41:57.3284797+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:42:11.5994253+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:42:11.9990705+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":285,"events_lines":1}
+{"time":"2026-04-18T22:42:12.2716478+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:42:26.5802255+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:42:26.9930622+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":286,"events_lines":1}
+{"time":"2026-04-18T22:42:27.2429887+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:42:41.5807469+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:42:41.9933294+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":287,"events_lines":1}
+{"time":"2026-04-18T22:42:42.5376044+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:42:56.581143+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:42:56.9927123+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":288,"events_lines":1}
+{"time":"2026-04-18T22:42:57.2431329+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:43:11.7333312+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:43:11.9972418+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":289,"events_lines":1}
+{"time":"2026-04-18T22:43:12.2655976+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:43:26.6438541+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:43:26.9929306+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":290,"events_lines":1}
+{"time":"2026-04-18T22:43:27.2628878+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:43:41.5837765+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:43:41.9930207+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":291,"events_lines":1}
+{"time":"2026-04-18T22:43:42.2390082+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:43:56.577642+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:43:56.9932486+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":292,"events_lines":1}
+{"time":"2026-04-18T22:43:57.2363584+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:44:11.5818296+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:44:11.9932164+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":293,"events_lines":1}
+{"time":"2026-04-18T22:44:12.5233949+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:44:26.6160061+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:44:26.9933287+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":294,"events_lines":1}
+{"time":"2026-04-18T22:44:27.2662106+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:44:41.6072714+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:44:41.993525+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":295,"events_lines":1}
+{"time":"2026-04-18T22:44:42.2721276+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:44:56.5789333+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:44:56.9936671+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":296,"events_lines":1}
+{"time":"2026-04-18T22:44:57.2233498+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:45:11.6421832+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:45:11.9936771+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":297,"events_lines":1}
+{"time":"2026-04-18T22:45:12.3035632+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:45:26.5765587+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:45:26.9936979+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":298,"events_lines":1}
+{"time":"2026-04-18T22:45:27.2176836+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:45:41.6598675+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:45:41.9936974+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":299,"events_lines":1}
+{"time":"2026-04-18T22:45:42.2700694+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:45:56.6222994+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:45:56.9935809+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":300,"events_lines":1}
+{"time":"2026-04-18T22:45:57.2330048+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:46:11.5822082+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:46:11.9940887+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":301,"events_lines":1}
+{"time":"2026-04-18T22:46:12.2367802+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:46:26.5856931+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:46:26.9997665+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":302,"events_lines":1}
+{"time":"2026-04-18T22:46:27.3155694+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:46:41.6160368+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:46:41.9938563+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":303,"events_lines":1}
+{"time":"2026-04-18T22:46:42.2132373+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:46:56.5866883+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:46:57.016784+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":304,"events_lines":1}
+{"time":"2026-04-18T22:46:57.2381805+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:47:11.6527412+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:47:12.0280186+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":305,"events_lines":1}
+{"time":"2026-04-18T22:47:12.2555257+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:47:26.582133+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:47:27.0161919+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":306,"events_lines":1}
+{"time":"2026-04-18T22:47:27.2368558+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:47:41.6121339+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:47:42.015235+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":307,"events_lines":1}
+{"time":"2026-04-18T22:47:42.293545+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:47:56.7642544+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:47:57.0173868+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":308,"events_lines":1}
+{"time":"2026-04-18T22:47:57.2446709+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:48:11.7390746+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:48:12.016074+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":309,"events_lines":1}
+{"time":"2026-04-18T22:48:12.2215639+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:48:26.5837073+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:48:27.0283216+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":310,"events_lines":1}
+{"time":"2026-04-18T22:48:27.2514308+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:48:41.5834695+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:48:42.0198059+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":311,"events_lines":1}
+{"time":"2026-04-18T22:48:42.2577348+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:48:56.5972093+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:48:57.0151782+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":312,"events_lines":1}
+{"time":"2026-04-18T22:48:57.2576411+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:49:11.5858548+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:49:12.0153293+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":313,"events_lines":1}
+{"time":"2026-04-18T22:49:12.2701331+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:49:26.5910243+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:49:27.0157826+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":314,"events_lines":1}
+{"time":"2026-04-18T22:49:27.3001685+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:49:41.6707014+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:49:42.0162183+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":315,"events_lines":1}
+{"time":"2026-04-18T22:49:42.325047+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:49:56.6125179+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:49:57.0161854+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":316,"events_lines":1}
+{"time":"2026-04-18T22:49:57.252716+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:50:11.6082596+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:50:12.016172+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":317,"events_lines":1}
+{"time":"2026-04-18T22:50:12.2908131+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:50:26.6801754+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:50:27.016328+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":318,"events_lines":1}
+{"time":"2026-04-18T22:50:27.2573046+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:50:41.6814727+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:50:42.0164545+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":319,"events_lines":1}
+{"time":"2026-04-18T22:50:42.2488009+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:50:56.5991068+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:50:57.0162988+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":320,"events_lines":1}
+{"time":"2026-04-18T22:50:57.2489195+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:51:11.5792871+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:51:12.0169837+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":321,"events_lines":1}
+{"time":"2026-04-18T22:51:12.2492359+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:51:26.763944+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:51:27.0178284+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":322,"events_lines":1}
+{"time":"2026-04-18T22:51:27.2422875+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:51:41.5773509+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:51:42.0528242+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":323,"events_lines":1}
+{"time":"2026-04-18T22:51:42.3213616+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:51:56.5958009+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:51:57.0160102+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":324,"events_lines":1}
+{"time":"2026-04-18T22:51:57.2252612+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:52:11.6214709+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:52:12.0206399+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":325,"events_lines":1}
+{"time":"2026-04-18T22:52:12.3088987+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:52:26.5767186+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:52:27.0162659+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":326,"events_lines":1}
+{"time":"2026-04-18T22:52:27.2439481+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:52:41.5802016+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:52:42.0163476+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":327,"events_lines":1}
+{"time":"2026-04-18T22:52:42.3174693+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:52:56.6313857+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:52:57.0161032+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":328,"events_lines":1}
+{"time":"2026-04-18T22:52:57.2284967+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:53:11.6602318+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:53:12.0162924+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":329,"events_lines":1}
+{"time":"2026-04-18T22:53:12.2952278+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:53:26.5790274+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:53:27.0181849+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":330,"events_lines":1}
+{"time":"2026-04-18T22:53:27.7666724+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:53:41.5915711+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:53:42.0178855+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":331,"events_lines":1}
+{"time":"2026-04-18T22:53:42.2572496+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:53:56.5853413+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:53:57.0167476+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":332,"events_lines":1}
+{"time":"2026-04-18T22:53:57.2348426+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:54:11.6702041+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:54:12.0161817+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":333,"events_lines":1}
+{"time":"2026-04-18T22:54:12.2623091+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:54:26.5801044+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:54:27.0257481+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":334,"events_lines":1}
+{"time":"2026-04-18T22:54:27.2923716+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:54:41.5780697+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:54:42.0160878+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":335,"events_lines":1}
+{"time":"2026-04-18T22:54:42.2970237+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:54:56.5857039+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:54:57.0164402+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":336,"events_lines":1}
+{"time":"2026-04-18T22:54:57.2720935+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:55:11.5864927+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:55:12.0159461+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":337,"events_lines":1}
+{"time":"2026-04-18T22:55:12.275172+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:55:26.7228385+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:55:27.0415322+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":338,"events_lines":1}
+{"time":"2026-04-18T22:55:27.2700917+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:55:41.6155569+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:55:42.0413777+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":339,"events_lines":1}
+{"time":"2026-04-18T22:55:42.2936934+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:55:56.581314+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:55:57.0418252+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":340,"events_lines":1}
+{"time":"2026-04-18T22:55:57.299035+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:56:11.5748544+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:56:12.0455154+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":341,"events_lines":1}
+{"time":"2026-04-18T22:56:12.2858277+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:56:26.5854574+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:56:27.0415863+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":342,"events_lines":1}
+{"time":"2026-04-18T22:56:27.3215721+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:56:41.5812544+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:56:42.0428946+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":343,"events_lines":1}
+{"time":"2026-04-18T22:56:42.3136225+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:56:56.6051077+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:56:57.04268+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":344,"events_lines":1}
+{"time":"2026-04-18T22:56:57.2617385+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:57:11.6253221+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:57:12.0418124+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":345,"events_lines":1}
+{"time":"2026-04-18T22:57:12.3236314+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:57:26.579172+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:57:27.0421914+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":346,"events_lines":1}
+{"time":"2026-04-18T22:57:27.2809459+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:57:41.5803448+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:57:42.0430426+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":347,"events_lines":1}
+{"time":"2026-04-18T22:57:42.2973644+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:57:56.757362+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:57:57.0440609+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":348,"events_lines":1}
+{"time":"2026-04-18T22:57:57.3131458+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:58:11.5908291+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:58:12.0425851+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":349,"events_lines":1}
+{"time":"2026-04-18T22:58:12.287072+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:58:26.6775449+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:58:27.0417608+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":350,"events_lines":1}
+{"time":"2026-04-18T22:58:27.2909848+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:58:41.6753642+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:58:42.0411565+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":351,"events_lines":1}
+{"time":"2026-04-18T22:58:42.2594738+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:58:56.6328511+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:58:57.0440918+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":352,"events_lines":1}
+{"time":"2026-04-18T22:58:57.3012746+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:59:11.7307172+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:59:12.041125+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":353,"events_lines":1}
+{"time":"2026-04-18T22:59:12.2806579+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:59:26.5932421+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:59:27.0440627+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":354,"events_lines":1}
+{"time":"2026-04-18T22:59:27.2654394+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:59:41.584441+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:59:42.0516131+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":355,"events_lines":1}
+{"time":"2026-04-18T22:59:42.2849872+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T22:59:56.5937779+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T22:59:57.0414896+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":356,"events_lines":1}
+{"time":"2026-04-18T22:59:57.391698+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:00:11.5859707+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:00:12.0413255+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":357,"events_lines":1}
+{"time":"2026-04-18T23:00:12.280483+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:00:26.6530937+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:00:27.04141+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":358,"events_lines":1}
+{"time":"2026-04-18T23:00:27.2589085+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:00:41.6431781+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:00:42.0417019+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":359,"events_lines":1}
+{"time":"2026-04-18T23:00:42.3771429+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:00:56.5830336+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:00:57.0411945+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":360,"events_lines":1}
+{"time":"2026-04-18T23:00:57.3032556+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:01:12.0969249+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":361,"events_lines":1}
+{"time":"2026-04-18T23:01:12.2995124+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:01:12.3920424+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:01:26.7185904+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:01:27.1000118+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":362,"events_lines":1}
+{"time":"2026-04-18T23:01:27.7555848+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:01:41.6403148+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:01:42.0977507+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":363,"events_lines":1}
+{"time":"2026-04-18T23:01:42.5004036+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:01:56.6085545+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:01:57.0974226+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":364,"events_lines":1}
+{"time":"2026-04-18T23:01:57.4822448+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:02:11.6369473+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:02:12.0974611+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":365,"events_lines":1}
+{"time":"2026-04-18T23:02:12.3665959+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:02:26.5897841+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:02:27.0970688+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":366,"events_lines":1}
+{"time":"2026-04-18T23:02:27.3469782+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:02:41.5970184+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:02:42.0971957+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":367,"events_lines":1}
+{"time":"2026-04-18T23:02:42.7792648+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:02:56.6012347+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:02:57.0974785+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":368,"events_lines":1}
+{"time":"2026-04-18T23:02:57.346003+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:03:11.6869916+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:03:12.1049564+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":369,"events_lines":1}
+{"time":"2026-04-18T23:03:12.4374316+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:03:26.5856352+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:03:27.0996678+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":370,"events_lines":1}
+{"time":"2026-04-18T23:03:27.4193186+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:03:41.6089578+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:03:42.1255141+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":371,"events_lines":1}
+{"time":"2026-04-18T23:03:42.4875814+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:03:56.7869565+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:03:57.1063854+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":372,"events_lines":1}
+{"time":"2026-04-18T23:03:57.3838686+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:04:11.5955719+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:04:12.0982909+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":373,"events_lines":1}
+{"time":"2026-04-18T23:04:12.4390127+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:04:26.5871738+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:04:27.0974104+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":374,"events_lines":1}
+{"time":"2026-04-18T23:04:27.3965381+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:04:41.5797702+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:04:42.0999503+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":375,"events_lines":1}
+{"time":"2026-04-18T23:04:42.532567+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:04:56.62996+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:04:57.096956+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":376,"events_lines":1}
+{"time":"2026-04-18T23:04:57.4688986+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:05:11.5808689+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:05:12.0973429+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":377,"events_lines":1}
+{"time":"2026-04-18T23:05:12.6079867+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:05:26.6618834+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:05:27.0972785+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":378,"events_lines":1}
+{"time":"2026-04-18T23:05:27.3285205+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:05:41.6196265+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:05:42.1103534+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":379,"events_lines":1}
+{"time":"2026-04-18T23:05:42.5036352+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:05:56.6358112+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:05:57.0970767+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":380,"events_lines":1}
+{"time":"2026-04-18T23:05:57.350695+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:06:11.583513+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:06:12.097231+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":381,"events_lines":1}
+{"time":"2026-04-18T23:06:12.342104+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:06:26.5886829+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:06:27.0972412+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":382,"events_lines":1}
+{"time":"2026-04-18T23:06:27.3941595+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:06:41.5779611+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:06:42.0972652+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":383,"events_lines":1}
+{"time":"2026-04-18T23:06:42.4126505+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:06:56.6589229+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:06:57.0992417+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":384,"events_lines":1}
+{"time":"2026-04-18T23:06:57.3526154+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:07:11.5838473+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:07:12.1003243+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":385,"events_lines":1}
+{"time":"2026-04-18T23:07:12.3496354+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:07:26.5777496+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:07:27.0972905+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":386,"events_lines":1}
+{"time":"2026-04-18T23:07:27.3269724+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:07:41.6229933+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:07:42.0972122+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":387,"events_lines":1}
+{"time":"2026-04-18T23:07:42.3011369+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:07:56.5780699+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:07:57.0975326+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":388,"events_lines":1}
+{"time":"2026-04-18T23:07:57.3258652+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:08:11.5858194+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:08:12.1060305+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":389,"events_lines":1}
+{"time":"2026-04-18T23:08:12.3348469+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:08:26.594347+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:08:27.0982635+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":390,"events_lines":1}
+{"time":"2026-04-18T23:08:27.3196368+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:08:41.5858609+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:08:42.0973428+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":391,"events_lines":1}
+{"time":"2026-04-18T23:08:42.3545356+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:08:56.6037097+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:08:57.1002734+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":392,"events_lines":1}
+{"time":"2026-04-18T23:08:57.3487903+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:09:11.5799634+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:09:12.1000537+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":393,"events_lines":1}
+{"time":"2026-04-18T23:09:12.3286608+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:09:26.6350159+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:09:27.0977055+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":394,"events_lines":1}
+{"time":"2026-04-18T23:09:27.324287+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:09:41.649981+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:09:42.097376+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":395,"events_lines":1}
+{"time":"2026-04-18T23:09:42.3219098+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:09:56.61896+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:09:57.0977789+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":396,"events_lines":1}
+{"time":"2026-04-18T23:09:57.3491411+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:10:11.5836093+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:10:12.0974799+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":397,"events_lines":1}
+{"time":"2026-04-18T23:10:12.3398551+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:10:26.6273088+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:10:27.0971223+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":398,"events_lines":1}
+{"time":"2026-04-18T23:10:27.3365445+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:10:41.5816194+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:10:42.097748+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":399,"events_lines":1}
+{"time":"2026-04-18T23:10:42.3534309+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:10:56.5821526+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:10:57.0979472+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":400,"events_lines":1}
+{"time":"2026-04-18T23:10:57.3372878+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:11:11.6148537+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:11:12.097451+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":401,"events_lines":1}
+{"time":"2026-04-18T23:11:12.3674553+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:11:26.6336563+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:11:27.0973313+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":402,"events_lines":1}
+{"time":"2026-04-18T23:11:27.3071268+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:11:41.5833256+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:11:42.0980894+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":403,"events_lines":1}
+{"time":"2026-04-18T23:11:42.3192583+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:11:56.5833978+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:11:57.0986595+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":404,"events_lines":1}
+{"time":"2026-04-18T23:11:57.5046058+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:12:11.580184+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:12:12.0971536+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":405,"events_lines":1}
+{"time":"2026-04-18T23:12:12.3383487+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:12:26.5806585+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:12:27.0983196+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":406,"events_lines":1}
+{"time":"2026-04-18T23:12:27.3111084+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:12:41.5818734+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:12:42.1014025+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":407,"events_lines":1}
+{"time":"2026-04-18T23:12:42.3264791+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:12:56.6159372+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:12:57.104474+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":408,"events_lines":1}
+{"time":"2026-04-18T23:12:57.3247678+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:13:11.658092+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:13:12.1034685+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":409,"events_lines":1}
+{"time":"2026-04-18T23:13:12.3523887+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:13:26.582142+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:13:27.0980585+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":410,"events_lines":1}
+{"time":"2026-04-18T23:13:27.3654562+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:13:41.6308741+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:13:42.0998437+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":411,"events_lines":1}
+{"time":"2026-04-18T23:13:42.3372259+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:13:56.5814492+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:13:57.1032057+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":412,"events_lines":1}
+{"time":"2026-04-18T23:13:57.3190214+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:14:11.5805322+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:14:12.0994591+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":413,"events_lines":1}
+{"time":"2026-04-18T23:14:12.3822725+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:14:26.7401892+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:14:27.1001136+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":414,"events_lines":1}
+{"time":"2026-04-18T23:14:27.3498081+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:14:41.586047+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:14:42.0977877+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":415,"events_lines":1}
+{"time":"2026-04-18T23:14:42.3302913+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:14:56.5908282+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:14:57.0971863+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":416,"events_lines":1}
+{"time":"2026-04-18T23:14:57.4527231+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:15:11.6729145+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:15:12.0972855+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":417,"events_lines":1}
+{"time":"2026-04-18T23:15:12.435799+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:15:26.6069661+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:15:27.1001033+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":418,"events_lines":1}
+{"time":"2026-04-18T23:15:27.7123673+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:15:41.6222322+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:15:42.0971278+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":419,"events_lines":1}
+{"time":"2026-04-18T23:15:42.6842823+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:15:56.6455843+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:15:57.0970339+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":420,"events_lines":1}
+{"time":"2026-04-18T23:15:57.3437293+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:16:11.5839456+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:16:12.0975814+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":421,"events_lines":1}
+{"time":"2026-04-18T23:16:12.3733829+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:16:26.6414294+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:16:27.0972141+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":422,"events_lines":1}
+{"time":"2026-04-18T23:16:27.4288789+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:16:41.5728659+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:16:42.0970723+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":423,"events_lines":1}
+{"time":"2026-04-18T23:16:42.4196345+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:16:56.5783804+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:16:57.0973458+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":424,"events_lines":1}
+{"time":"2026-04-18T23:16:57.40402+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:17:11.5769863+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:17:12.0973677+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":425,"events_lines":1}
+{"time":"2026-04-18T23:17:12.5404063+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:17:26.5778043+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:17:27.0971984+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":426,"events_lines":1}
+{"time":"2026-04-18T23:17:27.3317676+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:17:41.5750925+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:17:42.0972709+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":427,"events_lines":1}
+{"time":"2026-04-18T23:17:42.3439728+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:17:56.5726418+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:17:57.097104+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":428,"events_lines":1}
+{"time":"2026-04-18T23:17:57.3252893+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:18:11.5729748+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:18:12.097302+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":429,"events_lines":1}
+{"time":"2026-04-18T23:18:12.330027+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:18:26.5753786+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:18:27.097308+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":430,"events_lines":1}
+{"time":"2026-04-18T23:18:27.3688322+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:18:41.5742548+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:18:42.0971921+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":431,"events_lines":1}
+{"time":"2026-04-18T23:18:42.31827+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:18:56.5775553+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:18:57.097184+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":432,"events_lines":1}
+{"time":"2026-04-18T23:18:57.3436881+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:19:11.577595+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:19:12.0973546+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":433,"events_lines":1}
+{"time":"2026-04-18T23:19:12.326427+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:19:26.5748095+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:19:27.0973195+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":434,"events_lines":1}
+{"time":"2026-04-18T23:19:27.2983777+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:19:41.5739436+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:19:42.09715+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":435,"events_lines":1}
+{"time":"2026-04-18T23:19:42.3229959+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:19:56.5749896+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:19:57.0970273+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":436,"events_lines":1}
+{"time":"2026-04-18T23:19:57.3932291+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:20:11.5772996+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:20:12.0971757+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":437,"events_lines":1}
+{"time":"2026-04-18T23:20:12.3896488+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:20:26.5815279+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:20:27.0972186+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":438,"events_lines":1}
+{"time":"2026-04-18T23:20:27.4140891+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:20:41.5769071+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:20:42.0972901+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":439,"events_lines":1}
+{"time":"2026-04-18T23:20:42.3319105+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:20:56.5730829+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:20:57.0973631+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":440,"events_lines":1}
+{"time":"2026-04-18T23:20:57.3286282+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:21:11.5739195+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:21:12.0974708+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":441,"events_lines":1}
+{"time":"2026-04-18T23:21:12.3296192+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:21:26.5748271+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:21:27.0971972+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":442,"events_lines":1}
+{"time":"2026-04-18T23:21:27.3204517+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:21:41.5730433+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:21:42.0976851+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":443,"events_lines":1}
+{"time":"2026-04-18T23:21:42.3213226+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:21:56.5751664+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:21:57.0971406+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":444,"events_lines":1}
+{"time":"2026-04-18T23:21:57.3436529+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:22:11.5769876+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:22:12.0973511+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":445,"events_lines":1}
+{"time":"2026-04-18T23:22:12.3243303+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:22:26.5794306+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:22:27.0973746+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":446,"events_lines":1}
+{"time":"2026-04-18T23:22:27.3525974+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:22:41.5752865+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:22:42.0973919+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":447,"events_lines":1}
+{"time":"2026-04-18T23:22:42.4175708+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:22:56.5724263+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:22:57.0979265+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":448,"events_lines":1}
+{"time":"2026-04-18T23:22:57.3278391+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:23:11.5753503+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:23:12.0974236+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":449,"events_lines":1}
+{"time":"2026-04-18T23:23:12.3894586+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:23:26.5808657+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:23:27.0974153+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":450,"events_lines":1}
+{"time":"2026-04-18T23:23:27.3886242+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:23:41.5840664+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:23:42.0971914+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":451,"events_lines":1}
+{"time":"2026-04-18T23:23:42.3675383+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:23:56.6002656+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:23:57.09703+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":452,"events_lines":1}
+{"time":"2026-04-18T23:23:57.3607713+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:24:11.5783607+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:24:12.0973962+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":453,"events_lines":1}
+{"time":"2026-04-18T23:24:12.3907064+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:24:27.0986346+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":454,"events_lines":2}
+{"time":"2026-04-18T23:24:27.3642842+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:24:42.097207+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":456,"events_lines":2}
+{"time":"2026-04-18T23:24:42.3751515+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:24:56.5806665+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:24:57.0974512+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":458,"events_lines":1}
+{"time":"2026-04-18T23:24:57.3777875+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:25:11.5764824+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:25:12.0972145+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":459,"events_lines":1}
+{"time":"2026-04-18T23:25:12.5509149+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:25:26.5772797+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:25:27.0974444+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":460,"events_lines":1}
+{"time":"2026-04-18T23:25:27.4994992+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:25:41.5761192+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:25:42.0972756+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":461,"events_lines":1}
+{"time":"2026-04-18T23:25:42.3699294+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:25:56.5750383+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:25:57.0974478+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":462,"events_lines":1}
+{"time":"2026-04-18T23:25:57.4048357+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:26:11.585671+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:26:12.0972546+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":463,"events_lines":1}
+{"time":"2026-04-18T23:26:12.5662799+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:26:26.5809105+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:26:27.0974959+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":464,"events_lines":1}
+{"time":"2026-04-18T23:26:27.4832283+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:26:41.5802234+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:26:42.0971032+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":465,"events_lines":1}
+{"time":"2026-04-18T23:26:42.604386+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:26:56.5806618+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:26:57.0972151+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":466,"events_lines":1}
+{"time":"2026-04-18T23:26:57.4011805+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:27:11.5784316+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:27:12.0971958+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":467,"events_lines":1}
+{"time":"2026-04-18T23:27:12.4489413+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:27:26.6313772+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:27:27.0978796+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":468,"events_lines":1}
+{"time":"2026-04-18T23:27:27.5158167+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:27:41.6174096+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:27:42.0988543+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":469,"events_lines":1}
+{"time":"2026-04-18T23:27:42.4337338+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:27:56.6408722+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:27:57.1002047+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":470,"events_lines":1}
+{"time":"2026-04-18T23:27:57.4068155+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:28:11.6027965+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:28:12.0998455+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":471,"events_lines":1}
+{"time":"2026-04-18T23:28:12.3421398+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:28:26.5977175+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:28:27.0971296+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":472,"events_lines":1}
+{"time":"2026-04-18T23:28:27.3140489+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:28:41.6245137+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:28:42.0978652+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":473,"events_lines":1}
+{"time":"2026-04-18T23:28:42.3284936+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:28:56.5928817+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:28:57.0977998+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":474,"events_lines":1}
+{"time":"2026-04-18T23:28:57.3008865+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:29:11.576859+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:29:12.0972346+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":475,"events_lines":1}
+{"time":"2026-04-18T23:29:12.3203239+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:29:26.5832184+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:29:27.0972406+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":476,"events_lines":1}
+{"time":"2026-04-18T23:29:27.3517523+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:29:41.5779804+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:29:42.0974541+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":477,"events_lines":1}
+{"time":"2026-04-18T23:29:42.3155671+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:29:56.581078+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:29:57.0982891+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":478,"events_lines":1}
+{"time":"2026-04-18T23:29:57.3233169+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:30:11.6096624+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:30:12.0975247+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":479,"events_lines":1}
+{"time":"2026-04-18T23:30:12.3347725+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:30:26.5974278+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:30:27.0975145+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":480,"events_lines":1}
+{"time":"2026-04-18T23:30:27.3299105+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:30:41.6022478+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:30:42.0972173+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":481,"events_lines":1}
+{"time":"2026-04-18T23:30:42.3191663+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:30:56.594365+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:30:57.0974862+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":482,"events_lines":1}
+{"time":"2026-04-18T23:30:57.3297226+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:31:11.6964939+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:31:12.0972082+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":483,"events_lines":1}
+{"time":"2026-04-18T23:31:12.3347063+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:31:26.6071509+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:31:27.0974787+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":484,"events_lines":1}
+{"time":"2026-04-18T23:31:27.3039829+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:31:41.5808361+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:31:42.0977184+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":485,"events_lines":1}
+{"time":"2026-04-18T23:31:42.3316638+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:31:56.5822283+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:31:57.0974048+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":486,"events_lines":1}
+{"time":"2026-04-18T23:31:57.3150857+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:32:11.59686+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:32:12.0972666+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":487,"events_lines":1}
+{"time":"2026-04-18T23:32:12.3025335+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:32:26.5805172+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:32:27.09757+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":488,"events_lines":1}
+{"time":"2026-04-18T23:32:27.3266022+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:32:41.6017093+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:32:42.0971499+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":489,"events_lines":1}
+{"time":"2026-04-18T23:32:42.3246066+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:32:56.5914001+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:32:57.0974112+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":490,"events_lines":1}
+{"time":"2026-04-18T23:32:57.351926+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:33:11.5860347+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:33:12.0973832+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":491,"events_lines":1}
+{"time":"2026-04-18T23:33:12.3062782+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:33:26.5833811+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:33:27.0991774+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":492,"events_lines":1}
+{"time":"2026-04-18T23:33:27.3367443+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:33:41.5758671+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:33:42.0975493+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":493,"events_lines":1}
+{"time":"2026-04-18T23:33:42.3708308+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:33:56.5797952+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:33:57.0972637+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":494,"events_lines":1}
+{"time":"2026-04-18T23:33:57.402483+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:34:11.5798907+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:34:12.0971995+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":495,"events_lines":1}
+{"time":"2026-04-18T23:34:12.3681149+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:34:26.5880947+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:34:27.0976054+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":496,"events_lines":1}
+{"time":"2026-04-18T23:34:27.3741826+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:34:41.5894891+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:34:42.0974589+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":497,"events_lines":1}
+{"time":"2026-04-18T23:34:42.3415897+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:34:56.5860897+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:34:57.0976671+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":498,"events_lines":1}
+{"time":"2026-04-18T23:34:57.3924154+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:35:11.5796958+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:35:12.0974417+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":499,"events_lines":1}
+{"time":"2026-04-18T23:35:12.3133709+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:35:26.5966256+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:35:27.0971166+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":500,"events_lines":1}
+{"time":"2026-04-18T23:35:27.3082116+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:35:41.5930966+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:35:42.0978355+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":501,"events_lines":1}
+{"time":"2026-04-18T23:35:42.3067305+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:35:56.608139+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:35:57.0979548+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":502,"events_lines":1}
+{"time":"2026-04-18T23:35:57.3116252+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:36:11.5869285+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:36:12.0970201+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":503,"events_lines":1}
+{"time":"2026-04-18T23:36:12.3198851+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:36:26.5878923+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:36:27.0976197+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":504,"events_lines":1}
+{"time":"2026-04-18T23:36:27.308481+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:36:41.5879356+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:36:42.0978285+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":505,"events_lines":1}
+{"time":"2026-04-18T23:36:42.328712+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:36:56.5933398+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:36:57.0975222+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":506,"events_lines":1}
+{"time":"2026-04-18T23:36:57.3613668+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:37:11.6284781+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:37:12.0979192+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":507,"events_lines":1}
+{"time":"2026-04-18T23:37:12.3400122+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:37:26.5768181+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:37:27.099599+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":508,"events_lines":1}
+{"time":"2026-04-18T23:37:27.3378251+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:37:41.582481+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:37:42.0979007+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":509,"events_lines":1}
+{"time":"2026-04-18T23:37:42.3311452+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:37:56.6430616+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:37:57.0975651+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":510,"events_lines":1}
+{"time":"2026-04-18T23:37:57.2991683+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:38:11.576397+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:38:12.0990132+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":511,"events_lines":1}
+{"time":"2026-04-18T23:38:12.3252955+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:38:26.5848255+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:38:27.0988504+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":512,"events_lines":1}
+{"time":"2026-04-18T23:38:27.3428724+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:38:41.5864507+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:38:42.0972649+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":513,"events_lines":1}
+{"time":"2026-04-18T23:38:42.2961891+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:38:56.5870162+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:38:57.09774+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":514,"events_lines":1}
+{"time":"2026-04-18T23:38:57.3904577+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:39:11.5866486+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:39:12.0970821+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":515,"events_lines":1}
+{"time":"2026-04-18T23:39:12.3067154+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:39:26.6533489+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:39:27.0988391+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":516,"events_lines":1}
+{"time":"2026-04-18T23:39:27.2900249+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-18T23:39:41.6016419+03:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2026-04-18T23:39:42.0973072+03:00","level":"INFO","msg":"filestream: sending request","total_files":1,"events_offset":517,"events_lines":1}
+{"time":"2026-04-18T23:39:42.2880897+03:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}

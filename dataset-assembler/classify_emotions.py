@@ -202,7 +202,17 @@ def deepface_emotions(face_crop_bgr: np.ndarray) -> tuple[str, dict[str, float]]
             result = result[0]
         emotions = result["emotion"]   # already 0–100
         scores   = {k: round(float(v), 2) for k, v in emotions.items()}
-        dominant = result["dominant_emotion"]
+
+        # Post-process: suppress angry/sad when happy score is significant
+        happy = scores.get("happy", 0)
+        if happy > 20:
+            suppress = happy / 100.0
+            for label in ("angry", "sad", "disgust"):
+                if label in scores:
+                    scores[label] = round(scores[label] * (1.0 - suppress), 2)
+
+        # Recompute dominant after post-processing
+        dominant = max(scores, key=lambda k: scores[k])
         return dominant, scores
     except Exception as e:
         log.debug("deepface error: %s", e)
@@ -228,13 +238,21 @@ def blendshapes_to_emotions(bs: dict[str, float]) -> tuple[str, dict[str, float]
     mouth_press = (bs.get("mouthPressLeft", 0) + bs.get("mouthPressRight", 0)) / 2
     cheek_puff  = bs.get("cheekPuff", 0)
 
+    # Angry guard: suppress if face is smiling or mouth is open (surprise/happy)
+    angry_raw = brow_down * 0.5 + (nose_sneer + mouth_press) * 0.5
+    angry_val = angry_raw * max(0.0, 1.0 - smile * 3.0) * max(0.0, 1.0 - mouth_open * 2.0)
+
+    # Sad guard: suppress if smiling
+    sad_raw = frown * 0.6 + brow_down * 0.4
+    sad_val = sad_raw * max(0.0, 1.0 - smile * 3.0)
+
     scores = {
         "neutral":  round(max(0.0, 100 - brow_up*60 - eye_wide*40 - smile*40
                               - frown*30 - brow_down*30 - nose_sneer*40), 2),
         "happy":    round(min(100, (smile*0.7 + mouth_open*0.2 + cheek_puff*0.1) * 100), 2),
         "excited":  round(min(100, (smile*0.5 + mouth_open*0.3 + brow_up*0.2) * 100), 2),
-        "sad":      round(min(100, (frown*0.5 + brow_down*0.3 + (1-smile)*0.2) * 100), 2),
-        "angry":    round(min(100, (brow_down*0.5 + mouth_press*0.3 + (1-smile)*0.2) * 100), 2),
+        "sad":      round(min(100, sad_val * 100), 2),
+        "angry":    round(min(100, angry_val * 100), 2),
         "fear":     round(min(100, (brow_up*0.4 + eye_wide*0.3 + mouth_str*0.3) * 100), 2),
         "surprise": round(min(100, (brow_up*0.35 + eye_wide*0.35 + mouth_open*0.3) * 100), 2),
         "disgust":  round(min(100, (nose_sneer*0.6 + eye_squint*0.3 + frown*0.1) * 100), 2),
@@ -243,7 +261,7 @@ def blendshapes_to_emotions(bs: dict[str, float]) -> tuple[str, dict[str, float]
     }
     # Pick dominant: if any reaction emotion exceeds threshold, prefer it over neutral.
     # (Neutral starts at 100 and always wins argmax — use threshold instead.)
-    REACTION_THRESHOLD = 15.0
+    REACTION_THRESHOLD = 20.0
     reaction_scores = {k: v for k, v in scores.items() if k != "neutral"}
     best_reaction = max(reaction_scores, key=lambda k: reaction_scores[k])
     if reaction_scores[best_reaction] >= REACTION_THRESHOLD:
