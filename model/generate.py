@@ -257,31 +257,36 @@ def composite_reaction(
     return True
 
 
-def burn_label_opencv(segment_path: Path, label: str, labeled_path: Path) -> bool:
+def burn_label_on_avatar(facecam_path: Path, label: str,
+                         target_w: int, labeled_path: Path) -> bool:
     """
-    Use OpenCV to burn the emotion label onto every frame of the segment.
-    Writes a raw video (no audio) to labeled_path.
-    Avoids any fontconfig / drawtext dependency.
+    Burn emotion label onto the avatar/facecam video frames.
+    The label appears at the bottom of the avatar box.
+    target_w: the display width the avatar will be scaled to, used to size font.
     """
-    cap = cv2.VideoCapture(str(segment_path))
-    fps  = cap.get(cv2.CAP_PROP_FPS) or 30.0
-    w    = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    h    = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    cap = cv2.VideoCapture(str(facecam_path))
+    fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+    w   = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    h   = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out    = cv2.VideoWriter(str(labeled_path), fourcc, fps, (w, h))
 
     font       = cv2.FONT_HERSHEY_DUPLEX
-    font_scale = max(0.8, w / 640)
-    thickness  = max(2, int(font_scale * 2))
-    x, y       = 20, 50
+    # Scale font relative to how large the avatar box will appear
+    font_scale = max(0.4, target_w / 400)
+    thickness  = max(1, int(font_scale * 1.5))
+    # Position: bottom of avatar frame with small padding
+    pad = max(4, int(h * 0.04))
+    x   = pad
+    y   = h - pad
 
     while True:
         ret, frame = cap.read()
         if not ret:
             break
-        # Shadow for readability
-        cv2.putText(frame, label, (x + 2, y + 2), font, font_scale,
+        # Dark shadow for readability over any background
+        cv2.putText(frame, label, (x + 1, y + 1), font, font_scale,
                     (0, 0, 0), thickness + 2, cv2.LINE_AA)
         cv2.putText(frame, label, (x, y), font, font_scale,
                     (255, 255, 255), thickness, cv2.LINE_AA)
@@ -294,7 +299,7 @@ def burn_label_opencv(segment_path: Path, label: str, labeled_path: Path) -> boo
 
 def composite_segment_with_label(
     segment_path: Path,
-    clip_dir: Path,
+    clip_dir,          # Path or _ClipProxy
     out_path: Path,
     emotion_label: str,
     emotion_prob: float,
@@ -302,11 +307,9 @@ def composite_segment_with_label(
     face_scale: float = 0.25,
 ) -> bool:
     """
-    Burn emotion label onto segment with OpenCV, then composite facecam
-    via ffmpeg. Uses gameplay audio.
+    Burn emotion label onto the avatar video, then composite onto gameplay.
+    Label appears inside the avatar box. Uses gameplay audio.
     """
-    import tempfile
-
     facecam = clip_dir / "facecam.mp4"
     if not facecam.exists():
         print(f"  no facecam.mp4 in {clip_dir}")
@@ -326,13 +329,13 @@ def composite_segment_with_label(
 
     label = f"{emotion_label.upper()}  {emotion_prob:.0%}"
 
-    # Step 1: burn label with OpenCV → raw mp4v video (no audio)
-    tmp_labeled = out_path.parent / (out_path.stem + "_labeled_raw.mp4")
-    if not burn_label_opencv(segment_path, label, tmp_labeled):
+    # Step 1: burn label onto avatar video with OpenCV
+    tmp_labeled = out_path.parent / (out_path.stem + "_avatar_labeled.mp4")
+    if not burn_label_on_avatar(facecam, label, fw, tmp_labeled):
         print("  OpenCV label burn failed")
         return False
 
-    # Step 2: composite facecam onto labeled video, mux gameplay audio
+    # Step 2: composite labeled avatar onto gameplay, mux gameplay audio
     filter_complex = (
         f"[1:v]scale={fw}:{fh}[face];"
         f"[0:v][face]overlay={ox}:{oy}:shortest=1[v]"
@@ -340,13 +343,12 @@ def composite_segment_with_label(
 
     cmd = [
         "ffmpeg", "-y", "-loglevel", "error",
-        "-i", str(tmp_labeled),        # 0: labeled video (no audio)
+        "-i", str(segment_path),       # 0: gameplay (clean)
         "-stream_loop", "-1",
-        "-i", str(facecam),            # 1: facecam (looped)
-        "-i", str(segment_path),       # 2: original segment (for audio)
+        "-i", str(tmp_labeled),        # 1: labeled avatar (looped)
         "-filter_complex", filter_complex,
         "-map", "[v]",
-        "-map", "2:a",                 # gameplay audio from original
+        "-map", "0:a",                 # gameplay audio
         "-c:v", "libx264", "-preset", "fast", "-crf", "23",
         "-c:a", "aac", "-b:a", "128k",
         "-shortest", str(out_path),
