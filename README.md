@@ -10,7 +10,7 @@
 [![MediaPipe](https://img.shields.io/badge/Face-MediaPipe-00897B?style=flat-square)](https://mediapipe.dev)
 [![WandB](https://img.shields.io/badge/Tracking-W%26B-FFBE00?style=flat-square&logo=weightsandbiases&logoColor=black)](https://wandb.ai)
 
-*Built for the StartupHack 2025 AI challenge*
+*Built for the StartupHack 2026 AI challenge*
 
 </div>
 
