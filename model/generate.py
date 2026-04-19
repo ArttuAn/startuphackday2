@@ -120,18 +120,34 @@ def build_retrieval_index(
         if (cd / "facecam.mp4").exists() and (cd / "meta.json").exists()
     ]
 
-    print(f"Indexing {len(clip_dirs)} facecam clips...")
+    print(f"Indexing {len(clip_dirs)} facecam clips (filtering dark frames)...")
     all_vecs  = []
     all_paths = []
+    skipped   = 0
 
     for i, clip_dir in enumerate(clip_dirs, 1):
+        # Skip clips where the facecam is mostly dark (streamer moved overlay)
+        facecam = clip_dir / "facecam.mp4"
+        cap = cv2.VideoCapture(str(facecam))
+        brightness_ok = False
+        for _ in range(5):
+            ret, frame = cap.read()
+            if ret and frame.mean() > 15:
+                brightness_ok = True
+                break
+        cap.release()
+        if not brightness_ok:
+            skipped += 1
+            continue
+
         meta = json.loads((clip_dir / "meta.json").read_text())
-        # Use the stored blendshape scores as the ground-truth soft vector
         soft_vec = get_soft_labels(meta)
         all_vecs.append(soft_vec)
         all_paths.append(str(clip_dir))
         if i % 50 == 0:
-            print(f"  {i}/{len(clip_dirs)}")
+            print(f"  {i}/{len(clip_dirs)} ({skipped} dark clips skipped)")
+
+    print(f"  Indexed {len(all_paths)} clips, skipped {skipped} dark clips.")
 
     if not all_vecs:
         raise RuntimeError("No clips indexed — run extract_clips.py first.")
@@ -391,12 +407,14 @@ def generate_demo(
     corner: str = "bottom-right",
     segment_duration: int = 8,
     top_k: int = 3,
+    portrait_path: Path | None = None,
 ):
     """
     Demo mode: split gameplay into segments, predict emotion per segment,
     retrieve a matching facecam clip for each, overlay emotion label, concatenate.
 
-    This makes the reaction visibly change as the game events change.
+    If portrait_path is given, the retrieved facecam drives face reenactment
+    onto the portrait image (synthesize.py) instead of showing raw facecam.
     """
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"[demo] device={device}")
@@ -448,10 +466,30 @@ def generate_demo(
             clip_dir = retrieve_clip_topk(pred_vec, index, k=top_k)
             print(f"  clip → {clip_dir.name}")
 
+            # 3b. If portrait given, reenact avatar; otherwise use raw facecam
+            facecam_to_use = clip_dir / "facecam.mp4"
+            if portrait_path is not None and portrait_path.exists():
+                from synthesize import reenact_video
+                source_img  = cv2.imread(str(portrait_path))
+                reenacted   = tmp / f"seg_{i:03d}_reenacted.mp4"
+                print(f"  reenacting avatar...")
+                ok_reenact  = reenact_video(source_img, facecam_to_use, reenacted)
+                if ok_reenact:
+                    facecam_to_use = reenacted
+                else:
+                    print("  [warn] reenactment failed, falling back to raw facecam")
+
             # 4. Composite segment with emotion label overlay
             seg_out = tmp / f"seg_{i:03d}_out.mp4"
+
+            # Temporarily swap clip_dir's facecam with reenacted if needed
+            class _ClipProxy:
+                def __init__(self, fc): self._fc = fc
+                def __truediv__(self, name): return self._fc if name == "facecam.mp4" else clip_dir / name
+
+            proxy = _ClipProxy(facecam_to_use)
             ok = composite_segment_with_label(
-                seg_in, clip_dir, seg_out,
+                seg_in, proxy, seg_out,
                 emotion_label=top_emotion,
                 emotion_prob=top_prob,
                 corner=corner,
@@ -508,6 +546,8 @@ def main():
                         help="Seconds per segment in demo mode (default: 8)")
     parser.add_argument("--top_k",            type=int,  default=3,
                         help="Randomly pick from top-k retrieved clips (default: 3)")
+    parser.add_argument("--portrait",         type=Path, default=None,
+                        help="Portrait image for avatar reenactment (e.g. portraits/default.jpg)")
     args = parser.parse_args()
 
     if args.build_index:
@@ -526,6 +566,7 @@ def main():
             corner=args.corner,
             segment_duration=args.segment_duration,
             top_k=args.top_k,
+            portrait_path=args.portrait,
         )
     else:
         generate_reaction(
