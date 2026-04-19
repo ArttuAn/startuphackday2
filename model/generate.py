@@ -241,6 +241,41 @@ def composite_reaction(
     return True
 
 
+def burn_label_opencv(segment_path: Path, label: str, labeled_path: Path) -> bool:
+    """
+    Use OpenCV to burn the emotion label onto every frame of the segment.
+    Writes a raw video (no audio) to labeled_path.
+    Avoids any fontconfig / drawtext dependency.
+    """
+    cap = cv2.VideoCapture(str(segment_path))
+    fps  = cap.get(cv2.CAP_PROP_FPS) or 30.0
+    w    = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    h    = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    out    = cv2.VideoWriter(str(labeled_path), fourcc, fps, (w, h))
+
+    font       = cv2.FONT_HERSHEY_DUPLEX
+    font_scale = max(0.8, w / 640)
+    thickness  = max(2, int(font_scale * 2))
+    x, y       = 20, 50
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        # Shadow for readability
+        cv2.putText(frame, label, (x + 2, y + 2), font, font_scale,
+                    (0, 0, 0), thickness + 2, cv2.LINE_AA)
+        cv2.putText(frame, label, (x, y), font, font_scale,
+                    (255, 255, 255), thickness, cv2.LINE_AA)
+        out.write(frame)
+
+    cap.release()
+    out.release()
+    return labeled_path.exists()
+
+
 def composite_segment_with_label(
     segment_path: Path,
     clip_dir: Path,
@@ -251,10 +286,11 @@ def composite_segment_with_label(
     face_scale: float = 0.25,
 ) -> bool:
     """
-    Composite facecam onto a pre-trimmed gameplay segment and draw
-    the predicted emotion label in the top-left corner.
-    Uses gameplay audio so the viewer hears the game sounds.
+    Burn emotion label onto segment with OpenCV, then composite facecam
+    via ffmpeg. Uses gameplay audio.
     """
+    import tempfile
+
     facecam = clip_dir / "facecam.mp4"
     if not facecam.exists():
         print(f"  no facecam.mp4 in {clip_dir}")
@@ -273,48 +309,37 @@ def composite_segment_with_label(
     ox, oy = positions.get(corner, positions["bottom-right"])
 
     label = f"{emotion_label.upper()}  {emotion_prob:.0%}"
-    # Escape characters that break ffmpeg drawtext
-    label = label.replace("'", "").replace(":", " ").replace("\\", "")
 
-    # Try common font paths (Windows → Linux fallback)
-    font_candidates = [
-        "C:/Windows/Fonts/arial.ttf",
-        "C:/Windows/Fonts/Arial.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
-    ]
-    font_path = next((f for f in font_candidates if Path(f).exists()), None)
-    if font_path:
-        # Escape colon in Windows drive letter (C: → C\:) so ffmpeg doesn't
-        # treat it as an option separator inside the filter string
-        font_path_esc = font_path.replace(":", "\\:")
-        fontfile_clause = f":fontfile={font_path_esc}"
-    else:
-        fontfile_clause = ""
+    # Step 1: burn label with OpenCV → raw mp4v video (no audio)
+    tmp_labeled = out_path.parent / (out_path.stem + "_labeled_raw.mp4")
+    if not burn_label_opencv(segment_path, label, tmp_labeled):
+        print("  OpenCV label burn failed")
+        return False
 
+    # Step 2: composite facecam onto labeled video, mux gameplay audio
     filter_complex = (
         f"[1:v]scale={fw}:{fh}[face];"
-        f"[0:v][face]overlay={ox}:{oy}:shortest=1[v];"
-        f"[v]drawtext=text='{label}'"
-        f"{fontfile_clause}"
-        f":fontsize=32:fontcolor=white"
-        f":borderw=2:bordercolor=black"
-        f":x=20:y=20[out]"
+        f"[0:v][face]overlay={ox}:{oy}:shortest=1[v]"
     )
 
     cmd = [
         "ffmpeg", "-y", "-loglevel", "error",
-        "-i", str(segment_path),       # 0: gameplay segment
+        "-i", str(tmp_labeled),        # 0: labeled video (no audio)
         "-stream_loop", "-1",
         "-i", str(facecam),            # 1: facecam (looped)
+        "-i", str(segment_path),       # 2: original segment (for audio)
         "-filter_complex", filter_complex,
-        "-map", "[out]",               # composited video
-        "-map", "0:a",                 # gameplay audio
+        "-map", "[v]",
+        "-map", "2:a",                 # gameplay audio from original
         "-c:v", "libx264", "-preset", "fast", "-crf", "23",
         "-c:a", "aac", "-b:a", "128k",
         "-shortest", str(out_path),
     ]
     result = subprocess.run(cmd, capture_output=True)
+    try:
+        tmp_labeled.unlink()
+    except Exception:
+        pass
     if result.returncode != 0:
         print(f"  ffmpeg failed: {result.stderr.decode()[:300]}")
         return False
