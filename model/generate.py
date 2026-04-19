@@ -468,18 +468,24 @@ def generate_demo(
             clip_dir = retrieve_clip_topk(pred_vec, index, k=top_k)
             print(f"  clip → {clip_dir.name}")
 
-            # 3b. If portrait given, reenact avatar; otherwise use raw facecam
+            # 3b. If portrait given, generate emotion-driven expression clip
             facecam_to_use = clip_dir / "facecam.mp4"
             if portrait_path is not None and portrait_path.exists():
-                from synthesize import reenact_video
-                source_img  = cv2.imread(str(portrait_path))
-                reenacted   = tmp / f"seg_{i:03d}_reenacted.mp4"
-                print(f"  reenacting avatar...")
-                ok_reenact  = reenact_video(source_img, facecam_to_use, reenacted)
-                if ok_reenact:
-                    facecam_to_use = reenacted
+                from synthesize import generate_emotion_clip
+                source_img = cv2.imread(str(portrait_path))
+                if source_img is None:
+                    print(f"  [warn] could not read portrait {portrait_path}")
                 else:
-                    print("  [warn] reenactment failed, falling back to raw facecam")
+                    reenacted  = tmp / f"seg_{i:03d}_expr.mp4"
+                    seg_fps    = cv2.VideoCapture(str(seg_in)).get(cv2.CAP_PROP_FPS) or 25.0
+                    n_frames   = int(dur * seg_fps)
+                    print(f"  generating {top_emotion} expression ({n_frames} frames)...")
+                    ok_expr = generate_emotion_clip(
+                        source_img, top_emotion, n_frames, seg_fps, reenacted)
+                    if ok_expr:
+                        facecam_to_use = reenacted
+                    else:
+                        print("  [warn] expression gen failed, using raw facecam")
 
             # 4. Composite segment with emotion label overlay
             seg_out = tmp / f"seg_{i:03d}_out.mp4"

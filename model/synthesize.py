@@ -50,6 +50,71 @@ OUT_DIR         = BASE / "synthesized"
 MOTION_SCALE    = 0.65   # dampen driving motion (1.0 = full transfer)
 N_LMS           = 468    # MediaPipe Face Mesh landmarks
 
+# ── Emotion expression deltas ─────────────────────────────────────────────────
+# Each entry: (landmark_idx, dx_as_fraction_of_face_w, dy_as_fraction_of_face_h)
+# Positive y = down. These define how landmarks move to express each emotion.
+EMOTION_DELTAS: dict[str, list[tuple[int, float, float]]] = {
+    "happy": [
+        (61,  +0.025, -0.025), (291, -0.025, -0.025),  # mouth corners up
+        (13,   0.0,   +0.005), (14,   0.0,   +0.020),  # mouth opens
+        (159,  0.0,   -0.010), (386,  0.0,   -0.010),  # eyes widen
+    ],
+    "excited": [
+        (61,  +0.030, -0.030), (291, -0.030, -0.030),  # big smile
+        (70,   0.0,   -0.035), (336,  0.0,   -0.035),  # brows up
+        (159,  0.0,   -0.025), (386,  0.0,   -0.025),  # eyes wide
+        (14,   0.0,   +0.030),                          # mouth open
+    ],
+    "fear": [
+        (70,   0.0,   -0.045), (63,   0.0,   -0.040),  # brows shoot up
+        (105,  0.0,   -0.040), (336,  0.0,   -0.045),
+        (296,  0.0,   -0.040), (334,  0.0,   -0.040),
+        (159,  0.0,   -0.025), (386,  0.0,   -0.025),  # eyes wide
+        (13,   0.0,   -0.010), (14,   0.0,   +0.035),  # mouth open
+        (152,  0.0,   +0.020),                          # chin drops
+    ],
+    "surprise": [
+        (70,   0.0,   -0.055), (63,   0.0,   -0.050),  # brows very high
+        (105,  0.0,   -0.050), (336,  0.0,   -0.055),
+        (296,  0.0,   -0.050), (334,  0.0,   -0.050),
+        (159,  0.0,   -0.035), (386,  0.0,   -0.035),  # eyes very wide
+        (13,   0.0,   -0.010), (14,   0.0,   +0.045),  # mouth open wide
+        (152,  0.0,   +0.025),
+    ],
+    "sad": [
+        (65,   0.0,   -0.020), (295,  0.0,   -0.020),  # inner brows up
+        (61,  -0.015, +0.020), (291, +0.015, +0.020),  # mouth corners down
+        (159,  0.0,   +0.008), (386,  0.0,   +0.008),  # eyes droop
+        (13,   0.0,   +0.005),
+    ],
+    "angry": [
+        (70,  +0.015, +0.020), (63,  +0.010, +0.020),  # brows down+in
+        (105, +0.010, +0.015), (336, -0.015, +0.020),
+        (296, -0.010, +0.020), (334, -0.010, +0.015),
+        (159,  0.0,   +0.012), (386,  0.0,   +0.012),  # eyes narrow
+        (61,  +0.010,  0.0),   (291, -0.010,  0.0),    # mouth tight
+    ],
+    "disgust": [
+        (0,    0.0,   -0.020), (267,  0.0,   -0.020),  # upper lip curls up
+        (37,   0.0,   -0.015),
+        (70,   0.0,   +0.010), (336,  0.0,   +0.010),  # brows slightly down
+        (61,   0.0,   +0.010), (291,  0.0,   +0.010),  # mouth corners down
+        (4,    0.0,   -0.005),                          # nose wrinkle
+    ],
+    "contempt": [
+        (61,  +0.020, -0.020),                          # one mouth corner up
+        (291,  0.0,   +0.005),
+        (70,   0.0,   -0.015),                          # one brow up
+    ],
+    "confused": [
+        (70,   0.0,   -0.020),                          # one brow up
+        (336,  0.0,   +0.012),                          # other brow down
+        (105, +0.010, -0.010),
+        (14,   0.0,   +0.012),                          # slight mouth open
+    ],
+    "neutral": [],
+}
+
 
 # ── MediaPipe helpers ────────────────────────────────────────────────────────
 
@@ -273,6 +338,66 @@ def reenact_video(source_img: np.ndarray,
             return False
 
     return True
+
+
+# ── Emotion-driven expression clip ───────────────────────────────────────────
+
+def generate_emotion_clip(
+    source_img: np.ndarray,
+    emotion: str,
+    n_frames: int,
+    fps: float,
+    out_path: Path,
+) -> bool:
+    """
+    Animate source_img to express the given emotion using landmark delta offsets.
+    No driving video needed — expression is synthesised directly from emotion label.
+
+    Animation curve: ramp up over first 1/3 of frames, hold for remaining 2/3.
+    """
+    try:
+        landmarker = _make_landmarker()
+    except Exception as e:
+        print(f"  landmarker init failed: {e}")
+        return False
+
+    source_lms = _get_lms(source_img, landmarker)
+    if source_lms is None:
+        print("  no face detected in portrait — check portrait image")
+        return False
+
+    triangles = _build_triangles(source_lms, source_img.shape)
+    h, w      = source_img.shape[:2]
+
+    face_h = float(source_lms[:, 1].max() - source_lms[:, 1].min())
+    face_w = float(source_lms[:, 0].max() - source_lms[:, 0].min())
+
+    # Build fully-expressed target landmarks
+    deltas     = EMOTION_DELTAS.get(emotion, [])
+    target_lms = source_lms.copy()
+    for idx, dx_frac, dy_frac in deltas:
+        if idx < len(target_lms):
+            target_lms[idx, 0] = np.clip(target_lms[idx, 0] + dx_frac * face_w, 0, w - 1)
+            target_lms[idx, 1] = np.clip(target_lms[idx, 1] + dy_frac * face_h, 0, h - 1)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    writer = cv2.VideoWriter(str(out_path), fourcc, fps, (w, h))
+
+    ramp = max(1, n_frames // 3)   # ramp-up duration in frames
+
+    for f in range(n_frames):
+        # Ease-in then hold at full expression
+        t          = min(1.0, f / ramp)
+        eased      = t * t * (3 - 2 * t)          # smoothstep
+        interp_lms = (source_lms + (target_lms - source_lms) * eased).astype(np.float32)
+
+        frame = reenact_frame(source_img, source_lms, triangles,
+                              interp_lms, source_lms)
+        writer.write(frame)
+
+    writer.release()
+    return out_path.exists()
 
 
 # ── Composite synthesized face onto gameplay ─────────────────────────────────
