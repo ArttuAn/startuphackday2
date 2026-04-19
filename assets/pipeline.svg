@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d1a"/>
+      <stop offset="100%" style="stop-color:#1a0d2e"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#5b21b6"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="860" height="520" fill="url(#bg2)" rx="16"/>
+
+  <!-- Title -->
+  <text x="430" y="40" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="20" fill="white" text-anchor="middle" letter-spacing="3">PIPELINE OVERVIEW</text>
+  <rect x="180" y="50" width="500" height="2" rx="1" fill="url(#g1)" opacity="0.6"/>
+
+  <!-- ── ROW 1: Steps 1-5 ── -->
+
+  <!-- Step 1 -->
+  <rect x="30" y="80" width="140" height="72" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="30" y="80" width="140" height="8" rx="10" fill="url(#g1)"/>
+  <text x="100" y="106" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#a78bfa" text-anchor="middle">STEP 1</text>
+  <text x="100" y="122" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Scrape Videos</text>
+  <text x="100" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">YouTube / Twitch</text>
+
+  <!-- Arrow -->
+  <line x1="172" y1="116" x2="188" y2="116" stroke="#7c3aed" stroke-width="2"/>
+  <polygon points="188,111 196,116 188,121" fill="#7c3aed"/>
+
+  <!-- Step 2 -->
+  <rect x="198" y="80" width="140" height="72" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="198" y="80" width="140" height="8" rx="10" fill="url(#g1)"/>
+  <text x="268" y="106" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#a78bfa" text-anchor="middle">STEP 2</text>
+  <text x="268" y="122" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Validate Quality</text>
+  <text x="268" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Face presence check</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="116" x2="356" y2="116" stroke="#7c3aed" stroke-width="2"/>
+  <polygon points="356,111 364,116 356,121" fill="#7c3aed"/>
+
+  <!-- Step 3 -->
+  <rect x="366" y="80" width="140" height="72" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="366" y="80" width="140" height="8" rx="10" fill="url(#g1)"/>
+  <text x="436" y="106" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#a78bfa" text-anchor="middle">STEP 3</text>
+  <text x="436" y="122" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Detect Facecam</text>
+  <text x="436" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Haar cascade bbox</text>
+
+  <!-- Arrow -->
+  <line x1="508" y1="116" x2="524" y2="116" stroke="#7c3aed" stroke-width="2"/>
+  <polygon points="524,111 532,116 524,121" fill="#7c3aed"/>
+
+  <!-- Step 4 -->
+  <rect x="534" y="80" width="140" height="72" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="534" y="80" width="140" height="8" rx="10" fill="url(#g1)"/>
+  <text x="604" y="106" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#a78bfa" text-anchor="middle">STEP 4</text>
+  <text x="604" y="122" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Assemble Dataset</text>
+  <text x="604" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Organise raw clips</text>
+
+  <!-- Arrow -->
+  <line x1="676" y1="116" x2="692" y2="116" stroke="#7c3aed" stroke-width="2"/>
+  <polygon points="692,111 700,116 692,121" fill="#7c3aed"/>
+
+  <!-- Step 5 -->
+  <rect x="702" y="80" width="140" height="72" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="702" y="80" width="140" height="8" rx="10" fill="url(#g1)"/>
+  <text x="772" y="106" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#a78bfa" text-anchor="middle">STEP 5</text>
+  <text x="772" y="122" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Classify Emotions</text>
+  <text x="772" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">MediaPipe + DeepFace</text>
+
+  <!-- Down arrow from step 5 -->
+  <line x1="772" y1="154" x2="772" y2="180" stroke="#06b6d4" stroke-width="2"/>
+  <polygon points="767,178 772,186 777,178" fill="#06b6d4"/>
+
+  <!-- ── ROW 2: Steps 6-10 (right to left) ── -->
+
+  <!-- Step 6 -->
+  <rect x="702" y="188" width="140" height="72" rx="10" fill="#0c2a3a" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="702" y="188" width="140" height="8" rx="10" fill="url(#g2)"/>
+  <text x="772" y="214" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#67e8f9" text-anchor="middle">STEP 6</text>
+  <text x="772" y="230" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Extract Clips</text>
+  <text x="772" y="246" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">5s gameplay+facecam</text>
+
+  <!-- Arrow left -->
+  <line x1="700" y1="224" x2="684" y2="224" stroke="#0891b2" stroke-width="2"/>
+  <polygon points="684,219 676,224 684,229" fill="#0891b2"/>
+
+  <!-- Step 7 -->
+  <rect x="534" y="188" width="140" height="72" rx="10" fill="#0c2a3a" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="534" y="188" width="140" height="8" rx="10" fill="url(#g2)"/>
+  <text x="604" y="214" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#67e8f9" text-anchor="middle">STEP 7</text>
+  <text x="604" y="230" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Train Model</text>
+  <text x="604" y="246" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">SigLIP + MLP head</text>
+
+  <!-- Arrow left -->
+  <line x1="532" y1="224" x2="516" y2="224" stroke="#0891b2" stroke-width="2"/>
+  <polygon points="516,219 508,224 516,229" fill="#0891b2"/>
+
+  <!-- Step 8 -->
+  <rect x="366" y="188" width="140" height="72" rx="10" fill="#0c2a3a" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="366" y="188" width="140" height="8" rx="10" fill="url(#g2)"/>
+  <text x="436" y="214" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#67e8f9" text-anchor="middle">STEP 8</text>
+  <text x="436" y="230" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Build Index</text>
+  <text x="436" y="246" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Cosine retrieval index</text>
+
+  <!-- Arrow left -->
+  <line x1="364" y1="224" x2="348" y2="224" stroke="#0891b2" stroke-width="2"/>
+  <polygon points="348,219 340,224 348,229" fill="#0891b2"/>
+
+  <!-- Step 9 -->
+  <rect x="198" y="188" width="140" height="72" rx="10" fill="#0c2a3a" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="198" y="188" width="140" height="8" rx="10" fill="url(#g2)"/>
+  <text x="268" y="214" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#67e8f9" text-anchor="middle">STEP 9</text>
+  <text x="268" y="230" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Evaluate</text>
+  <text x="268" y="246" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Cross-game metrics</text>
+
+  <!-- Arrow left -->
+  <line x1="196" y1="224" x2="180" y2="224" stroke="#0891b2" stroke-width="2"/>
+  <polygon points="180,219 172,224 180,229" fill="#0891b2"/>
+
+  <!-- Step 10 -->
+  <rect x="30" y="188" width="140" height="72" rx="10" fill="#0c2a3a" stroke="#0891b2" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="30" y="188" width="140" height="8" rx="10" fill="url(#g2)"/>
+  <text x="100" y="214" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="11" fill="#67e8f9" text-anchor="middle">STEP 10</text>
+  <text x="100" y="230" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Synthesize Avatar</text>
+  <text x="100" y="246" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Landmark reenactment</text>
+
+  <!-- Down arrow from step 10 to demo -->
+  <line x1="100" y1="262" x2="100" y2="285" stroke="#10b981" stroke-width="2"/>
+  <polygon points="95,283 100,291 105,283" fill="#10b981"/>
+
+  <!-- ── DEMO OUTPUT ── -->
+  <rect x="30" y="293" width="800" height="80" rx="12" fill="#0a1f0a" stroke="#059669" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="30" y="293" width="800" height="8" rx="12" fill="url(#g3)"/>
+
+  <text x="430" y="325" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="14" fill="#10b981" text-anchor="middle" letter-spacing="2">DEMO OUTPUT</text>
+  <text x="430" y="347" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">New gameplay video  →  Emotion prediction  →  Avatar reacts  →  Composited demo.mp4</text>
+  <text x="430" y="362" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">python generate.py --demo --portrait portraits/default.jpg --input gameplay.mp4 --output demo.mp4</text>
+
+  <!-- ── Model Architecture box ── -->
+  <rect x="30" y="395" width="390" height="105" rx="12" fill="#1a0d0d" stroke="#d97706" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="30" y="395" width="390" height="8" rx="12" fill="url(#g4)"/>
+  <text x="225" y="421" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="13" fill="#fbbf24" text-anchor="middle" letter-spacing="1">MODEL ARCHITECTURE</text>
+  <text x="225" y="441" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">4 frames  →  SigLIP encoder (frozen, 768-dim)</text>
+  <text x="225" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">+ Audio features (26-dim RMS/ZCR/Mel)  →  concat</text>
+  <text x="225" y="475" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">MLP head (794→256→10)  →  Softmax</text>
+  <text x="225" y="492" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#fbbf24" text-anchor="middle">Focal Loss  •  ~200K trainable params</text>
+
+  <!-- ── Emotion classes box ── -->
+  <rect x="440" y="395" width="390" height="105" rx="12" fill="#0d1a0d" stroke="#059669" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="440" y="395" width="390" height="8" rx="12" fill="url(#g3)"/>
+  <text x="635" y="421" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="13" fill="#10b981" text-anchor="middle" letter-spacing="1">EMOTION CLASSES  (10)</text>
+
+  <!-- Emotion pills -->
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="10">
+    <rect x="455" y="430" width="58" height="18" rx="9" fill="#7c3aed" opacity="0.8"/>
+    <text x="484" y="443" fill="white" text-anchor="middle">neutral</text>
+
+    <rect x="521" y="430" width="48" height="18" rx="9" fill="#10b981" opacity="0.8"/>
+    <text x="545" y="443" fill="white" text-anchor="middle">happy</text>
+
+    <rect x="577" y="430" width="56" height="18" rx="9" fill="#f59e0b" opacity="0.8"/>
+    <text x="605" y="443" fill="white" text-anchor="middle">excited</text>
+
+    <rect x="641" y="430" width="36" height="18" rx="9" fill="#3b82f6" opacity="0.8"/>
+    <text x="659" y="443" fill="white" text-anchor="middle">sad</text>
+
+    <rect x="685" y="430" width="46" height="18" rx="9" fill="#ef4444" opacity="0.8"/>
+    <text x="708" y="443" fill="white" text-anchor="middle">angry</text>
+
+    <rect x="455" y="456" width="38" height="18" rx="9" fill="#8b5cf6" opacity="0.8"/>
+    <text x="474" y="469" fill="white" text-anchor="middle">fear</text>
+
+    <rect x="501" y="456" width="62" height="18" rx="9" fill="#06b6d4" opacity="0.8"/>
+    <text x="532" y="469" fill="white" text-anchor="middle">surprise</text>
+
+    <rect x="571" y="456" width="56" height="18" rx="9" fill="#64748b" opacity="0.8"/>
+    <text x="599" y="469" fill="white" text-anchor="middle">disgust</text>
+
+    <rect x="635" y="456" width="64" height="18" rx="9" fill="#475569" opacity="0.8"/>
+    <text x="667" y="469" fill="white" text-anchor="middle">contempt</text>
+
+    <rect x="455" y="482" width="62" height="18" rx="9" fill="#0891b2" opacity="0.8"/>
+    <text x="486" y="495" fill="white" text-anchor="middle">confused</text>
+  </g>
+  <text x="635" y="492" font-family="'Segoe UI', Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Trained on Signalis  •  Evaluated on Hollow Knight</text>
+</svg>
