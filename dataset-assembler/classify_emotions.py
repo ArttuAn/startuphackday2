@@ -36,6 +36,8 @@ from parse_captions import load_captions, nearest_caption
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefmt="%H:%M:%S")
 log = logging.getLogger(__name__)
 
+_face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+
 _MODEL_URL       = "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task"
 _MODEL_PATH      = Path(__file__).parent / "face_landmarker.task"
 _SEPARATOR_MODEL = Path(__file__).parent.parent / "streamer-separator" / "face_landmarker.task"
