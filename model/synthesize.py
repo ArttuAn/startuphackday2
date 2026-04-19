@@ -55,62 +55,80 @@ N_LMS           = 468    # MediaPipe Face Mesh landmarks
 # Positive y = down. These define how landmarks move to express each emotion.
 EMOTION_DELTAS: dict[str, list[tuple[int, float, float]]] = {
     "happy": [
-        (61,  +0.025, -0.025), (291, -0.025, -0.025),  # mouth corners up
-        (13,   0.0,   +0.005), (14,   0.0,   +0.020),  # mouth opens
-        (159,  0.0,   -0.010), (386,  0.0,   -0.010),  # eyes widen
+        (61,  +0.060, -0.060), (291, -0.060, -0.060),  # mouth corners way up
+        (13,   0.0,   +0.010), (14,   0.0,   +0.055),  # mouth opens wide
+        (17,   0.0,   +0.030),                          # chin drops
+        (159,  0.0,   -0.025), (386,  0.0,   -0.025),  # eyes widen (joy squint)
+        (70,   0.0,   -0.025), (336,  0.0,   -0.025),  # brows up slightly
     ],
     "excited": [
-        (61,  +0.030, -0.030), (291, -0.030, -0.030),  # big smile
-        (70,   0.0,   -0.035), (336,  0.0,   -0.035),  # brows up
-        (159,  0.0,   -0.025), (386,  0.0,   -0.025),  # eyes wide
-        (14,   0.0,   +0.030),                          # mouth open
+        (61,  +0.075, -0.075), (291, -0.075, -0.075),  # huge smile
+        (70,   0.0,   -0.070), (63,   0.0,   -0.060),  # brows shoot up
+        (105,  0.0,   -0.060), (336,  0.0,   -0.070),
+        (296,  0.0,   -0.060), (334,  0.0,   -0.060),
+        (159,  0.0,   -0.045), (386,  0.0,   -0.045),  # eyes very wide
+        (13,   0.0,   -0.010), (14,   0.0,   +0.065),  # mouth wide open
+        (152,  0.0,   +0.030),
     ],
     "fear": [
-        (70,   0.0,   -0.045), (63,   0.0,   -0.040),  # brows shoot up
-        (105,  0.0,   -0.040), (336,  0.0,   -0.045),
-        (296,  0.0,   -0.040), (334,  0.0,   -0.040),
-        (159,  0.0,   -0.025), (386,  0.0,   -0.025),  # eyes wide
-        (13,   0.0,   -0.010), (14,   0.0,   +0.035),  # mouth open
-        (152,  0.0,   +0.020),                          # chin drops
+        (70,   0.0,   -0.090), (63,   0.0,   -0.080),  # brows shoot way up
+        (105,  0.0,   -0.080), (336,  0.0,   -0.090),
+        (296,  0.0,   -0.080), (334,  0.0,   -0.080),
+        (65,   0.0,   -0.060), (295,  0.0,   -0.060),  # inner brows up too
+        (159,  0.0,   -0.050), (386,  0.0,   -0.050),  # eyes very wide
+        (145,  0.0,   +0.020), (374,  0.0,   +0.020),  # lower lids down
+        (13,   0.0,   -0.015), (14,   0.0,   +0.060),  # mouth gapes open
+        (17,   0.0,   +0.025), (152,  0.0,   +0.035),  # chin drops
+        (61,  -0.020, +0.015), (291, +0.020, +0.015),  # corners pull back
     ],
     "surprise": [
-        (70,   0.0,   -0.055), (63,   0.0,   -0.050),  # brows very high
-        (105,  0.0,   -0.050), (336,  0.0,   -0.055),
-        (296,  0.0,   -0.050), (334,  0.0,   -0.050),
-        (159,  0.0,   -0.035), (386,  0.0,   -0.035),  # eyes very wide
-        (13,   0.0,   -0.010), (14,   0.0,   +0.045),  # mouth open wide
-        (152,  0.0,   +0.025),
+        (70,   0.0,   -0.100), (63,   0.0,   -0.090),  # brows extremely high
+        (105,  0.0,   -0.090), (336,  0.0,   -0.100),
+        (296,  0.0,   -0.090), (334,  0.0,   -0.090),
+        (159,  0.0,   -0.060), (386,  0.0,   -0.060),  # eyes as wide as possible
+        (145,  0.0,   +0.025), (374,  0.0,   +0.025),
+        (13,   0.0,   -0.015), (14,   0.0,   +0.075),  # jaw drops
+        (17,   0.0,   +0.035), (152,  0.0,   +0.045),
     ],
     "sad": [
-        (65,   0.0,   -0.020), (295,  0.0,   -0.020),  # inner brows up
-        (61,  -0.015, +0.020), (291, +0.015, +0.020),  # mouth corners down
-        (159,  0.0,   +0.008), (386,  0.0,   +0.008),  # eyes droop
-        (13,   0.0,   +0.005),
+        (65,   0.0,   -0.045), (295,  0.0,   -0.045),  # inner brows up (grief)
+        (70,  +0.020, +0.015), (336, -0.020, +0.015),  # outer brows down
+        (61,  -0.035, +0.045), (291, +0.035, +0.045),  # mouth corners droop hard
+        (17,   0.0,   +0.010),                          # lip trembles
+        (159,  0.0,   +0.018), (386,  0.0,   +0.018),  # eyes heavy/drooping
+        (145,  0.0,   -0.010), (374,  0.0,   -0.010),
     ],
     "angry": [
-        (70,  +0.015, +0.020), (63,  +0.010, +0.020),  # brows down+in
-        (105, +0.010, +0.015), (336, -0.015, +0.020),
-        (296, -0.010, +0.020), (334, -0.010, +0.015),
-        (159,  0.0,   +0.012), (386,  0.0,   +0.012),  # eyes narrow
-        (61,  +0.010,  0.0),   (291, -0.010,  0.0),    # mouth tight
+        (70,  +0.035, +0.045), (63,  +0.025, +0.040),  # brows crush down+in
+        (105, +0.025, +0.035), (336, -0.035, +0.045),
+        (296, -0.025, +0.040), (334, -0.025, +0.035),
+        (159,  0.0,   +0.025), (386,  0.0,   +0.025),  # eyes narrow/glare
+        (145,  0.0,   -0.015), (374,  0.0,   -0.015),
+        (61,  +0.025,  0.0),   (291, -0.025,  0.0),    # mouth pressed tight
+        (13,   0.0,   +0.010),                          # upper lip tightens
     ],
     "disgust": [
-        (0,    0.0,   -0.020), (267,  0.0,   -0.020),  # upper lip curls up
-        (37,   0.0,   -0.015),
-        (70,   0.0,   +0.010), (336,  0.0,   +0.010),  # brows slightly down
-        (61,   0.0,   +0.010), (291,  0.0,   +0.010),  # mouth corners down
-        (4,    0.0,   -0.005),                          # nose wrinkle
+        (0,    0.0,   -0.045), (267,  0.0,   -0.045),  # upper lip curls up hard
+        (37,   0.0,   -0.040), (39,   0.0,   -0.035),
+        (70,  +0.010, +0.025), (336, +0.010, +0.025),  # brows pull down
+        (4,    0.0,   -0.020), (5,    0.0,   -0.015),  # nose scrunches
+        (61,  -0.010, +0.025), (291, +0.010, +0.025),  # corners pull down
+        (159,  0.0,   +0.015), (386,  0.0,   +0.015),  # eyes squint
     ],
     "contempt": [
-        (61,  +0.020, -0.020),                          # one mouth corner up
-        (291,  0.0,   +0.005),
-        (70,   0.0,   -0.015),                          # one brow up
+        (61,  +0.050, -0.045),                          # one mouth corner sharply up
+        (291,  0.0,   +0.012),                          # other corner neutral/down
+        (70,   0.0,   -0.035),                          # one brow raised
+        (336,  0.0,   +0.010),                          # other brow slightly down
+        (159,  0.0,   -0.010),                          # one eye slightly wider
     ],
     "confused": [
-        (70,   0.0,   -0.020),                          # one brow up
-        (336,  0.0,   +0.012),                          # other brow down
-        (105, +0.010, -0.010),
-        (14,   0.0,   +0.012),                          # slight mouth open
+        (70,   0.0,   -0.045),                          # one brow way up
+        (63,   0.0,   -0.035),
+        (336,  0.0,   +0.025), (296,  0.0,   +0.020),  # other brow furrowed down
+        (105, +0.020, -0.020),
+        (14,   0.0,   +0.025), (17,   0.0,   +0.015),  # mouth slightly open
+        (61,  -0.010, +0.010),                          # corner pulls slightly
     ],
     "neutral": [],
 }
@@ -392,8 +410,23 @@ def generate_emotion_clip(
         eased      = t * t * (3 - 2 * t)          # smoothstep
         interp_lms = (source_lms + (target_lms - source_lms) * eased).astype(np.float32)
 
-        frame = reenact_frame(source_img, source_lms, triangles,
-                              interp_lms, source_lms)
+        # Warp directly — bypass MOTION_SCALE dampening so expressions are
+        # fully visible. reenact_frame would multiply motion by 0.65.
+        output = source_img.copy()
+        for i, j, k in triangles:
+            _warp_triangle(source_img, output,
+                           source_lms[[i, j, k]],
+                           interp_lms[[i, j, k]])
+
+        # Feather-blend to face hull only
+        hull  = cv2.convexHull(interp_lms.astype(np.float32))
+        mask  = np.zeros((h, w), dtype=np.uint8)
+        cv2.fillConvexPoly(mask, hull.astype(np.int32), 255)
+        mask  = cv2.dilate(mask, np.ones((15, 15), np.uint8))
+        mask  = cv2.GaussianBlur(mask, (21, 21), 8)
+        alpha = mask.astype(np.float32)[:, :, None] / 255.0
+        frame = (output * alpha + source_img * (1 - alpha)).astype(np.uint8)
+
         writer.write(frame)
 
     writer.release()
