@@ -10,15 +10,21 @@ Usage:
     # Build retrieval index (run once after training)
     python generate.py --build_index
 
-    # Generate reaction video
+    # Generate single reaction video (one emotion, whole clip)
     python generate.py --input gameplay.mp4 --output reaction.mp4
+
+    # Generate demo video (segment-by-segment, emotion label overlay)
+    python generate.py --input gameplay.mp4 --output demo.mp4 --demo
+    python generate.py --input gameplay.mp4 --output demo.mp4 --demo --segment_duration 10
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import random
 import subprocess
+import tempfile
 from pathlib import Path
 
 import cv2
@@ -134,10 +140,7 @@ def build_retrieval_index(
 
 
 def retrieve_clip(query_vec: torch.Tensor, index: dict) -> Path:
-    """
-    Find facecam clip whose soft emotion vector is closest to query_vec.
-    Uses cosine similarity on the probability vectors.
-    """
+    """Find facecam clip whose soft emotion vector is closest to query_vec."""
     vecs  = index["soft_vecs"]   # (N, N_EMOTIONS)
     paths = index["paths"]
 
@@ -149,6 +152,42 @@ def retrieve_clip(query_vec: torch.Tensor, index: dict) -> Path:
     return Path(paths[best])
 
 
+def retrieve_clip_topk(query_vec: torch.Tensor, index: dict, k: int = 3) -> Path:
+    """
+    Randomly pick from top-k matches — avoids showing the exact same clip
+    for every segment that predicts the same dominant emotion.
+    """
+    vecs  = index["soft_vecs"]
+    paths = index["paths"]
+
+    q      = F.normalize(query_vec.unsqueeze(0), dim=1)
+    s      = F.normalize(vecs, dim=1)
+    scores = (q @ s.T).squeeze(0)
+
+    k       = min(k, len(paths))
+    indices = scores.topk(k).indices.tolist()
+    chosen  = random.choice(indices)
+    return Path(paths[chosen])
+
+
+# ── Video helpers ────────────────────────────────────────────────────────────
+
+def get_video_duration(path: Path) -> float:
+    cap = cv2.VideoCapture(str(path))
+    fps    = cap.get(cv2.CAP_PROP_FPS) or 30.0
+    frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
+    cap.release()
+    return frames / fps
+
+
+def get_video_size(path: Path) -> tuple[int, int]:
+    cap = cv2.VideoCapture(str(path))
+    w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    cap.release()
+    return w, h
+
+
 # ── Video compositing ────────────────────────────────────────────────────────
 
 def composite_reaction(
@@ -158,16 +197,13 @@ def composite_reaction(
     corner: str = "bottom-right",
     face_scale: float = 0.25,
 ) -> bool:
+    """Composite facecam onto full gameplay clip (no text overlay)."""
     facecam = clip_dir / "facecam.mp4"
     if not facecam.exists():
         print(f"  no facecam.mp4 in {clip_dir}")
         return False
 
-    cap = cv2.VideoCapture(str(gameplay_path))
-    gw  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    gh  = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    cap.release()
-
+    gw, gh = get_video_size(gameplay_path)
     fw = int(gw * face_scale)
     fh = fw
 
@@ -198,6 +234,69 @@ def composite_reaction(
     return True
 
 
+def composite_segment_with_label(
+    segment_path: Path,
+    clip_dir: Path,
+    out_path: Path,
+    emotion_label: str,
+    emotion_prob: float,
+    corner: str = "bottom-right",
+    face_scale: float = 0.25,
+) -> bool:
+    """
+    Composite facecam onto a pre-trimmed gameplay segment and draw
+    the predicted emotion label in the top-left corner.
+    Uses gameplay audio so the viewer hears the game sounds.
+    """
+    facecam = clip_dir / "facecam.mp4"
+    if not facecam.exists():
+        print(f"  no facecam.mp4 in {clip_dir}")
+        return False
+
+    gw, gh = get_video_size(segment_path)
+    fw = int(gw * face_scale)
+    fh = fw
+
+    positions = {
+        "bottom-right": (gw - fw - 10, gh - fh - 10),
+        "bottom-left":  (10,            gh - fh - 10),
+        "top-right":    (gw - fw - 10, 10),
+        "top-left":     (10,            10),
+    }
+    ox, oy = positions.get(corner, positions["bottom-right"])
+
+    label   = f"{emotion_label.upper()}  {emotion_prob:.0%}"
+    # Escape characters that break ffmpeg drawtext
+    label   = label.replace("'", "").replace(":", " ").replace("\\", "")
+
+    filter_complex = (
+        f"[1:v]scale={fw}:{fh}[face];"
+        f"[0:v][face]overlay={ox}:{oy}:shortest=1[v];"
+        f"[v]drawtext=text='{label}'"
+        f":fontsize=32:fontcolor=white"
+        f":borderw=2:bordercolor=black"
+        f":x=20:y=20[out]"
+    )
+
+    cmd = [
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-i", str(segment_path),       # 0: gameplay segment
+        "-stream_loop", "-1",
+        "-i", str(facecam),            # 1: facecam (looped)
+        "-filter_complex", filter_complex,
+        "-map", "[out]",               # composited video
+        "-map", "0:a",                 # gameplay audio
+        "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+        "-c:a", "aac", "-b:a", "128k",
+        "-shortest", str(out_path),
+    ]
+    result = subprocess.run(cmd, capture_output=True)
+    if result.returncode != 0:
+        print(f"  ffmpeg failed: {result.stderr.decode()[:300]}")
+        return False
+    return True
+
+
 # ── Full inference pipeline ──────────────────────────────────────────────────
 
 def generate_reaction(
@@ -207,6 +306,7 @@ def generate_reaction(
     index_path: Path = DEFAULT_INDEX,
     corner: str = "bottom-right",
 ):
+    """Original mode: one emotion prediction for the whole clip."""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"[generate] device={device}")
 
@@ -234,18 +334,131 @@ def generate_reaction(
     return ok
 
 
+def generate_demo(
+    gameplay_path: Path,
+    out_path: Path,
+    checkpoint: Path = DEFAULT_CHECKPOINT,
+    index_path: Path = DEFAULT_INDEX,
+    corner: str = "bottom-right",
+    segment_duration: int = 8,
+    top_k: int = 3,
+):
+    """
+    Demo mode: split gameplay into segments, predict emotion per segment,
+    retrieve a matching facecam clip for each, overlay emotion label, concatenate.
+
+    This makes the reaction visibly change as the game events change.
+    """
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"[demo] device={device}")
+
+    model, processor, n_frames = load_model_and_processor(checkpoint, device)
+
+    print(f"[demo] loading retrieval index...")
+    index = torch.load(index_path, map_location="cpu")
+
+    total_dur = get_video_duration(gameplay_path)
+    starts    = list(range(0, int(total_dur), segment_duration))
+    print(f"[demo] {total_dur:.0f}s gameplay → {len(starts)} segments × {segment_duration}s")
+
+    with tempfile.TemporaryDirectory() as tmp_str:
+        tmp = Path(tmp_str)
+        segment_files = []
+
+        for i, start in enumerate(starts):
+            dur = min(segment_duration, total_dur - start)
+            if dur < 1.0:
+                break
+
+            print(f"\n[demo] segment {i+1}/{len(starts)}  t={start:.0f}–{start+dur:.0f}s")
+
+            # 1. Extract segment clip (faster prediction, clean concat boundary)
+            seg_in = tmp / f"seg_{i:03d}_in.mp4"
+            subprocess.run([
+                "ffmpeg", "-y", "-loglevel", "error",
+                "-ss", str(start), "-t", str(dur),
+                "-i", str(gameplay_path),
+                "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
+                "-c:a", "aac", "-b:a", "96k",
+                str(seg_in),
+            ], check=True)
+
+            # 2. Predict emotion from this segment
+            pred_vec    = predict_emotion_vector(model, processor, seg_in, n_frames, device)
+            top_idx     = pred_vec.argmax().item()
+            top_emotion = EMOTION_CLASSES[top_idx]
+            top_prob    = pred_vec[top_idx].item()
+
+            # Print distribution
+            print(f"  emotion → {top_emotion} ({top_prob:.0%})")
+            for e, p in sorted(zip(EMOTION_CLASSES, pred_vec.tolist()), key=lambda x: -x[1])[:4]:
+                bar = "█" * int(p * 20)
+                print(f"    {e:12s} {p:.2f}  {bar}")
+
+            # 3. Retrieve facecam clip (random from top-k to vary reactions)
+            clip_dir = retrieve_clip_topk(pred_vec, index, k=top_k)
+            print(f"  clip → {clip_dir.name}")
+
+            # 4. Composite segment with emotion label overlay
+            seg_out = tmp / f"seg_{i:03d}_out.mp4"
+            ok = composite_segment_with_label(
+                seg_in, clip_dir, seg_out,
+                emotion_label=top_emotion,
+                emotion_prob=top_prob,
+                corner=corner,
+            )
+            if ok:
+                segment_files.append(seg_out)
+            else:
+                print(f"  [warn] skipping segment {i+1} (composite failed)")
+
+        if not segment_files:
+            print("[demo] no segments rendered — check checkpoint and index paths")
+            return False
+
+        # 5. Concatenate all segments
+        print(f"\n[demo] concatenating {len(segment_files)} segments → {out_path}")
+        concat_txt = tmp / "concat.txt"
+        concat_txt.write_text(
+            "\n".join(f"file '{f.as_posix()}'" for f in segment_files),
+            encoding="utf-8",
+        )
+
+        result = subprocess.run([
+            "ffmpeg", "-y", "-loglevel", "error",
+            "-f", "concat", "-safe", "0",
+            "-i", str(concat_txt),
+            "-c", "copy",
+            str(out_path),
+        ], capture_output=True)
+
+        if result.returncode != 0:
+            print(f"[demo] concat failed: {result.stderr.decode()[:300]}")
+            return False
+
+        print(f"[demo] done → {out_path}")
+        return True
+
+
 # ── Main ────────────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(description="Generate reaction video")
-    parser.add_argument("--build_index", action="store_true")
-    parser.add_argument("--input",       type=Path)
-    parser.add_argument("--output",      type=Path, default=Path("reaction_output.mp4"))
-    parser.add_argument("--checkpoint",  type=Path, default=DEFAULT_CHECKPOINT)
-    parser.add_argument("--index",       type=Path, default=DEFAULT_INDEX)
-    parser.add_argument("--dataset_dir", type=Path, default=DEFAULT_DATASET)
-    parser.add_argument("--corner",      type=str,  default="bottom-right",
+    parser.add_argument("--build_index",      action="store_true",
+                        help="Build retrieval index from dataset")
+    parser.add_argument("--demo",             action="store_true",
+                        help="Demo mode: segment-by-segment reactions with emotion label overlay")
+    parser.add_argument("--input",            type=Path)
+    parser.add_argument("--output",           type=Path, default=Path("reaction_output.mp4"))
+    parser.add_argument("--checkpoint",       type=Path, default=DEFAULT_CHECKPOINT)
+    parser.add_argument("--index",            type=Path, default=DEFAULT_INDEX)
+    parser.add_argument("--dataset_dir",      type=Path, default=DEFAULT_DATASET)
+    parser.add_argument("--corner",           type=str,  default="bottom-right",
                         choices=["bottom-right", "bottom-left", "top-right", "top-left"])
+    parser.add_argument("--segment_duration", type=int,  default=8,
+                        help="Seconds per segment in demo mode (default: 8)")
+    parser.add_argument("--top_k",            type=int,  default=3,
+                        help="Randomly pick from top-k retrieved clips (default: 3)")
     args = parser.parse_args()
 
     if args.build_index:
@@ -255,13 +468,24 @@ def main():
     if args.input is None:
         parser.error("--input required")
 
-    generate_reaction(
-        gameplay_path=args.input,
-        out_path=args.output,
-        checkpoint=args.checkpoint,
-        index_path=args.index,
-        corner=args.corner,
-    )
+    if args.demo:
+        generate_demo(
+            gameplay_path=args.input,
+            out_path=args.output,
+            checkpoint=args.checkpoint,
+            index_path=args.index,
+            corner=args.corner,
+            segment_duration=args.segment_duration,
+            top_k=args.top_k,
+        )
+    else:
+        generate_reaction(
+            gameplay_path=args.input,
+            out_path=args.output,
+            checkpoint=args.checkpoint,
+            index_path=args.index,
+            corner=args.corner,
+        )
 
 
 if __name__ == "__main__":
