@@ -272,14 +272,25 @@ def composite_segment_with_label(
     }
     ox, oy = positions.get(corner, positions["bottom-right"])
 
-    label   = f"{emotion_label.upper()}  {emotion_prob:.0%}"
+    label = f"{emotion_label.upper()}  {emotion_prob:.0%}"
     # Escape characters that break ffmpeg drawtext
-    label   = label.replace("'", "").replace(":", " ").replace("\\", "")
+    label = label.replace("'", "").replace(":", " ").replace("\\", "")
+
+    # Try common font paths (Windows → Linux fallback)
+    font_candidates = [
+        "C:/Windows/Fonts/arial.ttf",
+        "C:/Windows/Fonts/Arial.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    ]
+    font_path = next((f for f in font_candidates if Path(f).exists()), None)
+    fontfile_clause = f":fontfile='{font_path}'" if font_path else ""
 
     filter_complex = (
         f"[1:v]scale={fw}:{fh}[face];"
         f"[0:v][face]overlay={ox}:{oy}:shortest=1[v];"
         f"[v]drawtext=text='{label}'"
+        f"{fontfile_clause}"
         f":fontsize=32:fontcolor=white"
         f":borderw=2:bordercolor=black"
         f":x=20:y=20[out]"
