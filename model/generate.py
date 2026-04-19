@@ -51,7 +51,14 @@ def load_model_and_processor(checkpoint: Path, device: torch.device):
     ckpt       = torch.load(checkpoint, map_location=device)
     model_name = ckpt.get("model_name", "google/siglip-base-patch16-224")
     n_frames   = ckpt.get("n_frames", 4)
-    audio_dim  = ckpt.get("audio_dim", AUDIO_DIM)
+
+    # Infer audio_dim from the saved head weight shape so old checkpoints
+    # (trained without audio, head=[256,768]) still load correctly.
+    head_w    = ckpt["model_state"].get("head.0.weight")
+    if head_w is not None:
+        audio_dim = max(0, head_w.shape[1] - 768)  # 768 = SigLIP embed dim
+    else:
+        audio_dim = ckpt.get("audio_dim", AUDIO_DIM)
 
     processor    = AutoProcessor.from_pretrained(model_name)
     siglip_model = AutoModel.from_pretrained(model_name).vision_model
