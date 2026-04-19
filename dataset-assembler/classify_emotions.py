@@ -446,6 +446,7 @@ def classify_video(vid_dir: Path, out_path: Path,
             t = round(frame_idx / fps, 2)
 
             # ── Crop to facecam region (avoids running MediaPipe on tiny overlay) ──
+            full_frame = frame.copy()   # keep for re-detection fallback
             if bbox_crop is not None:
                 bx, by, bw, bh = bbox_crop
                 fh_frame, fw_frame = frame.shape[:2]
@@ -453,7 +454,30 @@ def classify_video(vid_dir: Path, out_path: Path,
                 by = max(0, min(by, fh_frame - 1))
                 bw = max(1, min(bw, fw_frame - bx))
                 bh = max(1, min(bh, fh_frame - by))
-                frame = frame[by:by + bh, bx:bx + bw]
+                crop = frame[by:by + bh, bx:bx + bw]
+
+                # ── Dynamic bbox re-detection if crop is too dark ────────
+                # Streamer sometimes moves their facecam during long streams.
+                # If mean brightness < 15 (nearly black), scan the full frame
+                # for a face and update bbox_crop for all future frames.
+                if crop.mean() < 15:
+                    gray = cv2.cvtColor(full_frame, cv2.COLOR_BGR2GRAY)
+                    faces = _face_cascade.detectMultiScale(
+                        gray, scaleFactor=1.1, minNeighbors=4, minSize=(40, 40))
+                    if len(faces) > 0:
+                        fx, fy, fw2, fh2 = faces[0]
+                        # Expand bbox to ~2× face size for full facecam region
+                        pad = int(max(fw2, fh2) * 0.6)
+                        nx  = max(0, fx - pad)
+                        ny  = max(0, fy - pad)
+                        nw  = min(fw_frame - nx, fw2 + pad * 2)
+                        nh  = min(fh_frame - ny, fh2 + pad * 2)
+                        bbox_crop = (nx, ny, nw, nh)
+                        log.info("  t=%.0fs: facecam moved — updated bbox to "
+                                 "x=%d y=%d w=%d h=%d", t, *bbox_crop)
+                        crop = full_frame[ny:ny + nh, nx:nx + nw]
+
+                frame = crop
 
             # ── Upscale small crops — MediaPipe needs ≥256px for reliable landmarks ──
             MIN_MP_SIZE = 256
@@ -613,8 +637,4 @@ def main():
         if result:
             ok += 1
 
-    log.info("Done — %d/%d videos classified", ok, len(vid_dirs))
-
-
-if __name__ == "__main__":
-    main()
+    log.info("Done — %d/%d videos classif
