@@ -53,14 +53,40 @@ N_LMS           = 468    # MediaPipe Face Mesh landmarks
 
 # ── MediaPipe helpers ────────────────────────────────────────────────────────
 
-def _get_lms(img_bgr: np.ndarray, face_mesh) -> np.ndarray | None:
+_MODEL_PATH = (BASE.parent / "dataset-assembler" / "face_landmarker.task")
+
+
+def _make_landmarker():
+    """Create a MediaPipe FaceLandmarker using the Tasks API (mediapipe ≥0.10)."""
+    import mediapipe as mp
+    from mediapipe.tasks.python import vision as mpv
+    from mediapipe.tasks.python.core import base_options as mpo
+    if not _MODEL_PATH.exists():
+        import urllib.request
+        url = ("https://storage.googleapis.com/mediapipe-models/"
+               "face_landmarker/face_landmarker/float16/latest/face_landmarker.task")
+        print(f"  Downloading FaceLandmarker model → {_MODEL_PATH}")
+        urllib.request.urlretrieve(url, _MODEL_PATH)
+    options = mpv.FaceLandmarkerOptions(
+        base_options=mpo.BaseOptions(model_asset_path=str(_MODEL_PATH)),
+        num_faces=1,
+        min_face_detection_confidence=0.3,
+        min_tracking_confidence=0.3,
+        running_mode=mpv.RunningMode.IMAGE,
+    )
+    return mpv.FaceLandmarker.create_from_options(options)
+
+
+def _get_lms(img_bgr: np.ndarray, landmarker) -> np.ndarray | None:
     """Return (N_LMS, 2) float32 pixel coords, or None if no face detected."""
+    import mediapipe as mp
     h, w = img_bgr.shape[:2]
     rgb  = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-    res  = face_mesh.process(rgb)
-    if not res.multi_face_landmarks:
+    mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb)
+    result   = landmarker.detect(mp_image)
+    if not result.face_landmarks:
         return None
-    lms = res.multi_face_landmarks[0].landmark
+    lms = result.face_landmarks[0]
     return np.array([(lm.x * w, lm.y * h)
                      for lm in lms[:N_LMS]], dtype=np.float32)
 
@@ -173,24 +199,15 @@ def reenact_video(source_img: np.ndarray,
     Writes synthesized video (with driving audio) to out_path.
     """
     try:
-        import mediapipe as mp
-    except ImportError:
-        print("mediapipe not installed — pip install mediapipe")
+        landmarker = _make_landmarker()
+    except Exception as e:
+        print(f"  mediapipe landmarker init failed: {e}")
         return False
 
-    face_mesh = mp.solutions.face_mesh.FaceMesh(
-        static_image_mode=False,
-        max_num_faces=1,
-        refine_landmarks=False,
-        min_detection_confidence=0.3,
-        min_tracking_confidence=0.3,
-    )
-
     # ── Source landmarks + triangulation (computed once) ──────────────────
-    source_lms = _get_lms(source_img, face_mesh)
+    source_lms = _get_lms(source_img, landmarker)
     if source_lms is None:
         print("  ✗ No face detected in source portrait")
-        face_mesh.close()
         return False
     triangles = _build_triangles(source_lms, source_img.shape)
 
@@ -206,7 +223,7 @@ def reenact_video(source_img: np.ndarray,
         ok, frame = cap.read()
         if not ok:
             break
-        lms = _get_lms(frame, face_mesh)
+        lms = _get_lms(frame, landmarker)
         if lms is not None:
             neutral_lms = lms
             break
@@ -223,7 +240,7 @@ def reenact_video(source_img: np.ndarray,
 
             # Resize driving frame to source size for landmark matching
             drv_resized = cv2.resize(driving_frame, (w, h))
-            drv_lms     = _get_lms(drv_resized, face_mesh)
+            drv_lms     = _get_lms(drv_resized, landmarker)
             if drv_lms is None:
                 drv_lms = neutral_lms
 
@@ -233,7 +250,6 @@ def reenact_video(source_img: np.ndarray,
             frame_idx += 1
 
         cap.release()
-        face_mesh.close()
 
         if frame_idx == 0:
             return False
