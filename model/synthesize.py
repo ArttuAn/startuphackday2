@@ -117,6 +117,8 @@ def _build_triangles(lms: np.ndarray, img_shape) -> list[tuple[int, int, int]]:
 
 def _warp_triangle(src: np.ndarray, dst: np.ndarray,
                    src_pts: np.ndarray, dst_pts: np.ndarray):
+    src_pts = src_pts.astype(np.float32)
+    dst_pts = dst_pts.astype(np.float32)
     """Warp one triangle from src image into dst image in-place."""
     h, w = src.shape[:2]
 
