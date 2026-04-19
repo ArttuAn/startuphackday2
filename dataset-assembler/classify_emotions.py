@@ -637,4 +637,8 @@ def main():
         if result:
             ok += 1
 
-    log.info("Done — %d/%d videos classif
+    log.info("Done — %d/%d videos classified successfully.", ok, len(vid_dirs))
+
+
+if __name__ == "__main__":
+    main()
