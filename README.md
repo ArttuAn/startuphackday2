@@ -2,7 +2,7 @@
 
 ![REACT AI Logo](assets/logo.svg)
 
-**An end-to-end AI pipeline that watches gameplay footage and generates a synthetic streamer avatar that reacts — trained on real Twitch/YouTube streamers playing Signalis.**
+**An end-to-end AI pipeline that watches gameplay footage and generates a synthetic streamer avatar that reacts — trained on real YouTube streamer playing Signalis.**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org)
@@ -20,11 +20,11 @@
 
 ![Pipeline](assets/pipeline.svg)
 
-The pipeline runs in 10 steps — from raw Twitch VODs to a fully synthetic reacting avatar:
+The pipeline runs in 10 steps — from raw YouTube VODs to a fully synthetic reacting avatar:
 
 | Step | Module | What it does |
 |------|--------|--------------|
-| 1 | `streamer-dataset-builder` | Scrapes Signalis VODs from YouTube/Twitch |
+| 1 | `streamer-dataset-builder` | Scrapes Signalis VODs from YouTube |
 | 2 | `face-validator` | Removes low-quality/no-face/VTuber videos |
 | 3 | `streamer-separator` | Detects facecam bounding box per video |
 | 4 | `dataset-assembler/assemble.py` | Organises raw footage + bbox + audio |
@@ -184,7 +184,7 @@ python scrape_eval_games.py --games "hollow knight" "little nightmares" --max_pe
 run_pipeline.py                   pipeline orchestrator
 requirements.txt
 assets/                           logo + diagrams
-streamer-dataset-builder/         YouTube/Twitch scraper
+streamer-dataset-builder/         YouTube scraper
 face-validator/                   face presence + quality filter
 streamer-separator/               facecam bbox detection
 dataset-assembler/
