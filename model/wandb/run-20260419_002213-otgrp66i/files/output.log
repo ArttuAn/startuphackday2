@@ -1,0 +1,45 @@
+wandb run: https://wandb.ai/arttu-antikainen-aalto/streamer-reaction-model/runs/otgrp66i
+Loading SigLIP...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█| 408/408 [00:00<00:00,
+[GameplayDataset] 4109 clips
+  confused    : 1063
+  angry       : 969
+  sad         : 704
+  fear        : 389
+  happy       : 384
+  neutral     : 336
+  surprise    : 232
+  excited     : 16
+  contempt    : 10
+  disgust     : 6
+
+Train: 3310 clips from 5 videos
+Val:   799 clips from 1 videos
+Train distribution: {'angry': 823, 'sad': 672, 'confused': 804, 'neutral': 278, 'fear': 259, 'happy': 280, 'surprise': 168, 'excited': 10, 'contempt': 10, 'disgust': 6}
+Val   distribution: {'angry': 146, 'confused': 259, 'neutral': 58, 'fear': 130, 'excited': 6, 'happy': 104, 'surprise': 64, 'sad': 32}
+
+  wandb: logged 20 'neutral' clips for inspection
+  wandb: logged 20 'happy' clips for inspection
+  wandb: logged 16 'excited' clips for inspection
+  wandb: logged 20 'sad' clips for inspection
+  wandb: logged 20 'angry' clips for inspection
+  wandb: logged 20 'fear' clips for inspection
+  wandb: logged 20 'surprise' clips for inspection
+  wandb: logged 6 'disgust' clips for inspection
+  wandb: logged 10 'contempt' clips for inspection
+  wandb: logged 20 'confused' clips for inspection
+  wandb: dataset artifact + frame pairs logged
+[GameplayDataset] 4109 clips
+  confused    : 1063
+  angry       : 969
+  sad         : 704
+  fear        : 389
+  happy       : 384
+  neutral     : 336
+  surprise    : 232
+  excited     : 16
+  contempt    : 10
+  disgust     : 6
+Train: 3310 | Val: 799
+Computing class weights...

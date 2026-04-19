@@ -26,7 +26,9 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from dataset import EMOTION_CLASSES, N_EMOTIONS, get_soft_labels, sample_frames_rgb
+from dataset import (EMOTION_CLASSES, N_EMOTIONS, AUDIO_DIM,
+                     get_soft_labels, sample_frames_rgb,
+                     extract_gameplay_audio_features)
 from train import SigLIPEmotionPredictor
 
 BASE = Path(__file__).parent
@@ -43,10 +45,11 @@ def load_model_and_processor(checkpoint: Path, device: torch.device):
     ckpt       = torch.load(checkpoint, map_location=device)
     model_name = ckpt.get("model_name", "google/siglip-base-patch16-224")
     n_frames   = ckpt.get("n_frames", 4)
+    audio_dim  = ckpt.get("audio_dim", AUDIO_DIM)
 
     processor    = AutoProcessor.from_pretrained(model_name)
     siglip_model = AutoModel.from_pretrained(model_name).vision_model
-    model        = SigLIPEmotionPredictor(siglip_model).to(device)
+    model        = SigLIPEmotionPredictor(siglip_model, audio_dim=audio_dim).to(device)
     model.load_state_dict(ckpt["model_state"])
     model.eval()
 
@@ -76,8 +79,9 @@ def predict_emotion_vector(
         images=[frames[i] for i in range(n_frames)],
         return_tensors="pt",
     )
-    pixel_values = processed["pixel_values"].unsqueeze(0).to(device)  # (1, T, 3, H, W)
-    pred = model(pixel_values).squeeze(0).cpu()  # (N_EMOTIONS,)
+    pixel_values   = processed["pixel_values"].unsqueeze(0).to(device)  # (1, T, 3, H, W)
+    audio_features = extract_gameplay_audio_features(video_path).unsqueeze(0).to(device)
+    pred = model(pixel_values, audio_features).squeeze(0).cpu()  # (N_EMOTIONS,)
     return pred
 
 

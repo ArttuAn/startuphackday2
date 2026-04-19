@@ -1,0 +1,27 @@
+{
+  "t": 1045.0,
+  "emotion": "confused",
+  "audio": {
+    "loudness": 11.9,
+    "pitch_mean": 131.4,
+    "pitch_var": 51.8,
+    "speech": 0.571,
+    "audio_emotion": "speaking"
+  },
+  "caption": "",
+  "caption_events": [],
+  "scores": {
+    "neutral": 85.93,
+    "happy": 5.79,
+    "excited": 4.99,
+    "sad": 11.38,
+    "angry": 16.81,
+    "fear": 0.44,
+    "surprise": 1.8,
+    "disgust": 15.65,
+    "contempt": 13.59,
+    "confused": 33.35
+  },
+  "clip_start": 1042.5,
+  "clip_end": 1047.5
+}

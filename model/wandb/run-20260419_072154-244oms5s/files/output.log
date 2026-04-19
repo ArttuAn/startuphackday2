@@ -1,0 +1,38 @@
+wandb run: https://wandb.ai/arttu-antikainen-aalto/streamer-reaction-model/runs/244oms5s
+Loading SigLIP...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████| 408/408 [00:00<00:00, 2471.19it/s]
+[GameplayDataset] 4153 clips
+  confused    : 1063
+  angry       : 969
+  sad         : 704
+  fear        : 403
+  happy       : 394
+  neutral     : 355
+  surprise    : 233
+  excited     : 16
+  contempt    : 10
+  disgust     : 6
+
+Train: 3335 clips from 5 videos
+Val:   818 clips from 1 videos
+Train distribution: {'angry': 823, 'sad': 672, 'confused': 804, 'neutral': 290, 'fear': 264, 'happy': 287, 'surprise': 169, 'contempt': 10, 'disgust': 6, 'excited': 10}
+Val   distribution: {'angry': 146, 'confused': 259, 'neutral': 65, 'fear': 139, 'excited': 6, 'happy': 107, 'surprise': 64, 'sad': 32}
+
+  wandb: logged 20 'angry' clips for inspection
+  wandb: logged 20 'confused' clips for inspection
+  wandb: dataset artifact + frame pairs logged
+[34m[1mwandb[0m: [33mWARNING[0m Artifact "dataset_split" already exists with the same content. No new version will be created.
+[GameplayDataset] 4153 clips
+  confused    : 1063
+  angry       : 969
+  sad         : 704
+  fear        : 403
+  happy       : 394
+  neutral     : 355
+  surprise    : 233
+  excited     : 16
+  contempt    : 10
+  disgust     : 6
+Train: 3335 | Val: 818
+Computing class weights...

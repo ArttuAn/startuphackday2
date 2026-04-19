@@ -32,7 +32,7 @@ from sklearn.metrics import f1_score
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import CosineAnnealingLR
 
-from dataset import N_EMOTIONS, EMOTION_CLASSES, build_loaders
+from dataset import N_EMOTIONS, EMOTION_CLASSES, AUDIO_DIM, build_loaders
 
 BASE = Path(__file__).parent
 DEFAULT_DATASET = BASE.parent / "dataset-assembler" / "dataset"
@@ -50,23 +50,27 @@ class SigLIPEmotionPredictor(nn.Module):
     Output: (batch, N_EMOTIONS) — softmax probabilities
     """
 
-    def __init__(self, siglip_model, hidden_dim: int = 256, dropout: float = 0.3):
+    def __init__(self, siglip_model, hidden_dim: int = 256, dropout: float = 0.3,
+                 audio_dim: int = AUDIO_DIM):
         super().__init__()
-        self.encoder = siglip_model
+        self.encoder   = siglip_model
+        self.audio_dim = audio_dim
 
         for p in self.encoder.parameters():
             p.requires_grad = False
 
         embed_dim = self.encoder.config.hidden_size  # 768 for base
+        total_dim = embed_dim + audio_dim
 
         self.head = nn.Sequential(
-            nn.Linear(embed_dim, hidden_dim),
+            nn.Linear(total_dim, hidden_dim),
             nn.GELU(),
             nn.Dropout(dropout),
             nn.Linear(hidden_dim, N_EMOTIONS),
         )
 
-    def forward(self, pixel_values: torch.Tensor) -> torch.Tensor:
+    def forward(self, pixel_values: torch.Tensor,
+                audio_features: torch.Tensor | None = None) -> torch.Tensor:
         B, T, C, H, W = pixel_values.shape
         x = pixel_values.view(B * T, C, H, W)
 
@@ -74,7 +78,11 @@ class SigLIPEmotionPredictor(nn.Module):
             out   = self.encoder(pixel_values=x)
             feats = out.last_hidden_state.mean(dim=1)   # (B*T, 768)
 
-        feats  = feats.view(B, T, -1).mean(dim=1)       # (B, 768)
+        feats = feats.view(B, T, -1).mean(dim=1)        # (B, 768)
+
+        if self.audio_dim > 0 and audio_features is not None:
+            feats = torch.cat([feats, audio_features], dim=1)  # (B, 768+audio_dim)
+
         logits = self.head(feats)                        # (B, N_EMOTIONS)
         return torch.softmax(logits, dim=-1)
 
@@ -148,11 +156,12 @@ def run_epoch(model, loader, optimizer, device, train: bool,
     ctx = torch.enable_grad() if train else torch.no_grad()
     with ctx:
         pbar = tqdm(loader, desc=f"  {phase} e{epoch}", leave=False, dynamic_ncols=True)
-        for batch_idx, (pixel_values, soft_labels) in enumerate(pbar):
-            pixel_values = pixel_values.to(device)
-            soft_labels  = soft_labels.to(device)
+        for batch_idx, (pixel_values, audio_features, soft_labels) in enumerate(pbar):
+            pixel_values   = pixel_values.to(device)
+            audio_features = audio_features.to(device)
+            soft_labels    = soft_labels.to(device)
 
-            pred = model(pixel_values)
+            pred = model(pixel_values, audio_features)
             loss = focal_loss(pred, soft_labels, class_weights)
 
             if train:
@@ -163,8 +172,8 @@ def run_epoch(model, loader, optimizer, device, train: bool,
                 # Log every batch to wandb so metrics appear immediately
                 if wandb_run and global_step is not None:
                     global_step[0] += 1
-                    wandb_run.log({"train/batch_focal_loss": loss.item()},
-                                  step=global_step[0])
+                    wandb_run.log({"train/batch_focal_loss": loss.item(),
+                                   "batch": global_step[0]})
 
             total_loss  += loss.item() * soft_labels.size(0)
             all_preds.append(pred.detach().cpu().numpy())
@@ -298,7 +307,7 @@ def main():
                                       for i in range(N_EMOTIONS)}})
 
     # ── Model ────────────────────────────────────────────────────────────
-    model     = SigLIPEmotionPredictor(siglip_model).to(device)
+    model     = SigLIPEmotionPredictor(siglip_model, audio_dim=AUDIO_DIM).to(device)
     optimizer = AdamW(model.head.parameters(), lr=args.lr, weight_decay=1e-4)
     scheduler = CosineAnnealingLR(optimizer, T_max=args.epochs)
 
@@ -368,6 +377,7 @@ def main():
                 "val_macro_f1":    val_m["macro_f1"],
                 "model_name":      args.model_name,
                 "n_frames":        args.n_frames,
+                "audio_dim":       AUDIO_DIM,
                 "emotion_classes": EMOTION_CLASSES,
             }, ckpt_path)
             print(f"  → saved best_model.pt (val_FL={val_m['focal_loss']:.4f})")
@@ -377,7 +387,7 @@ def main():
                 artifact = wandb.Artifact(
                     name="best_model",
                     type="model",
-                    description=f"Best checkpoint at epoch {epoch}, val_KL={val_m['kl_loss']:.4f}",
+                    description=f"Best checkpoint at epoch {epoch}, val_FL={val_m['focal_loss']:.4f}",
                     metadata={"epoch": epoch, **{f"val_{k}": v for k, v in val_m.items()}},
                 )
                 artifact.add_file(str(ckpt_path))

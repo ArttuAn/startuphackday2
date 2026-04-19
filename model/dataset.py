@@ -14,12 +14,100 @@ from __future__ import annotations
 
 import json
 import random
+import subprocess
+import tempfile
+import wave
 from pathlib import Path
 
 import cv2
 import numpy as np
 import torch
 from torch.utils.data import Dataset
+
+# ── Gameplay audio feature config ────────────────────────────────────────────
+_N_BANDS  = 10   # log mel energy bands
+AUDIO_DIM = 6 + _N_BANDS * 2   # RMS(2) + ZCR(2) + centroid(2) + bands(mean+std)
+
+
+def extract_gameplay_audio_features(gameplay_path: Path) -> torch.Tensor:
+    """
+    Extract audio features from gameplay.mp4 (game sounds, not streamer voice).
+
+    Returns (AUDIO_DIM,) float32 tensor:
+      rms_mean, rms_std,
+      zcr_mean, zcr_std,
+      centroid_mean, centroid_std,
+      mel_band_mean × N_BANDS,
+      mel_band_std  × N_BANDS
+
+    Game audio carries emotion-relevant signals: scary music → fear/surprise,
+    death sounds → sad/angry, victory jingles → happy/excited.
+    """
+    zero = torch.zeros(AUDIO_DIM, dtype=torch.float32)
+    try:
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+            tmp_path = Path(tmp.name)
+
+        res = subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error",
+             "-i", str(gameplay_path),
+             "-ar", "16000", "-ac", "1", "-t", "5",
+             str(tmp_path)],
+            capture_output=True,
+        )
+        if res.returncode != 0 or not tmp_path.exists():
+            return zero
+
+        with wave.open(str(tmp_path), "rb") as wf:
+            sr  = wf.getframerate()
+            raw = wf.readframes(wf.getnframes())
+        tmp_path.unlink(missing_ok=True)
+
+        samples = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
+        if len(samples) < 512:
+            return zero
+
+        # ── Frame analysis (100 ms frames) ───────────────────────────────
+        frame_len = sr // 10
+        n_frames  = len(samples) // frame_len
+        if n_frames == 0:
+            return zero
+        frames = samples[:n_frames * frame_len].reshape(n_frames, frame_len)
+
+        # RMS energy
+        rms = np.sqrt(np.mean(frames ** 2, axis=1))
+
+        # Zero-crossing rate
+        zcr = np.mean(np.abs(np.diff(np.sign(frames), axis=1)), axis=1) / 2
+
+        # FFT magnitude spectrum
+        mag   = np.abs(np.fft.rfft(frames * np.hanning(frame_len), axis=1))
+        freqs = np.fft.rfftfreq(frame_len, d=1.0 / sr)
+
+        # Spectral centroid
+        centroid = np.sum(freqs * mag, axis=1) / (mag.sum(axis=1) + 1e-8)
+
+        # Log mel-band energies (_N_BANDS bands, 100–8000 Hz)
+        f_lo = np.linspace(100, 8000, _N_BANDS + 1)[:-1]
+        f_hi = np.linspace(100, 8000, _N_BANDS + 1)[1:]
+        band_energy = np.zeros((n_frames, _N_BANDS))
+        for b in range(_N_BANDS):
+            mask = (freqs >= f_lo[b]) & (freqs < f_hi[b])
+            if mask.any():
+                band_energy[:, b] = np.log(mag[:, mask].mean(axis=1) ** 2 + 1e-8)
+
+        feats = np.concatenate([
+            [rms.mean(),      rms.std()],
+            [zcr.mean(),      zcr.std()],
+            [centroid.mean(), centroid.std()],
+            band_energy.mean(axis=0),
+            band_energy.std(axis=0),
+        ]).astype(np.float32)
+
+        return torch.from_numpy(feats)
+
+    except Exception:
+        return zero
 
 _face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
@@ -108,10 +196,11 @@ def sample_frames_rgb(video_path: Path, n: int, img_size: int) -> np.ndarray | N
 
 class GameplayDataset(Dataset):
     """
-    Returns (pixel_values, soft_labels) per clip.
+    Returns (pixel_values, audio_features, soft_labels) per clip.
 
-    pixel_values: (n_frames, 3, img_size, img_size) float32, normalised for SigLIP
-    soft_labels:  (N_EMOTIONS,) float32 probability distribution
+    pixel_values:   (n_frames, 3, img_size, img_size) float32, normalised for SigLIP
+    audio_features: (AUDIO_DIM,) float32 — game audio features (RMS, ZCR, mel bands)
+    soft_labels:    (N_EMOTIONS,) float32 probability distribution
     """
 
     def __init__(
@@ -187,8 +276,9 @@ class GameplayDataset(Dataset):
         )
         pixel_values = processed["pixel_values"]  # (n_frames, 3, H, W)
 
-        soft_labels = get_soft_labels(meta)
-        return pixel_values, soft_labels
+        audio_features = extract_gameplay_audio_features(clip_dir / "gameplay.mp4")
+        soft_labels    = get_soft_labels(meta)
+        return pixel_values, audio_features, soft_labels
 
 
 def build_loaders(
@@ -366,13 +456,25 @@ def build_loaders(
         except Exception as e:
             print(f"  wandb dataset logging failed: {e}")
 
-    val_ds = GameplayDataset(dataset_dir, processor, n_frames=n_frames, augment=False)
+    train_ds = Subset(full_ds, train_idx)
+    val_ds = Subset(
+        GameplayDataset(dataset_dir, processor, n_frames=n_frames, augment=False),
+        val_idx,
+    )
 
     train_loader = DataLoader(
-        Subset(full_ds, train_idx), batch_size=batch_size,
-        shuffle=True, num_workers=num_workers)
+        train_ds,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=num_workers,
+        pin_memory=torch.cuda.is_available(),
+    )
     val_loader = DataLoader(
-        Subset(val_ds, val_idx), batch_size=batch_size,
-        shuffle=False, num_workers=num_workers)
+        val_ds,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        pin_memory=torch.cuda.is_available(),
+    )
 
     return train_loader, val_loader

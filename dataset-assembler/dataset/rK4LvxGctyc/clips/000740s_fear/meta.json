@@ -1,0 +1,35 @@
+{
+  "t": 740.0,
+  "emotion": "fear",
+  "arousal": 0.994,
+  "valence": -1.0,
+  "surprise": 0.0,
+  "tension": 0.0,
+  "head_pose": {
+    "yaw": 0.0,
+    "pitch": 0.0,
+    "roll": 0.0
+  },
+  "head_motion": 0.0,
+  "blendshapes": {},
+  "audio": {
+    "loudness": 7.11,
+    "pitch_mean": 121.2,
+    "pitch_var": 19.7,
+    "speech": 1.0,
+    "audio_emotion": "speaking"
+  },
+  "caption": "",
+  "caption_events": [],
+  "scores": {
+    "angry": 9.62,
+    "disgust": 0.05,
+    "fear": 42.79,
+    "happy": 0.09,
+    "sad": 8.4,
+    "surprise": 0.01,
+    "neutral": 0.59
+  },
+  "clip_start": 737.5,
+  "clip_end": 742.5
+}

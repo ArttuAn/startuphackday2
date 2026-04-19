@@ -1,0 +1,38 @@
+2026-04-19 07:37:55,552 INFO    MainThread:24284 [wandb_setup.py:_flush():81] Current SDK version is 0.26.0
+2026-04-19 07:37:55,552 INFO    MainThread:24284 [wandb_setup.py:_flush():81] Configure stats pid to 24284
+2026-04-19 07:37:55,552 INFO    MainThread:24284 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-04-19 07:37:55,552 INFO    MainThread:24284 [wandb_init.py:setup_run_log_directory():721] Logging user logs to C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\wandb\run-20260419_073755-ciek2qdm\logs\debug.log
+2026-04-19 07:37:55,552 INFO    MainThread:24284 [wandb_init.py:setup_run_log_directory():722] Logging internal logs to C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\wandb\run-20260419_073755-ciek2qdm\logs\debug-internal.log
+2026-04-19 07:37:55,556 INFO    MainThread:24284 [wandb_init.py:init():848] calling init triggers
+2026-04-19 07:37:55,556 INFO    MainThread:24284 [wandb_init.py:init():853] wandb.init called with sweep_config: {}
+config: {'model_name': 'google/siglip-base-patch16-224', 'epochs': 30, 'batch_size': 4, 'lr': 0.001, 'n_frames': 4, 'n_emotions': 10, 'emotions': ['neutral', 'happy', 'excited', 'sad', 'angry', 'fear', 'surprise', 'disgust', 'contempt', 'confused'], 'device': 'cpu', '_wandb': {}}
+2026-04-19 07:37:55,556 INFO    MainThread:24284 [wandb_init.py:init():896] starting backend
+2026-04-19 07:37:58,009 INFO    MainThread:24284 [wandb_init.py:init():911] sending inform_init request
+2026-04-19 07:37:58,061 INFO    MainThread:24284 [wandb_init.py:init():919] backend started and connected
+2026-04-19 07:37:58,105 INFO    MainThread:24284 [wandb_init.py:init():989] updated telemetry
+2026-04-19 07:37:58,163 INFO    MainThread:24284 [wandb_init.py:init():1013] communicating run to backend with 90.0 second timeout
+2026-04-19 07:37:58,878 INFO    MainThread:24284 [wandb_init.py:init():1058] starting run threads in backend
+2026-04-19 07:38:01,143 INFO    MainThread:24284 [wandb_run.py:_console_start():2542] atexit reg
+2026-04-19 07:38:01,144 INFO    MainThread:24284 [wandb_run.py:_redirect():2391] redirect: wrap_raw
+2026-04-19 07:38:01,144 INFO    MainThread:24284 [wandb_run.py:_redirect():2460] Wrapping output streams.
+2026-04-19 07:38:01,145 INFO    MainThread:24284 [wandb_run.py:_redirect():2483] Redirects installed.
+2026-04-19 07:38:01,155 INFO    MainThread:24284 [wandb_init.py:init():1098] run started, returning control to user process
+2026-04-19 07:41:01,864 INFO    MainThread:24284 [wandb_run.py:_config_callback():1403] config_cb ('_wandb', 'visualize', 'dataset/train_distribution') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/bar/v0', 'fieldSettings': {'label': 'emotion', 'value': 'count'}, 'stringSettings': {'title': 'Train — emotion distribution'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'dataset/train_distribution_table'}], 'fields': []}]}]}}} None
+2026-04-19 07:41:01,865 INFO    MainThread:24284 [wandb_run.py:_config_callback():1403] config_cb ('_wandb', 'visualize', 'dataset/val_distribution') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/bar/v0', 'fieldSettings': {'label': 'emotion', 'value': 'count'}, 'stringSettings': {'title': 'Val — emotion distribution'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'dataset/val_distribution_table'}], 'fields': []}]}]}}} None
+2026-04-19 07:41:52,506 INFO    wandb-AsyncioManager-main:24284 [service_client.py:_forward_responses():134] Reached EOF.
+2026-04-19 07:41:52,506 INFO    wandb-AsyncioManager-main:24284 [mailbox.py:close():155] Closing mailbox, abandoning 3 handles.
+2026-04-19 07:41:57,789 ERROR   wandb-AsyncioManager-main:24284 [asyncio_manager.py:fn_wrap_exceptions():184] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\Lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 182, in fn_wrap_exceptions
+    await fn()
+  File "C:\Users\Admin\anaconda3\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 45, in publish
+    await self._send_server_request(request)
+  File "C:\Users\Admin\anaconda3\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 87, in _send_server_request
+    await self._drain_writer()
+  File "C:\Users\Admin\anaconda3\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 96, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\Admin\anaconda3\Lib\asyncio\streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\Admin\anaconda3\Lib\asyncio\streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

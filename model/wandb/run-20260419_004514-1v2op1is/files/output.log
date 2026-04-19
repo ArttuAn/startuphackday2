@@ -1,0 +1,69 @@
+wandb run: https://wandb.ai/arttu-antikainen-aalto/streamer-reaction-model/runs/1v2op1is
+Loading SigLIP...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████| 408/408 [00:00<00:00, 4532.47it/s]
+[GameplayDataset] 4153 clips
+  confused    : 1063
+  angry       : 969
+  sad         : 704
+  fear        : 403
+  happy       : 394
+  neutral     : 355
+  surprise    : 233
+  excited     : 16
+  contempt    : 10
+  disgust     : 6
+
+Train: 3335 clips from 5 videos
+Val:   818 clips from 1 videos
+Train distribution: {'angry': 823, 'sad': 672, 'confused': 804, 'neutral': 290, 'fear': 264, 'happy': 287, 'surprise': 169, 'contempt': 10, 'disgust': 6, 'excited': 10}
+Val   distribution: {'angry': 146, 'confused': 259, 'neutral': 65, 'fear': 139, 'excited': 6, 'happy': 107, 'surprise': 64, 'sad': 32}
+
+  wandb: logged 20 'neutral' clips for inspection
+  wandb: logged 20 'happy' clips for inspection
+  wandb: logged 16 'excited' clips for inspection
+  wandb: logged 20 'sad' clips for inspection
+  wandb: logged 20 'angry' clips for inspection
+  wandb: logged 20 'fear' clips for inspection
+  wandb: logged 20 'surprise' clips for inspection
+  wandb: logged 6 'disgust' clips for inspection
+  wandb: logged 10 'contempt' clips for inspection
+  wandb: logged 20 'confused' clips for inspection
+  wandb: dataset artifact + frame pairs logged
+[GameplayDataset] 4153 clips
+  confused    : 1063
+  angry       : 969
+  sad         : 704
+  fear        : 403
+  happy       : 394
+  neutral     : 355
+  surprise    : 233
+  excited     : 16
+  contempt    : 10
+  disgust     : 6
+Train: 3335 | Val: 818
+Computing class weights...
+  weights: {'neutral': '0.002', 'happy': '0.012', 'excited': '3.101', 'sad': '0.005', 'angry': '0.004', 'fear': '0.016', 'surprise': '0.039', 'disgust': '0.620', 'contempt': '3.101', 'confused': '3.101'}
+Trainable params: 199,434 (head only)
+  train e1:   0%|       | 2/834 [00:08<1:01:45,  4.45s/it, loss=0.0121][34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 1 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 2 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+  train e1:   0%|         | 4/834 [00:17<59:03,  4.27s/it, loss=0.0102][34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 3 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 4 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+  train e1:   1%|         | 7/834 [00:29<57:54,  4.20s/it, loss=0.0161][34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 5 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 6 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 7 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+  train e1:   1%|         | 9/834 [00:37<56:41,  4.12s/it, loss=0.0122][34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 8 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 9 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+  train e1:   1%|        | 12/834 [00:51<58:54,  4.30s/it, loss=0.0094][34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 10 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 11 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+[34m[1mwandb[0m: [33mWARNING[0m Tried to log to step 12 that is less than the current step 13. Steps must be monotonically increasing, so this data will be ignored. See https://wandb.me/define-metric to log data out of order.
+Traceback (most recent call last):                                     
+Epoch   1/30 | train FL=0.0122 top1=0.235 top3=0.625 f1=0.153 | val FL=0.0117 top1=0.172 top3=0.561 f1=0.086 | 4258.6s
+  → saved best_model.pt (val_FL=0.0117)
+  File "C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\train.py", line 410, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Admin\OneDrive\Desktop\startuphackYT\model\train.py", line 380, in main
+    description=f"Best checkpoint at epoch {epoch}, val_KL={val_m['kl_loss']:.4f}",
+                                                            ~~~~~^^^^^^^^^^^
+KeyError: 'kl_loss'
