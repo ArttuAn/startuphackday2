@@ -106,7 +106,7 @@ def focal_loss(pred: torch.Tensor, target: torch.Tensor,
 def build_class_weights(loader, n_classes: int) -> torch.Tensor:
     """Inverse-frequency class weights from soft label argmax counts."""
     counts = torch.zeros(n_classes)
-    for _, soft_labels in loader:
+    for _, _audio, soft_labels in loader:
         indices = soft_labels.argmax(dim=1)
         for idx in indices:
             counts[idx] += 1
