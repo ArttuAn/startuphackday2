@@ -103,13 +103,24 @@ def focal_loss(pred: torch.Tensor, target: torch.Tensor,
     return loss.mean()
 
 
-def build_class_weights(loader, n_classes: int) -> torch.Tensor:
-    """Inverse-frequency class weights from soft label argmax counts."""
+def build_class_weights(dataset_dir: Path, n_classes: int) -> torch.Tensor:
+    """
+    Inverse-frequency class weights computed directly from meta.json files.
+    Much faster than iterating the DataLoader — no video/audio loading needed.
+    """
+    import json
     counts = torch.zeros(n_classes)
-    for _, _audio, soft_labels in loader:
-        indices = soft_labels.argmax(dim=1)
-        for idx in indices:
-            counts[idx] += 1
+    for meta_path in dataset_dir.rglob("meta.json"):
+        try:
+            meta = json.loads(meta_path.read_text())
+            scores = meta.get("emotion_scores", {})
+            if not scores:
+                continue
+            top_emotion = max(scores, key=scores.get)
+            if top_emotion in EMOTION_CLASSES:
+                counts[EMOTION_CLASSES.index(top_emotion)] += 1
+        except Exception:
+            continue
     counts  = counts.clamp(min=1.0)
     weights = 1.0 / counts
     weights = weights / weights.sum() * n_classes   # normalise so mean weight ≈ 1
@@ -300,7 +311,7 @@ def main():
 
     # ── Class weights (focal loss) ────────────────────────────────────────
     print("Computing class weights...")
-    class_weights = build_class_weights(train_loader, N_EMOTIONS)
+    class_weights = build_class_weights(args.dataset_dir, N_EMOTIONS)
     print("  weights:", {EMOTION_CLASSES[i]: f"{class_weights[i]:.3f}" for i in range(N_EMOTIONS)})
     if use_wandb and run:
         wandb.log({"class_weights": {EMOTION_CLASSES[i]: float(class_weights[i])
