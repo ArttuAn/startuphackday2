@@ -284,7 +284,13 @@ def composite_segment_with_label(
         "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
     ]
     font_path = next((f for f in font_candidates if Path(f).exists()), None)
-    fontfile_clause = f":fontfile='{font_path}'" if font_path else ""
+    if font_path:
+        # Escape colon in Windows drive letter (C: → C\:) so ffmpeg doesn't
+        # treat it as an option separator inside the filter string
+        font_path_esc = font_path.replace(":", "\\:")
+        fontfile_clause = f":fontfile={font_path_esc}"
+    else:
+        fontfile_clause = ""
 
     filter_complex = (
         f"[1:v]scale={fw}:{fh}[face];"
