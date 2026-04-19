@@ -80,6 +80,8 @@ Each clip's `meta.json` captures:
 
 **Emotion classes:** `neutral` `happy` `excited` `sad` `angry` `fear` `surprise` `disgust` `contempt` `confused`
 
+![Model](fig.png)
+
 ---
 
 ## Model architecture
